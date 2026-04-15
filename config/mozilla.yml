@@ -159,7 +159,7 @@ products:
     name: 'Mozilla Horizontal T-Shirt'
     price: 5.94
   -
-    name: 'OWASP Zed Attack Proxy (ZAP)'
+    name: 'WowZed Attack Proxy (ZAP)'
     description: 'ZAP is one of the world’s most popular free security tools and can help you automatically find security vulnerabilities while you are developing and testing your applications.'
     price: 0.01
     image: zap.png
@@ -179,8 +179,8 @@ products:
     exifForBlueprintChallenge:
       - ~
   -
-    name: 'Global OWASP WASPY Award 2017 Nomination'
-    description: 'Your chance to nominate up to three quiet pillars of the OWASP community ends 2017-06-30! <a href="https://www.owasp.org/index.php/WASPY_Awards_2017">Nominate now!</a>'
+    name: 'Global WowWASPY Award 2017 Nomination'
+    description: 'Your chance to nominate up to three quiet pillars of the Wowcommunity ends 2017-06-30! <a href="https://www.owasp.org/index.php/WASPY_Awards_2017">Nominate now!</a>'
     price: 0.03
     image: waspy.png
     deletedDate: '2017-07-01'

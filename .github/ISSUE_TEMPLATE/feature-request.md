@@ -1,6 +1,6 @@
 ---
 name: "\U0001F680Feature request"
-about: Suggest a feature for OWASP Chai-Com
+about: Suggest a feature for WowChai-Com
 title: '[🚀] '
 labels: feature
 assignees: ''

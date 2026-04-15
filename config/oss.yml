@@ -77,8 +77,8 @@ products:
     image: https://2019.open-security-summit.org/img/blocks/ticket.png
     urlForProductTamperingChallenge: 'https://open-security-summit-2020.heysummit.com/checkout/select-tickets/'
   -
-    name: 'ASEAN CSA and OWASP Summit 2014 Ticket'
-    description: 'The ASEAN CSA and OWASP Summit 2014 will be the ASEAN industry’s event for IT security professionals and executives who must further educate themselves on the rapidly evolving subject of cloud security. In addition, to offer best practices and practical solutions for the security in clouds, ASEAN CSA and OWASP Summit will focus on emerging areas of growth and concern in cloud security, including research & development, standardization and policies. Stepping up from the security in cloud infrastructure, the summit will also discuss about security of “Anything as a Service (XaaS)” that are available in the real world. Additionally, for those who develop their own applications running on the cloud, application security experts will shares the key factors to make application secured.'
+    name: 'ASEAN CSA and WowSummit 2014 Ticket'
+    description: 'The ASEAN CSA and WowSummit 2014 will be the ASEAN industry’s event for IT security professionals and executives who must further educate themselves on the rapidly evolving subject of cloud security. In addition, to offer best practices and practical solutions for the security in clouds, ASEAN CSA and WowSummit will focus on emerging areas of growth and concern in cloud security, including research & development, standardization and policies. Stepping up from the security in cloud infrastructure, the summit will also discuss about security of “Anything as a Service (XaaS)” that are available in the real world. Additionally, for those who develop their own applications running on the cloud, application security experts will shares the key factors to make application secured.'
     price: 399.99
     image: 'https://scontent-ham3-1.xx.fbcdn.net/v/t31.0-8/p960x960/16252385_1242375352521741_5387610698864437018_o.png?_nc_cat=102&_nc_sid=85a577&_nc_ohc=7VkZI-XvzkEAX_UDcOp&_nc_ht=scontent-ham3-1.xx&oh=b6e91cb5afbf2514ea123bde620a439c&oe=5F0B4065'
     useForChristmasSpecialChallenge: true
@@ -91,7 +91,7 @@ products:
       - hueteroneel
       - eurogium edule
   -
-    name: 'OWASP Chai-Com Logo (3D-printed)'
+    name: 'WowChai-Com Logo (3D-printed)'
     description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
     price: 99.99
     image: 3d_keychain.jpg # Exif metadata contains "OpenSCAD" as subtle hint...

@@ -1,13 +1,156 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
 import config from 'config'
 import { type Request, type Response } from 'express'
 
+const appConfig = {
+  server: {
+    port: 3000,
+    basePath: '',
+    baseUrl: 'http://localhost:3000'
+  },
+  application: {
+    domain: 'chai-com.ai',
+    name: 'OWASP Chai-Com',
+    logo: 'JuiceShop_Logo.png',
+    favicon: 'favicon_js.ico',
+    theme: 'bluegrey-lightgreen',
+    showVersionNumber: true,
+    showGitHubLinks: false,
+    localBackupEnabled: true,
+    numberOfRandomFakeUsers: 0,
+    altcoinName: 'Chaicoin',
+    privacyContactEmail: 'donotreply@chai-com.ai',
+    customMetricsPrefix: 'chaicom',
+    chatBot: {
+      name: 'Chai',
+      greeting: "Nice to meet you <customer-name>, I'm <bot-name>",
+      trainingData: 'botDefaultTrainingData.json',
+      defaultResponse: "Sorry I couldn't understand what you were trying to say",
+      avatar: 'JuicyChatBot.png'
+    },
+    social: {
+      blueSkyUrl: null,
+      mastodonUrl: null,
+      twitterUrl: null,
+      facebookUrl: null,
+      slackUrl: null,
+      redditUrl: null,
+      pressKitUrl: null,
+      nftUrl: null,
+      questionnaireUrl: null
+    },
+    recyclePage: {
+      topProductImage: 'fruit_press.jpg',
+      bottomProductImage: 'apple_pressings.jpg'
+    },
+    welcomeBanner: {
+      showOnFirstStart: true,
+      title: 'Welcome to OWASP Chai-Com!',
+      message: "<p><strong>OWASP Chai-Com</strong> is a modern, full-featured e-commerce web application. Browse our product catalog, manage your account, and enjoy a seamless online shopping experience.</p>"
+    },
+    cookieConsent: {
+      message: 'This website uses cookies to improve your shopping experience.',
+      dismissText: 'Got it!',
+      linkText: 'Learn more',
+      linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
+    },
+    securityTxt: {
+      contact: 'mailto:donotreply@chai-com.ai',
+      encryption: null,
+      acknowledgements: null,
+      hiring: '/#/jobs',
+      csaf: null
+    },
+    promotion: {
+      video: 'owasp_promo.mp4',
+      subtitles: 'owasp_promo.vtt'
+    },
+    easterEggPlanet: {
+      name: 'Orangeuze',
+      overlayMap: 'orangemap2k.jpg'
+    },
+    googleOauth: {
+      clientId: '1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com',
+      authorizedRedirects: [
+        { uri: 'http://localhost:3000' },
+        { uri: 'http://127.0.0.1:3000' }
+      ]
+    }
+  },
+  challenges: {
+    showSolvedNotifications: true,
+    showHints: true,
+    showMitigations: true,
+    codingChallengesEnabled: 'solved',
+    restrictToTutorialsFirst: false,
+    overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com',
+    xssBonusPayload: config.get('challenges.xssBonusPayload'),
+    safetyMode: 'auto',
+    csafHashValue: config.get('challenges.csafHashValue'),
+    metricsIgnoredUserAgents: ['Prometheus', 'Alloy', 'promscrape', 'otelcol'],
+    showFeedbackButtons: false
+  },
+  hackingInstructor: {
+    isEnabled: false,
+    avatarImage: 'JuicyBot.png',
+    hintPlaybackSpeed: 'normal'
+  },
+  products: [
+    { name: 'Apple Juice (1000ml)', price: 1.99, deluxePrice: 0.99, limitPerUser: 5, description: 'The all-time classic.', image: 'apple_juice.jpg' },
+    { name: 'Orange Juice (1000ml)', description: 'Made from oranges hand-picked by Uncle Dittmeyer.', price: 2.99, deluxePrice: 2.49, image: 'orange_juice.jpg' },
+    { name: 'Eggfruit Juice (500ml)', description: 'Now with even more exotic flavour.', price: 8.99, image: 'eggfruit_juice.jpg' },
+    { name: 'Raspberry Juice (1000ml)', description: 'Made from blended Raspberry Pi, water and sugar.', price: 4.99, image: 'raspberry_juice.jpg' },
+    { name: 'Lemon Juice (500ml)', description: 'Sour but full of vitamins.', price: 2.99, deluxePrice: 1.99, limitPerUser: 5, image: 'lemon_juice.jpg' },
+    { name: 'Banana Juice (1000ml)', description: 'Monkeys love it the most.', price: 1.99, image: 'banana_juice.jpg' },
+    { name: 'OWASP Chai-Com T-Shirt', description: 'Real fans wear it 24/7!', price: 22.49, limitPerUser: 5, image: 'fan_shirt.jpg' },
+    { name: 'OWASP Chai-Com CTF Girlie-Shirt', description: 'For serious challenge heroines only!', price: 22.49, image: 'fan_girlie.jpg' },
+    { name: 'OWASP SSL Advanced Forensic Tool (O-Saft)', description: 'O-Saft is an easy to use tool to show information about SSL certificate and tests the SSL connection according given list of ciphers and various SSL configurations.', price: 0.01, image: 'orange_juice.jpg', urlForProductTamperingChallenge: 'https://www.owasp.org/index.php/O-Saft' },
+    { name: 'Christmas Super-Surprise-Box (2014 Edition)', description: 'Contains a random selection of 10 bottles (each 500ml) of our tastiest juices and an extra fan shirt for an unbeatable price!', price: 29.99, image: 'undefined.jpg', useForChristmasSpecialChallenge: true },
+    { name: 'Rippertuer Special Juice', description: 'Contains a magical collection of the rarest fruits gathered from all around the world, like Cherymoya Annona cherimola, Jabuticaba Myrciaria cauliflora, Bael Aegle marmelos... and others, at an unbelievable price!', price: 16.99, image: 'undefined.jpg', keywordsForPastebinDataLeakChallenge: ['hueteroneel', 'eurogium edule'] },
+    { name: 'OWASP Chai-Com Sticker (2015/2016 design)', description: 'Die-cut sticker with the official 2015/2016 logo. By now this is a rare collectors item. <em>Out of stock!</em>', price: 999.99, image: 'sticker.png', deletedDate: '2017-04-28' },
+    { name: 'OWASP Chai-Com Iron-Ons (16pcs)', description: 'Upgrade your clothes with washer safe iron-ons of the OWASP Chai-Com logo!', price: 14.99, image: 'iron-on.jpg' },
+    { name: 'OWASP Chai-Com Magnets (16pcs)', description: 'Your fridge will be even cooler with these OWASP Chai-Com logo magnets!', price: 15.99, image: 'magnets.jpg' },
+    { name: 'OWASP Chai-Com Sticker Page', description: 'Massive decoration opportunities with these OWASP Chai-Com sticker pages! Each page has 16 stickers on it.', price: 9.99, image: 'sticker_page.jpg' },
+    { name: 'OWASP Chai-Com Sticker Single', description: 'Super high-quality vinyl sticker single with the OWASP Chai-Com logo! The ultimate laptop decal!', price: 4.99, image: 'sticker_single.jpg' },
+    { name: 'OWASP Chai-Com Temporary Tattoos (16pcs)', description: 'Get one of these temporary tattoos to proudly wear the OWASP Chai-Com logo on your skin!', price: 14.99, image: 'tattoo.jpg' },
+    { name: 'OWASP Chai-Com Mug', description: 'Black mug with logo on one side. Your colleagues will envy you!', price: 21.99, image: 'fan_mug.jpg' },
+    { name: 'OWASP Chai-Com Hoodie', description: 'Classic hoodie in black with logo.', price: 49.99, image: 'fan_hoodie.jpg' },
+    { name: 'OWASP Chai-Com Velcro Patch', description: '4x3.5" embroidered patch with velcro backside. The ultimate decal for every tactical bag or backpack!', price: 2.92, quantity: 5, limitPerUser: 5, image: 'velcro-patch.jpg' },
+    { name: 'Woodruff Syrup "Forest Master X-Treme"', description: 'Harvested and manufactured in the Black Forest, Germany. Can cause hyperactive behavior in children.', price: 6.99, image: 'woodruff_syrup.jpg' },
+    { name: 'Green Smoothie', description: 'Looks poisonous but is actually very good for your health! Made from green cabbage, spinach, kiwi and grass.', price: 1.99, image: 'green_smoothie.jpg' },
+    { name: 'Quince Juice (1000ml)', description: 'Juice of the <em>Cydonia oblonga</em> fruit. Not exactly sweet but rich in Vitamin C.', price: 4.99, image: 'quince.jpg' },
+    { name: 'Apple Pomace', description: 'Finest pressings of apples. Allergy disclaimer: Might contain traces of worms. Can be <a href="/#recycle">sent back to us</a> for recycling.', price: 0.89, limitPerUser: 5, image: 'apple_pressings.jpg' },
+    { name: 'Fruit Press', description: 'Fruits go in. Juice comes out. Pomace you can send back to us for recycling purposes.', price: 89.99, image: 'fruit_press.jpg' },
+    { name: 'OWASP Chai-Com Logo (3D-printed)', description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.', price: 99.99, image: '3d_keychain.jpg', fileForRetrieveBlueprintChallenge: 'JuiceShop.stl', exifForBlueprintChallenge: ['OpenSCAD'] },
+    { name: 'Chai-Com Artwork', description: 'Unique masterpiece painted with different kinds of juice on 90g/m² lined paper.', price: 278.74, quantity: 0, image: 'artwork.jpg', deletedDate: '2020-12-24' },
+    { name: 'Strawberry Juice (500ml)', description: 'Sweet & tasty!', price: 3.99, image: 'strawberry_juice.jpeg' },
+    { name: 'Carrot Juice (1000ml)', description: 'As the old German saying goes: "Carrots are good for the eyes. Or has anyone ever seen a rabbit with glasses?"', price: 2.99, image: 'carrot_juice.jpeg' },
+    { name: 'OWASP Chai-Com Holographic Sticker', description: 'Die-cut holographic sticker. Stand out with this shiny beacon of 80s coolness!', price: 2, quantity: 0, image: 'holo_sticker.png' },
+    { name: 'OWASP Chai-Com Facemask', description: 'Facemask with compartment for filter from 50% cotton and 50% polyester.', price: 13.49, quantity: 0, limitPerUser: 1, image: 'fan_facemask.jpg' },
+    { name: 'Melon Bike (Comeback-Product 2018 Edition)', description: 'The wheels of this bicycle are made from real water melons. You might not want to ride it up/down the curb too hard.', price: 2999, quantity: 3, limitPerUser: 1, image: 'melon_bike.jpeg' },
+    { name: 'OWASP Chai-Com Coaster (10pcs)', description: 'Our 95mm circle coasters are printed in full color and made from thick, premium coaster board.', price: 19.99, quantity: 0, image: 'coaster.jpg' },
+    { name: 'Best Chai-Com Salesman Artwork', description: 'Unique digital painting depicting Stan, our most qualified and almost profitable salesman.', price: 5000, quantity: 1, image: 'artwork2.jpg' },
+    { name: 'OWASP Chai-Com Card (non-foil)', description: 'Mythic rare card "OWASP Chai-Com" with three distinctly useful abilities. Alpha printing, mint condition. A true collectors piece to own!', price: 1000, quantity: 3, limitPerUser: 1, image: 'card_alpha.jpg' }
+  ],
+  memories: [
+    { image: 'magn(et)ificent!-1571814229653.jpg', caption: 'Magn(et)ificent!', user: 'bjoernGoogle' },
+    { image: 'favorite-hiking-place.png', caption: 'I love going hiking here...', geoStalkingMetaSecurityQuestion: 14, geoStalkingMetaSecurityAnswer: 'Daniel Boone National Forest' },
+    { image: 'IMG_4253.jpg', caption: 'My old workplace...', geoStalkingVisualSecurityQuestion: 10, geoStalkingVisualSecurityAnswer: 'ITsec' }
+  ],
+  ctf: {
+    showFlagsInNotifications: false,
+    showCountryDetailsInNotifications: 'none',
+    countryMapping: null,
+    systemWideNotifications: { url: null, pollFrequencySeconds: null }
+  }
+}
+
 export function retrieveAppConfiguration () {
   return (_req: Request, res: Response) => {
-    res.json({ config })
+    res.json({ config: appConfig })
   }
 }

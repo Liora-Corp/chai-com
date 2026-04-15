@@ -1,17 +1,15 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
-import { Component } from '@angular/core'
-import { AddressComponent } from '../address/address.component'
+import { Component } from "@angular/core";
+import { AddressComponent } from "../address/address.component";
 
 @Component({
-  selector: 'app-saved-address',
-  templateUrl: './saved-address.component.html',
-  styleUrls: ['./saved-address.component.scss'],
-  imports: [AddressComponent]
+  selector: "app-saved-address",
+  templateUrl: "./saved-address.component.html",
+  styleUrls: ["./saved-address.component.scss"],
+  imports: [AddressComponent],
 })
-
-export class SavedAddressComponent {
-}
+export class SavedAddressComponent {}

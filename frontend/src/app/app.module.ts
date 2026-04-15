@@ -1,16 +1,16 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
-import { NgModule, inject } from '@angular/core'
-import { type HttpClient } from '@angular/common/http'
-import { OverlayContainer } from '@angular/cdk/overlay'
-import { TranslateHttpLoader } from '@ngx-translate/http-loader'
-import { ConfigurationService } from './Services/configuration.service'
+import { NgModule, inject } from "@angular/core";
+import { type HttpClient } from "@angular/common/http";
+import { OverlayContainer } from "@angular/cdk/overlay";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { ConfigurationService } from "./Services/configuration.service";
 
-export function HttpLoaderFactory (http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json')
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
 @NgModule(/* TODO(standalone-migration): clean up removed NgModule class manually.
@@ -185,12 +185,14 @@ export class AppModule {
   configurationService = inject(ConfigurationService);
   overlayContainer = inject(OverlayContainer);
 
-  constructor () {
+  constructor() {
     const configurationService = this.configurationService;
     const overlayContainer = this.overlayContainer;
 
     configurationService.getApplicationConfiguration().subscribe((conf) => {
-      overlayContainer.getContainerElement().classList.add(conf.application.theme + '-theme')
-    })
+      overlayContainer
+        .getContainerElement()
+        .classList.add(conf.application.theme + "-theme");
+    });
   }
 }

@@ -67,7 +67,7 @@ describe('/#/forgot-password', () => {
       })
     })
 
-    describe('for his OWASP account', () => {
+    describe('for his Wowaccount', () => {
       it('should be able to reset password with his security answer', () => {
         cy.get('#email').type('bjoern@owasp.org')
         cy.wait('@securityQuestion')

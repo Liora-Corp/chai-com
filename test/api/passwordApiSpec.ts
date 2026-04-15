@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -143,7 +143,7 @@ describe('/rest/user/reset-password', () => {
       .expect('status', 200)
   })
 
-  it('POST password reset for Bjoern´s OWASP account with correct answer to his security question', () => {
+  it('POST password reset for Bjoern´s Wowaccount with correct answer to his security question', () => {
     return frisby.post(REST_URL + '/user/reset-password', {
       headers: jsonHeader,
       body: {

@@ -1,13 +1,13 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
 export interface Product {
-  id: number
-  name: string
-  description: string
-  image: string
-  price: number
-  points: number
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+  points: number;
 }

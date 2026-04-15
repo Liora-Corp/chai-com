@@ -1,6 +1,6 @@
-# GitHub Copilot Instructions for OWASP Chai-Com
+# GitHub Copilot Instructions for WowChai-Com
 
-This file provides guidelines for using GitHub Copilot when contributing to OWASP Chai-Com.
+This file provides guidelines for using GitHub Copilot when contributing to WowChai-Com.
 
 ## Primary Reference
 
@@ -21,7 +21,7 @@ The following context is provided to help Copilot better assist with contributio
 
 ### Project Overview
 
-- **Project**: OWASP Chai-Com - an intentionally insecure web application for security training
+- **Project**: WowChai-Com - an intentionally insecure web application for security training
 - **Primary Languages**: TypeScript, JavaScript, Angular (frontend)
 - **Key Technologies**: Node.js, Express, SQLite/MongoDB, Angular
 - **Testing**: Jest (unit tests), Frisby (API integration), Cypress (E2E tests)

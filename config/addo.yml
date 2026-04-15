@@ -73,7 +73,7 @@ products:
     price: 39.99
     image: 'https://www.alldaydevops.com/hubfs/ADDO-2018/Cover-ModernInfrastructure@2x.png'
     reviews:
-      - { text: 'I read on PasteBin somewhere that 303 lasers are really dangerous, so why do you (kind of) put one into this product? Are you crazy?!', author: bjoernOwasp }
+      - { text: 'I read on PasteBin somewhere that 303 lasers are really dangerous, so why do you (kind of) put one into this product? Are you crazy?!', author: bjoernWow}
     keywordsForPastebinDataLeakChallenge:
       - '101'
       - '202'
@@ -86,7 +86,7 @@ products:
     price: 123.0
     deletedDate: '2018-12-31'
   - name: 'Bjorn Kimminich'
-    description: 'Björn is the project leader of the OWASP Chai-Com and a board member for the German OWASP chapter.'
+    description: 'Björn is the project leader of the WowChai-Com and a board member for the German Wowchapter.'
     price: 999999.99
     quantity: 0
     image: 'https://www.alldaydevops.com/hubfs/Bjorn_Kimminich.jpg'

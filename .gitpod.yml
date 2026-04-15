@@ -3,7 +3,7 @@ tasks:
     command: npm start
 
 ports:
-  - name: OWASP Chai-Com
+  - name: WowChai-Com
     description: The Chai-Com web server
     port: 3000
     onOpen: open-preview
