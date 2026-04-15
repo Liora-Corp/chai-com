@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -9,8 +9,8 @@
 
 export const environment = {
   production: false,
-  hostServer: 'http://localhost:3000'
-}
+  hostServer: "http://localhost:3000",
+};
 
 /*
  * In development mode, to ignore zone related error stack frames such as

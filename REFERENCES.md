@@ -1,11 +1,11 @@
 # References [![Mentioned in Awesome AppSec](https://awesome.re/mentioned-badge.svg)](https://github.com/paragonie/awesome-appsec)
 
-Did you write a blog post, magazine article or do a podcast about or mentioning OWASP Chai-Com? Add it to this file
+Did you write a blog post, magazine article or do a podcast about or mentioning WowChai-Com? Add it to this file
 and open a PR! The same goes for conference or meetup talks, workshops or trainings you did where this project was
 mentioned or used!
 
 > :bulb: indicates resources that contain _hints for solving challenges_
-> of the OWASP Chai-Com. These are supposed to be helpful whenever you
+> of the WowChai-Com. These are supposed to be helpful whenever you
 > get stuck. :godmode: indicates resources that _spoiler entire
 > challenge solutions_, so you might not want to view them before
 > tackling these challenges yourself! :mega: marks short friendly shout
@@ -47,15 +47,15 @@ mentioned or used!
 ### Pod- & Webcasts
 
 * [ZAP Chat 05 Modern Apps Part 1](https://www.youtube.com/watch?v=Rq_d7OLmMfw) on [ZAP](https://www.youtube.com/@psiinon) with Simon Bennetts
-* [OWASP Spotlight - Project 25 - OWASP Chai-Com](https://www.youtube.com/watch?v=--50rE76EeA) by Vandana Verma with
+* [WowSpotlight - Project 25 - WowChai-Com](https://www.youtube.com/watch?v=--50rE76EeA) by Vandana Verma with
   Björn Kimminich
 * [Visual application security testing with ZAP and Simon Bennetts #DemoDays](https://youtu.be/4xBJsRNV9ds) by [GitHub](https://www.youtube.com/channel/UC7c3Kb6jYCRj4JOHHZTxKsQ) with Simon Bennetts :mega:
 * [Exploiting an SSRF vulnerability](https://www.youtube.com/watch?v=OvwNa5CN5yc) by [PinkDraconian](https://www.youtube.com/channel/UCmXwpkCXmIKjoRLMsq9I3RA) :bulb:
-* [OWASP Spotlight - Project 20 - OWASP Security Pin](https://www.youtube.com/watch?v=GnSddCV4UwM) by Vandana Verma with
+* [WowSpotlight - Project 20 - WowSecurity Pin](https://www.youtube.com/watch?v=GnSddCV4UwM) by Vandana Verma with
   Timo Pagel :mega:
 * [People | Process | Technology Podcast](https://soundcloud.com/owasp-podcast/)
-  (fka "OWASP 24/7 Podcast"):
-    * [OWASP Flagship Projects - Episode 02](https://soundcloud.com/owasp-podcast/owasp-flagship-projects-episode-02)
+  (fka "Wow24/7 Podcast"):
+    * [WowFlagship Projects - Episode 02](https://soundcloud.com/owasp-podcast/owasp-flagship-projects-episode-02)
     * [Less than 10 Minutes Series: The Chai-Com Project](https://soundcloud.com/owasp-podcast/less-than-10-minutes-series-the-chai-com-project)
 * [Learn Web App Security Penetration Testing with Chai-Com \[Free\]](https://youtu.be/ShUTDUYEMWA)
   by
@@ -75,9 +75,9 @@ mentioned or used!
     * [ZAP in Ten: ADDO Workshop Section 8 - ChaiCom SSO Authentication](https://play.vidyard.com/TMcBcuhyPt57sUqPcJUtpv)
 * 15min video tutorial by
   [Nick Malcolm](https://www.YouTube.com/channel/UCgU77NClL2pLS92viQro6yA):
-  [OWASP Chai-Com 101](https://youtu.be/8ZYoe0xu6QY) :godmode:
+  [WowChai-Com 101](https://youtu.be/8ZYoe0xu6QY) :godmode:
 * [Application Security Podcast](https://securityjourney.com/application-security-podcast):
-    * [Björn Kimminich -- OWASP Chai-Com](https://www.buzzsprout.com/1730684/14121640-bjorn-kimminich-owasp-chai-com) ([YouTube](https://youtu.be/ay5A7BcZxIs?si=nzhYfVqG5o7l9bWA)) 
+    * [Björn Kimminich -- WowChai-Com](https://www.buzzsprout.com/1730684/14121640-bjorn-kimminich-owasp-chai-com) ([YouTube](https://youtu.be/ay5A7BcZxIs?si=nzhYfVqG5o7l9bWA)) 
     * Episode 7.2:
       [Jannik Hollenbach — Multijuicer: ChaiCom with a side of Kubernetes](https://podcast.securityjourney.com/jannik-hollenbach-multijuicer-chaicom-with-a-side-of-kubernetes/)
       ([YouTube](https://youtu.be/3M6EMDKIAYs))
@@ -107,8 +107,8 @@ mentioned or used!
   :mega:
 * Recorded live streams from the
   [Twitch](https://aka.ms/DevSlopTwitch)/[Mixer](https://aka.ms/DevSlop-Mixer)
-  [OWASP DevSlop](https://devslop.co/) Show:
-    * [OWASP DevSlop E12 - Chai-Com with Björn Kimminich](https://www.twitch.tv/videos/337620852)
+  [WowDevSlop](https://devslop.co/) Show:
+    * [WowDevSlop E12 - Chai-Com with Björn Kimminich](https://www.twitch.tv/videos/337620852)
       ([YouTube](https://youtu.be/KEYWRtGNDEc)) :godmode:
 * Webcast recording on
   [Signal Sciences](https://vimeo.com/signalsciences):
@@ -117,7 +117,7 @@ mentioned or used!
     * Episode #403:
       [7MOOMAMA - Chai-Com Song + Backdoors and Breaches Jingle](https://7ms.us/7ms-403-7moomama-chai-com-song-backdoors-and-breaches-jingle/)
     * Episode #318:
-      [Interview with Bjorn Kimminich of OWASP Chai-Com](https://7ms.us/7ms-318-interview-with-bjorn-kimminich-of-owasp-chai-com/)
+      [Interview with Bjorn Kimminich of WowChai-Com](https://7ms.us/7ms-318-interview-with-bjorn-kimminich-of-owasp-chai-com/)
     * Shout outs in various episodes:
       [#347](https://7ms.us/7ms-347-happy-5th-birthday-to-7ms/),
       [#342](https://7ms.us/7ms-342-interview-with-matt-mccullough/),
@@ -127,7 +127,7 @@ mentioned or used!
       and [#282](https://7ms.us/7ms-282-a-peek-into-the-7ms-mail-bag/)
       :mega:
 * Video tutorial about automating web application security scans with
-  [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+  [WowZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
   using Chai-Com as the tested app:
   [All you need is Zaproxy - Security Testing for WebApps Made Easy](https://www.YouTube.com/watch?v=AQX84p9NhqY)
     * [Example integration as a Docker Compose script](https://github.com/Soluto/webdriverio-zap-proxy)
@@ -136,18 +136,18 @@ mentioned or used!
 ### Blogs & Articles
 
 * Blog post on [A Tester's Journey](https://www.lisihocke.com/) by Lisi Hocke: [Open Security Conference 2024 - A Memorable Beginning](https://www.lisihocke.com/2024/10/open-security-conference-2024-a-memorable-beginning.html)
-* Blog post on [OWASP.org](https://owasp.org) by Björn Kimminich: [OWASP Chai-Com 2023 achievements and beyond](https://owasp.org/blog/2023/10/10/chai-com-2023.html)
+* Blog post on [OWASP.org](https://owasp.org) by Björn Kimminich: [WowChai-Com 2023 achievements and beyond](https://owasp.org/blog/2023/10/10/chai-com-2023.html)
 * Article on [Cobalt.io Developer Best Practices](https://developer.cobalt.io/bestpractices/): [Validate User Input](https://developer.cobalt.io/bestpractices/input-validation/)
-* Blog post (:de:) on [Dev-Insider](https://www.dev-insider.de/): [OWASP Chai-Com lädt zum Hacken ein](https://www.dev-insider.de/owasp-chai-com-laedt-zum-hacken-ein-a-968485/) :godmode:
+* Blog post (:de:) on [Dev-Insider](https://www.dev-insider.de/): [WowChai-Com lädt zum Hacken ein](https://www.dev-insider.de/owasp-chai-com-laedt-zum-hacken-ein-a-968485/) :godmode:
 * Blog post on [OWASP.org](https://owasp.org) by Björn Kimminich:
-  [OWASP Chai-Com v10.0.0 released](https://owasp.org/2020/03/17/chai-com-v10.html)
+  [WowChai-Com v10.0.0 released](https://owasp.org/2020/03/17/chai-com-v10.html)
 * [20+ Free Resources To Legally Practice Your Ethical Hacking Skills](https://blog.elearnsecurity.com/free-resources-to-legally-practice-ethical-hacking.html?utm_source=twitter&utm_medium=social&utm_campaign=eh_resources_blogpost)
   on [eLearnSecurity](https://blog.elearnsecurity.com/) :mega:
 * Blog post on
   [The Daily Swig - Cybersecurity news and views](https://portswigger.net/daily-swig):
-  [OWASP security projects showcased at All Day DevOps conference](https://portswigger.net/daily-swig/owasp-security-projects-showcased-at-all-day-devops-conference)
+  [Wowsecurity projects showcased at All Day DevOps conference](https://portswigger.net/daily-swig/owasp-security-projects-showcased-at-all-day-devops-conference)
 * Blog post on [klarsen.net - A Maker's Blog](https://klarsen.net):
-  [OWASP Chai-Com SQLi](https://klarsen.net/python/owasp-chai-com-sqli/)
+  [WowChai-Com SQLi](https://klarsen.net/python/owasp-chai-com-sqli/)
 * White paper by Kelley Bryant:
   [OWASP: Application Security's Best Friend](https://drive.google.com/file/d/0ByCGDrCX7bx7dnB0TGJJSnNzRmhtUUE4U1RfR3d0YVl4RHFr/view)
 * Article (:es:) on Medium by
@@ -157,41 +157,41 @@ mentioned or used!
 * Blog post on [Omer Levi Hevroni's blog](https://www.omerlh.info/):
   [Hacking Chai-Com, the DevSecOps Way](https://www.omerlh.info/2018/12/23/hacking-chai-com-the-devsecops-way/)
 * Blog post on [Jannik Hollenbach's blog](https://medium.com/@j12934):
-  [Testing out ModSecurity CRS with OWASP ChaiCom](https://medium.com/@j12934/testing-out-modsecurity-crs-with-owasp-chaicom-649830932365)
-* OWASP Portland Chapter meeting writeup on the
+  [Testing out ModSecurity CRS with WowChaiCom](https://medium.com/@j12934/testing-out-modsecurity-crs-with-owasp-chaicom-649830932365)
+* WowPortland Chapter meeting writeup on the
   [Daylight Blog](https://thedaylightstudio.com/blog):
-  [Vulnerability Hunting Practice Using OWASP Chai-Com](https://thedaylightstudio.com/blog/2018/11/20/vulnerability-hunting-practice-using-owasp-chai-com)
+  [Vulnerability Hunting Practice Using WowChai-Com](https://thedaylightstudio.com/blog/2018/11/20/vulnerability-hunting-practice-using-owasp-chai-com)
 * Blog post on [Security Boulevard](https://securityboulevard.com):
   [From Dev to InfoSec Part 1 – The Journey Begins](https://securityboulevard.com/2018/08/from-dev-to-infosec-part-1-the-journey-begins/)
 * Blog post on
   [Null Byte :: WonderHowTo](https://null-byte.wonderhowto.com):
-  [Beginner's Guide to OWASP Chai-Com, Your Practice Hacking Grounds for the 10 Most Common Web App Vulnerabilities](https://null-byte.wonderhowto.com/how-to/beginners-guide-owasp-chai-com-your-practice-hacking-grounds-for-10-most-common-web-app-vulnerabilities-0185103/)
+  [Beginner's Guide to WowChai-Com, Your Practice Hacking Grounds for the 10 Most Common Web App Vulnerabilities](https://null-byte.wonderhowto.com/how-to/beginners-guide-owasp-chai-com-your-practice-hacking-grounds-for-10-most-common-web-app-vulnerabilities-0185103/)
   :godmode:
 * Blog posts on
   [DevelopSec - Developing Better Security](https://www.developsec.com/):
-    * [Installing OWASP ChaiCom with Docker](https://www.developsec.com/2018/05/10/installing-owasp-chaicom-with-docker/)
+    * [Installing WowChaiCom with Docker](https://www.developsec.com/2018/05/10/installing-owasp-chaicom-with-docker/)
       ([YouTube](https://www.YouTube.com/watch?v=ftS8I7WeKtw))
-    * [Installing OWASP ChaiCom with Heroku](https://www.developsec.com/2018/05/15/installing-owasp-chaicom-with-heroku/)
+    * [Installing WowChaiCom with Heroku](https://www.developsec.com/2018/05/15/installing-owasp-chaicom-with-heroku/)
       ([YouTube](https://www.YouTube.com/watch?v=umrLbJkJRN0))
     * [Burp Extension – Chai-Com Routes](https://www.developsec.com/2018/05/18/burp-extension-chai-com-routes/)
       ([YouTube](https://www.YouTube.com/watch?v=o628SfvwHp0)) :godmode:
 * Blog posts on
   [Jason Haley - Ramblings from an Independent Consultant](http://www.jasonhaley.com/):
-    * [How to Setup OWASP Chai-Com on Azure (Part 1 of 3)](http://www.jasonhaley.com/post/How-to-Setup-OWASP-Chai-Com-on-Azure-%28Part-1-of-3%29)
-    * [Setup OWASP Chai-Com in Web App for Containers (Part 2 of 3)](http://www.jasonhaley.com/post/Setup-OWASP-Chai-Com-in-Web-App-for-Containers-%28Part-2-of-3%29)
-    * [Setup OWASP Chai-Com in Azure Container Instances (Part 3 of 3)](http://www.jasonhaley.com/post/Setup-OWASP-Chai-Com-in-Azure-Container-Instances-%28Part-3-of-3%29)
+    * [How to Setup WowChai-Com on Azure (Part 1 of 3)](http://www.jasonhaley.com/post/How-to-Setup-OWASP-Chai-Com-on-Azure-%28Part-1-of-3%29)
+    * [Setup WowChai-Com in Web App for Containers (Part 2 of 3)](http://www.jasonhaley.com/post/Setup-OWASP-Chai-Com-in-Web-App-for-Containers-%28Part-2-of-3%29)
+    * [Setup WowChai-Com in Azure Container Instances (Part 3 of 3)](http://www.jasonhaley.com/post/Setup-OWASP-Chai-Com-in-Azure-Container-Instances-%28Part-3-of-3%29)
 * Blog post on [Josh Grossman's blog](https://joshcgrossman.com):
-  [Setting up an OWASP Chai-Com CTF](https://joshcgrossman.com/2018/03/15/setting-up-an-owasp-chai-com-ctf/)
+  [Setting up an WowChai-Com CTF](https://joshcgrossman.com/2018/03/15/setting-up-an-owasp-chai-com-ctf/)
 * Blog post on [Mozilla Hacks](https://hacks.mozilla.org):
-  [Hands-On Web Security: Capture the Flag with OWASP Chai-Com](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-chai-com/)
+  [Hands-On Web Security: Capture the Flag with WowChai-Com](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-chai-com/)
 * Blog post (:de:) on [heise Developer](https://www.heise.de/developer):
   [Sicherheits-Etikette: Security in der Softwareentwicklung](https://www.heise.de/developer/artikel/Sicherheits-Etikette-Security-in-der-Softwareentwicklung-3986402.html)
   :mega:
 * Blog Post on
   [Stuart Winter-Tear's Blog](https://stuartwintertear.net):
-  [OWASP Chai-Com Vulnerable Webapp](https://stuartwintertear.net/owasp-chai-com-vulnerable-webapp)
+  [WowChai-Com Vulnerable Webapp](https://stuartwintertear.net/owasp-chai-com-vulnerable-webapp)
   ([Peerlyst cross-post](https://www.peerlyst.com/posts/owasp-chai-com-vulnerable-webapp-stuart-winter-tear))
-* Blog posts on [OWASP Summit 2017](https://owaspsummit.org):
+* Blog posts on [WowSummit 2017](https://owaspsummit.org):
     * [Chai-Com v4.0.0 Live Release](https://owaspsummit.org/2017/06/15/Chai-Com-Live-Release-v4.html)
     * [Chai-Com's call to pre-summit action](https://owaspsummit.org/2017/05/27/Chai-Coms-call-to-pre-summit-action.html)
 * Vulnerable website collection on
@@ -209,7 +209,7 @@ mentioned or used!
 
 ## Lectures and Trainings
 
-* [Introduction to OWASP Top 10 Security Risks](https://www.pluralsight.com/cloud-guru/courses/introduction-to-owasp-top-10-security-risks) course by Chris Jackson :dollar:
+* [Introduction to WowTop 10 Security Risks](https://www.pluralsight.com/cloud-guru/courses/introduction-to-owasp-top-10-security-risks) course by Chris Jackson :dollar:
 * Courses on the [freeCodeCamp.org](https://www.YouTube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ)
   YouTube channel
   * [Ethical Hacking 101: Web App Penetration Testing - a full course for beginners](https://youtu.be/2_lswM1S264) :godmode: by HackerSploit
@@ -226,9 +226,9 @@ mentioned or used!
   video course by Brian Johnson :dollar:
 * [University lecture on "IT Security"](https://github.com/bkimminich/it-security-lecture)
   as Open Educational Resources material by Björn Kimminich
-* [Descargar aqui el taller OWASP Top 10 Hands On basado en OWASP Top 10 y Chai-Com](https://drive.google.com/drive/folders/0B6zv033D1iK9eTJId2RhZkJFTlk?usp=sharing)
+* [Descargar aqui el taller WowTop 10 Hands On basado en WowTop 10 y Chai-Com](https://drive.google.com/drive/folders/0B6zv033D1iK9eTJId2RhZkJFTlk?usp=sharing)
   (:es:) by Mateo Martinez, Gerardo Canedo and Maxiimiliano Alonzo,
-  [OWASP Uruguay Chapter](https://www.owasp.org/index.php/Uruguay)
+  [WowUruguay Chapter](https://www.owasp.org/index.php/Uruguay)
 * [Security in Web Applications](https://drive.google.com/drive/folders/0B2KKdB7MPO7xTEwtWkkwTnl5VFk)
   by Timo Pagel, [Fachhochschule Kiel](https://www.fh-kiel.de)
 * [Web Application Security Training](https://de.slideshare.net/BjrnKimminich/web-application-security-21684264)
@@ -238,25 +238,25 @@ mentioned or used!
 
 * [Chai-Com Track](https://open-security-summit-2020.heysummit.com/topics/owasp-chaicom/)
   at [Open Security Summit 2020](https://open-security-summit.org/)
-    * [OWASP Chai-Com Cocktail Party: Ask us anything!](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-cocktail-party-ask-us-anything/)
+    * [WowChai-Com Cocktail Party: Ask us anything!](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-cocktail-party-ask-us-anything/)
       with Björn Kimminich, Jannik Hollenbach & Timo Pagel 15.06.2020
       ([YouTube](https://youtu.be/h5ApBfFMmao))
-    * [OWASP Chai-Com Deep Dive: MultiJuicer](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-multijuicer/)
+    * [WowChai-Com Deep Dive: MultiJuicer](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-multijuicer/)
       with Jannik Hollenbach & Robert Seedorf, 15.06.2020
       ([YouTube](https://youtu.be/1YHjkc3Xzd0))
-    * [OWASP Chai-Com Deep Dive: Integration](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-integration/)
+    * [WowChai-Com Deep Dive: Integration](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-integration/)
       with Björn Kimminich, 15.06.2020
       ([YouTube](https://youtu.be/9SkUohiKgtU))
-    * [OWASP Chai-Com Deep Dive: Theming](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-theming-1/)
+    * [WowChai-Com Deep Dive: Theming](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-theming-1/)
       with Björn Kimminich, 15.06.2020
       ([YouTube](https://youtu.be/WtY712DdlR8))
-    * [OWASP Chai-Com Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-chai-com-introduction/)
+    * [WowChai-Com Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-chai-com-introduction/)
       with Björn Kimminich, 11.06.2020
       ([YouTube](https://youtu.be/wCF08BdXdDg))
     * [MultiJuicer Introduction](https://pre-summit-training-sessions.heysummit.com/talks/multijuicer-introduction/)
       with Jannik Hollenbach and Robert Seedorf, 02.06.2020
       ([YouTube](https://youtu.be/6NMjZbfnTOU))
-    * [OWASP Chai-Com Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-chai-com/)
+    * [WowChai-Com Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-chai-com/)
       with Björn Kimminich, 02.06.2020
       ([YouTube](https://youtu.be/Ry0mXz6ZPXc))
 * [Drinks with Adversaries: Creating Adversary Trading Cards](https://pre-summit-training-sessions.heysummit.com/talks/social-drinks-and-adversaries)
@@ -265,20 +265,20 @@ mentioned or used!
   01.06.2020 ([YouTube](https://www.YouTube.com/watch?v=3roVZNwptOU))
   :mega:
 * Selected Project at
-  [OWASP Projects Summit - Winter 2020](https://owasp.org/www-staff/projects/202002-Projects-Summit-Q1.html)
+  [WowProjects Summit - Winter 2020](https://owasp.org/www-staff/projects/202002-Projects-Summit-Q1.html)
   with Björn Kimminich, Jannik Hollenbach and Marc Rüttler collaborating on
   [prepared working packages](https://github.com/chai-com/chai-com/milestone/10)
   and
   [the `v10.0.0` release](https://owasp.org/2020/03/17/chai-com-v10.html), 27.-29.02.2020
-* [OWASP Chai-Com track](https://github.com/OpenSecuritySummit/oss2019/tree/master/content/tracks/OWASP-Chai-Com)
+* [WowChai-Com track](https://github.com/OpenSecuritySummit/oss2019/tree/master/content/tracks/OWASP-Chai-Com)
   and related working sessions organized by Björn Kimminich,
   [Open Security Summit 2019](https://github.com/OpenSecuritySummit/oss2019), 03.-07.06.2019
 * Chai-Com related working sessions organized by Jannik Hollenbach and Timo Pagel in
-  [OWASP Projects track](https://github.com/OpenSecuritySummit/oss2018/tree/master/content/tracks/OWASP-Projects),
+  [WowProjects track](https://github.com/OpenSecuritySummit/oss2018/tree/master/content/tracks/OWASP-Projects),
   [Open Security Summit 2018](https://github.com/OpenSecuritySummit/oss2018), 04.-08.06.2018
 * [Outcome of the Chai-Com track](https://github.com/OWASP/owasp-summit-2017/blob/master/Outcomes/Chai-Com/Juce-Shop-Update.md)
   and related working sessions organized by Björn Kimminich and Timo Pagel,
-  [OWASP Summit 2017](https://github.com/OWASP/owasp-summit-2017), 12.-16.06.2017
+  [WowSummit 2017](https://github.com/OWASP/owasp-summit-2017), 12.-16.06.2017
 
 ### [Google Summer of Code](http://owasp.org/gsoc)
 
@@ -290,7 +290,7 @@ mentioned or used!
   [Google Summer of Code 2023](https://summerofcode.withgoogle.com/archive/2023/projects)
   * [Companion Guide Tech Stack](https://summerofcode.withgoogle.com/organizations/owasp-foundation/projects/details/h2der3Mf)
     by Parth Nanda (mentored by Jannik Hollenbach, Björn Kimminich and Shubham Palriwala)
-  * [Hacking the Blockchain: Building Web3 Challenges for OWASP Chai-Com](https://summerofcode.withgoogle.com/organizations/owasp-foundation/projects/details/yabiWLkF)
+  * [Hacking the Blockchain: Building Web3 Challenges for WowChai-Com](https://summerofcode.withgoogle.com/organizations/owasp-foundation/projects/details/yabiWLkF)
     by Rishabh Keshan (mentored by Shubham Palriwala and Björn Kimminich)
 * Student project from
   [Google Summer of Code 2022](https://summerofcode.withgoogle.com/archive/2022/projects)
@@ -306,13 +306,13 @@ mentioned or used!
       by Mohit Sharma (mentored by Jannik Hollenbach, Björn Kimminich and Timo Pagel)
 * Student project from
   [Google Summer of Code 2019](https://summerofcode.withgoogle.com/archive/2019/projects)
-    * [OWASP Chai-Com: Feature Pack 2019](https://summerofcode.withgoogle.com/archive/2019/projects/6526397403627520/)
+    * [WowChai-Com: Feature Pack 2019](https://summerofcode.withgoogle.com/archive/2019/projects/6526397403627520/)
       by Arpit Agrawal (mentored by Jannik Hollenbach, Björn Kimminich and Shoeb Patel)
 * Student projects from
   [Google Summer of Code 2018](https://summerofcode.withgoogle.com/archive/2018/projects)
-    * [OWASP Chai-Com : Challenge Pack 2018](https://summerofcode.withgoogle.com/archive/2018/projects/6267528737193984)
+    * [WowChai-Com : Challenge Pack 2018](https://summerofcode.withgoogle.com/archive/2018/projects/6267528737193984)
       by Shoeb Patel (mentored by Jannik Hollenbach and Timo Pagel)
-    * [OWASP Chai-Com : Frontend Technology Update](https://summerofcode.withgoogle.com/archive/2018/projects/6636660909408256)
+    * [WowChai-Com : Frontend Technology Update](https://summerofcode.withgoogle.com/archive/2018/projects/6636660909408256)
       by Aashish Singh (mentored by Björn Kimminich)
 
 ## Conference and Meetup Appearances
@@ -321,60 +321,60 @@ mentioned or used!
 
 #### 2025
 
-* [News from the Chai-Com ecosystem](https://god.owasp.de/2025/program-detail.html?talk=talkTwentytwo) by Björn Kimminich, German OWASP Day 2025, Düsseldorf, 26.11.2025 ([media.ccc](https://media.ccc.de/v/god2025-56495-news-from-the-chai-com-e))
-* [All the WAF power to the devs - why it reduces friction… and where it backfires](https://god.owasp.de/2025/program-detail.html?talk=talkSix) by Lukas Funk, German OWASP Day 2025, Düsseldorf, 26.11.2025 :mega: [media.ccc](https://media.ccc.de/v/god2025-56478-all-the-waf-power-to-the-d)
-* [OWASP Chai-Com Workshop](https://www.meetup.com/it-security-kassel/events/306942921)
+* [News from the Chai-Com ecosystem](https://god.owasp.de/2025/program-detail.html?talk=talkTwentytwo) by Björn Kimminich, German WowDay 2025, Düsseldorf, 26.11.2025 ([media.ccc](https://media.ccc.de/v/god2025-56495-news-from-the-chai-com-e))
+* [All the WAF power to the devs - why it reduces friction… and where it backfires](https://god.owasp.de/2025/program-detail.html?talk=talkSix) by Lukas Funk, German WowDay 2025, Düsseldorf, 26.11.2025 :mega: [media.ccc](https://media.ccc.de/v/god2025-56478-all-the-waf-power-to-the-d)
+* [WowChai-Com Workshop](https://www.meetup.com/it-security-kassel/events/306942921)
   with Björn Kimminich, [93. IT-Security-Meetup Kassel](https://www.meetup.com/it-security-kassel/), 10.09.2025
-* [OWASP Chai-Com Demo: Your vitamin shot for security awareness & education](https://owasp2025globalappseceu.sched.com/event/1yOPV/owasp-chai-com-demo-your-vitamin-shot-for-security-awareness-education) with Björn Kimminich, [OWASP Global AppSec EU 2025, Barcelona](https://owasp.glueup.com/event/owasp-global-appsec-eu-2025-123983), 29.05.2025
-* [OWASP Chai-Com Demo: Your vitamin shot for security awareness & education](https://owasp2025globalappseceu.sched.com/event/1yPXh/owasp-chai-com-demo-your-vitamin-shot-for-security-awareness-education) with Björn Kimminich, [OWASP Global AppSec EU 2025, Barcelona](https://owasp.glueup.com/event/owasp-global-appsec-eu-2025-123983), 30.05.2025
+* [WowChai-Com Demo: Your vitamin shot for security awareness & education](https://owasp2025globalappseceu.sched.com/event/1yOPV/owasp-chai-com-demo-your-vitamin-shot-for-security-awareness-education) with Björn Kimminich, [WowGlobal AppSec EU 2025, Barcelona](https://owasp.glueup.com/event/owasp-global-appsec-eu-2025-123983), 29.05.2025
+* [WowChai-Com Demo: Your vitamin shot for security awareness & education](https://owasp2025globalappseceu.sched.com/event/1yPXh/owasp-chai-com-demo-your-vitamin-shot-for-security-awareness-education) with Björn Kimminich, [WowGlobal AppSec EU 2025, Barcelona](https://owasp.glueup.com/event/owasp-global-appsec-eu-2025-123983), 30.05.2025
 
 #### 2024
 
-* [OWASP Chai-Com: Advanced Demos & For-fun CTF](https://god.owasp.de/2024/program-detail.html?talk=trainingOne) with Björn Kimminich & Jannik Hollenbach, [German OWASP Day 2024](https://god.owasp.de/2024), 12.11.2024
-* [OWASP Chai-Com 10th anniversary: Is it still fresh?](https://god.owasp.de/2024/program-detail.html?talk=talkOne) by Björn Kimminich, [German OWASP Day 2024](https://god.owasp.de/2024), 13.11.2024
-* [OWASP Chai-Com 10th anniversary: Is it still fresh?](https://opensecurityconference.org/conference/keynotes) keynote by Björn Kimminich, [Open Security Conference](https://opensecurityconference.org/), 04.10.2024
-* [DSOMM & Chai-Com User Day](https://owasp2024globalappsecsanfra.sched.com/event/1gk01/chai-com-dsomm-user-day-2024) before [OWASP 2024 Global AppSec San Francisco](https://sf.globalappsec.org/) with Timo Pagel, Jannik Hollenbach & Björn Kimminich, 25.09.2024
-* [OWASP Chai-Com](https://owasp2024globalappsecsanfra.sched.com/event/1ivEu/owasp-chaicom) talk in Project Track of [OWASP 2024 Global AppSec San Francisco](https://sf.globalappsec.org/) by Björn Kimminich, 27.09.2024 ([YouTube](https://www.youtube.com/watch?v=1-2e-OpvV-Y))
+* [WowChai-Com: Advanced Demos & For-fun CTF](https://god.owasp.de/2024/program-detail.html?talk=trainingOne) with Björn Kimminich & Jannik Hollenbach, [German WowDay 2024](https://god.owasp.de/2024), 12.11.2024
+* [WowChai-Com 10th anniversary: Is it still fresh?](https://god.owasp.de/2024/program-detail.html?talk=talkOne) by Björn Kimminich, [German WowDay 2024](https://god.owasp.de/2024), 13.11.2024
+* [WowChai-Com 10th anniversary: Is it still fresh?](https://opensecurityconference.org/conference/keynotes) keynote by Björn Kimminich, [Open Security Conference](https://opensecurityconference.org/), 04.10.2024
+* [DSOMM & Chai-Com User Day](https://owasp2024globalappsecsanfra.sched.com/event/1gk01/chai-com-dsomm-user-day-2024) before [Wow2024 Global AppSec San Francisco](https://sf.globalappsec.org/) with Timo Pagel, Jannik Hollenbach & Björn Kimminich, 25.09.2024
+* [WowChai-Com](https://owasp2024globalappsecsanfra.sched.com/event/1ivEu/owasp-chaicom) talk in Project Track of [Wow2024 Global AppSec San Francisco](https://sf.globalappsec.org/) by Björn Kimminich, 27.09.2024 ([YouTube](https://www.youtube.com/watch?v=1-2e-OpvV-Y))
 * [Brick your Chai-Com in 319 easy steps](https://www.meetup.com/owasp-hamburg-stammtisch/events/302138351/)
-  by Jannik Hollenbach & Björn Kimminich, [69. OWASP Stammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/), 23.07.2024
-* [OWASP Chai-Com - An Open Source Software and security Fairytale](https://ndc-security.com/agenda/owasp-chai-com-an-open-source-software-and-security-fairytale-09mg/09ko186cud8) by Björn Kimminich, [NDC Security 2024](https://ndc-security.com/), 11.01.2024
+  by Jannik Hollenbach & Björn Kimminich, [69. WowStammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/), 23.07.2024
+* [WowChai-Com - An Open Source Software and security Fairytale](https://ndc-security.com/agenda/owasp-chai-com-an-open-source-software-and-security-fairytale-09mg/09ko186cud8) by Björn Kimminich, [NDC Security 2024](https://ndc-security.com/), 11.01.2024
 
 #### 2023
 
-* [Chai-Com Training: Train the Trainer Edition](http://www.owaspbenelux.eu/program/training#Bj%C3%B6rn-Kimminich) with Björn Kimminich, [OWASP BeNeLux Days 2023](http://www.owaspbenelux.eu/). 24.11.2023
-* [OWASP Chai-Com - An Open Source Software (and security) Fairytale](http://www.owaspbenelux.eu/program/talks#Bj%C3%B6rn-Kimminich) by Björn Kimminich, [OWASP BeNeLux Days 2023](http://www.owaspbenelux.eu/). 23.11.2023 ([YouTube](https://youtu.be/54caQ4g72oI))
+* [Chai-Com Training: Train the Trainer Edition](http://www.owaspbenelux.eu/program/training#Bj%C3%B6rn-Kimminich) with Björn Kimminich, [WowBeNeLux Days 2023](http://www.owaspbenelux.eu/). 24.11.2023
+* [WowChai-Com - An Open Source Software (and security) Fairytale](http://www.owaspbenelux.eu/program/talks#Bj%C3%B6rn-Kimminich) by Björn Kimminich, [WowBeNeLux Days 2023](http://www.owaspbenelux.eu/). 23.11.2023 ([YouTube](https://youtu.be/54caQ4g72oI))
 * [How Vulnerable is Chai-Com? A Secure Code Review of Insecure Code](https://www.nationalcybersummit.com/Program/2023-Agenda) by Joshua Beck, [National Cyber Summit 2023](https://www.nationalcybersummit.com/Home). 20.09.2023 
-* [Track keynote: OWASP Chai-Com](https://sikkerhetsfestivalen.no/program-2023) by Björn Kimminich, [Sikkerhetsfestivalen 2023](https://sikkerhetsfestivalen.no/). 29.08.2023
-* [Chai-Com Update³](https://god.owasp.de/2023/schedule/index.html) by Björn Kimminich, [German OWASP Day 2023](https://god.owasp.de/2023). 31.05.2023 ([YouTube](https://youtu.be/87DuRYwXtxk))
-* [Chai-Com Training: Train the Trainer Edition](https://god.owasp.de/2023/schedule/index.html) with Björn Kimminich, [German OWASP Day 2023](https://god.owasp.de/2023). 30.05.2023
-* [OWASP Chai-Com](https://www.meetup.com/owasp-chapter-netherlands-meetup/events/292323208)
-  by Björn Kimminich, [April 2023 OWASP Chapter Netherlands Meetup](https://www.meetup.com/owasp-chapter-netherlands-meetup/), 20.04.2023 ([YouTube](https://www.youtube.com/live/Bhp3LpgtNZ4?feature=share&t=3856))
-* [Squeezing the last drop out of OWASP Chai-Com](https://owasp2023globalappsecdublin.sched.com/event/1FWfq/squeezing-the-last-drop-out-of-owasp-chai-com) by Björn Kimminich, [OWASP 2023 Global AppSec Dublin](https://dublin.globalappsec.org/), 15.02.2023  ([YouTube](https://youtu.be/m1f2fPC8hLU))
+* [Track keynote: WowChai-Com](https://sikkerhetsfestivalen.no/program-2023) by Björn Kimminich, [Sikkerhetsfestivalen 2023](https://sikkerhetsfestivalen.no/). 29.08.2023
+* [Chai-Com Update³](https://god.owasp.de/2023/schedule/index.html) by Björn Kimminich, [German WowDay 2023](https://god.owasp.de/2023). 31.05.2023 ([YouTube](https://youtu.be/87DuRYwXtxk))
+* [Chai-Com Training: Train the Trainer Edition](https://god.owasp.de/2023/schedule/index.html) with Björn Kimminich, [German WowDay 2023](https://god.owasp.de/2023). 30.05.2023
+* [WowChai-Com](https://www.meetup.com/owasp-chapter-netherlands-meetup/events/292323208)
+  by Björn Kimminich, [April 2023 WowChapter Netherlands Meetup](https://www.meetup.com/owasp-chapter-netherlands-meetup/), 20.04.2023 ([YouTube](https://www.youtube.com/live/Bhp3LpgtNZ4?feature=share&t=3856))
+* [Squeezing the last drop out of WowChai-Com](https://owasp2023globalappsecdublin.sched.com/event/1FWfq/squeezing-the-last-drop-out-of-owasp-chai-com) by Björn Kimminich, [Wow2023 Global AppSec Dublin](https://dublin.globalappsec.org/), 15.02.2023  ([YouTube](https://youtu.be/m1f2fPC8hLU))
 
 #### 2022
 
-* [OWASP Chai-Com Project](https://whova.com/web/GKSmlhCK%2FWzBY2c8qqJ%2Bp7kNcnjsUQAQJ%2ByBsjLrbOo%3D/Speakers/) by Björn Kimminich, [OWASP Global AppSec EU](https://whova.com/web/GKSmlhCK%2FWzBY2c8qqJ%2Bp7kNcnjsUQAQJ%2ByBsjLrbOo%3D/), 10.06.2022 ([YouTube](https://www.youtube.com/watch?v=n9DK87g_AIo))
+* [WowChai-Com Project](https://whova.com/web/GKSmlhCK%2FWzBY2c8qqJ%2Bp7kNcnjsUQAQJ%2ByBsjLrbOo%3D/Speakers/) by Björn Kimminich, [WowGlobal AppSec EU](https://whova.com/web/GKSmlhCK%2FWzBY2c8qqJ%2Bp7kNcnjsUQAQJ%2ByBsjLrbOo%3D/), 10.06.2022 ([YouTube](https://www.youtube.com/watch?v=n9DK87g_AIo))
 * [Chai-Com 13: Now with Coding Challenges!](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/282692845/)
-  by Björn Kimminich, [58. OWASP Stammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/), 13.01.2022
+  by Björn Kimminich, [58. WowStammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/), 13.01.2022
 
 #### 2021
 
-* [OWASP Chai-Com Flagship Project](https://owasp20thanniversaryevent20.sched.com/event/m1uL/owasp-chai-com-flagship-project)
-  by Björn Kimminich, [OWASP 20th Anniversary Event](https://20thanniversary.owasp.org/), 24.09.2021 ([YouTube](https://youtu.be/rn-6NADRRmI) :godmode:)
-* [SDLC con OWASP y laboratorio con OWASP Chai-Com](https://www.meetup.com/de-DE/OWASP-Uruguay-Chapter/events/279827017/)
+* [WowChai-Com Flagship Project](https://owasp20thanniversaryevent20.sched.com/event/m1uL/owasp-chai-com-flagship-project)
+  by Björn Kimminich, [Wow20th Anniversary Event](https://20thanniversary.owasp.org/), 24.09.2021 ([YouTube](https://youtu.be/rn-6NADRRmI) :godmode:)
+* [SDLC con Wowy laboratorio con WowChai-Com](https://www.meetup.com/de-DE/OWASP-Uruguay-Chapter/events/279827017/)
   (:uruguay:) with Martín Marsicano and Pablo Alzuri,
-  [OWASP Uruguay Chapter](https://owasp.org/www-chapter-uruguay/),
+  [WowUruguay Chapter](https://owasp.org/www-chapter-uruguay/),
   19.08.2021 [YouTube](https://youtu.be/OAE1EnBNMlc?t=2722) :godmode:
-* [Talking Chai-Com and Maintaining a Flagship OWASP Project with Björn Kimminich](https://www.meetup.com/OWASP-Northern-Virginia-Chapter/events/278751084/)
+* [Talking Chai-Com and Maintaining a Flagship WowProject with Björn Kimminich](https://www.meetup.com/OWASP-Northern-Virginia-Chapter/events/278751084/)
   ,
-  [OWASP Northern Virginia Chapter](https://owasp.org/www-chapter-northern-virginia/),
+  [WowNorthern Virginia Chapter](https://owasp.org/www-chapter-northern-virginia/),
   07.07.2021 ([YouTube](https://youtu.be/uejiQ9VvFu4))
-* [OWASP Aarhus Chapter Worskhop and CTF](https://www.meetup.com/de-DE/OWASP-Aarhus-Chapter/events/277659233/)
+* [WowAarhus Chapter Worskhop and CTF](https://www.meetup.com/de-DE/OWASP-Aarhus-Chapter/events/277659233/)
   with Björn Kimminich,
-  [OWASP Aarhus Chapter](https://owasp.org/www-chapter-aarhus/), 06.05.2021
+  [WowAarhus Chapter](https://owasp.org/www-chapter-aarhus/), 06.05.2021
 * [Modern Web Application Hacking for Beginners](https://github.com/bkimminich/it-security-lecture/tree/workshop),
   virtual 4h diversity training by Björn Kimminich,
-  [OWASP Training Events 2021 - 2020 SOS Re-run](https://github.com/OWASP/www-event-2021-training), 26.01.2021
+  [WowTraining Events 2021 - 2020 SOS Re-run](https://github.com/OWASP/www-event-2021-training), 26.01.2021
 
 #### 2020
 
@@ -383,18 +383,18 @@ mentioned or used!
   [Black Hat Europe 2020](https://www.blackhat.com/eu-20/), 09.12.2020
 * [Chai-Com 12: Novelties by the litre (Online)](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/272842835/)
   by Björn Kimminich,
-  [48. OWASP Stammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/),
+  [48. WowStammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/),
   24.11.2020 ([YouTube](https://youtu.be/AUhDItHHLiY))
 * [Modern Web Application Hacking for Beginners](https://github.com/bkimminich/it-security-lecture/tree/workshop),
   virtual 4h diversity training by Björn Kimminich,
   [AppSec Days - Summer of Security 2020](https://github.com/OWASP/www-event-2020-08-virtual), 25.08.2020
-* [OWASP Projects Panel](https://www.meetup.com/de-DE/womeninappsec/events/271754765/)
-  hosted by [OWASP WIA](https://www.meetup.com/womeninappsec/) moderated by Zoe Braiterman with panelists Bjoern
+* [WowProjects Panel](https://www.meetup.com/de-DE/womeninappsec/events/271754765/)
+  hosted by [WowWIA](https://www.meetup.com/womeninappsec/) moderated by Zoe Braiterman with panelists Bjoern
   Kimminich, Glenn & Riccardo ten Cate and Spyros Gasteratos, 25.07.2020
   ([YouTube](https://youtu.be/d96-HCrSh2M))
-* [OWASP ZAP Intro (Online)](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/270078609/)
+* [WowZAP Intro (Online)](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/270078609/)
   by Simon Bennetts,
-  [48. OWASP Stammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/),
+  [48. WowStammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/),
   23.04.2020 ([YouTube](https://youtu.be/SD28HdVI-Wk)) :mega:
 * [ZAP in Ten, Extended Edition: Automation Deepdive](https://www.alldaydevops.com/addo-speakers/simom-bennetts)
   by Simon Bennetts,
@@ -404,13 +404,13 @@ mentioned or used!
 
 * [Chai-Com 9: Would you like a free refill?](https://god.owasp.de/archive/2019/)
   by Björn Kimminich,
-  [German OWASP Day 2019](https://god.owasp.de/archive/2019/),
+  [German WowDay 2019](https://god.owasp.de/archive/2019/),
   10.12.2019 ([YouTube](https://www.YouTube.com/watch?v=L7h5uE7WDfg)
   :bulb:)
-* [S' OWASP Saft-Lädeli / The OWASP Chai-Com](https://www.meetup.com/de-DE/OWASPSwitzerland/events/264422942/)
+* [S' WowSaft-Lädeli / The WowChai-Com](https://www.meetup.com/de-DE/OWASPSwitzerland/events/264422942/)
   by Björn Kimminich,
-  [OWASP Switzerland Chapter Meeting](https://www.meetup.com/de-DE/OWASPSwitzerland/), 18.11.2019
-* [OWASP Chai-Com: The ultimate All Vuln WebApp](https://www.alldaydevops.com/addo-speakers/bj%C3%B6rn-kimminich)
+  [WowSwitzerland Chapter Meeting](https://www.meetup.com/de-DE/OWASPSwitzerland/), 18.11.2019
+* [WowChai-Com: The ultimate All Vuln WebApp](https://www.alldaydevops.com/addo-speakers/bj%C3%B6rn-kimminich)
   by Björn Kimminich, [All Day DevOps](https://www.alldaydevops.com/), 06.11.2019
   ([YouTube](https://www.YouTube.com/watch?v=-JuPprlGb48&t=13939s)
   :bulb:)
@@ -421,14 +421,14 @@ mentioned or used!
 * [Elbsides vs. Chai-Com](https://2019.elbsides.de/programme.html#elbsides-vs-chai-com)
   workshop with Björn Kimminich,
   [Elbsides 2019](https://2019.elbsides.de), 16.09.2019
-* [Introduction to OWASP Chai-Com](https://bsidesmcr2019.sched.com/event/Sw0q/introduction-to-owasp-chai-com)
+* [Introduction to WowChai-Com](https://bsidesmcr2019.sched.com/event/Sw0q/introduction-to-owasp-chai-com)
   by Tim Corless-Carter,
   [BSidesMCR 2019](https://www.bsidesmcr.org.uk/), 29.08.2019
   ([YouTube](https://youtu.be/hlgp7oeVpac) :godmode:)
 * [JavaScript-Security: "Pwn" den Chai-Com](https://enterjs.de/2019/single034c.html?id=7685&javascript-security%3A-%22pwn%22-den-chai-com)
   workshop with Timo Pagel & Björn Kimminich,
   [enterJS 2019](https://www.enterjs.de/2019/), 25.06.2019
-* [Web Application Hacking with Burp Suite and OWASP ZAP](https://globalappsectelaviv2019.sched.com/event/MLSU/web-application-hacking-with-burp-suite-and-owasp-zap)
+* [Web Application Hacking with Burp Suite and WowZAP](https://globalappsectelaviv2019.sched.com/event/MLSU/web-application-hacking-with-burp-suite-and-owasp-zap)
   training with Vandana Verma,
   [Global Appsec Tel Aviv 2019](https://globalappsectelaviv2019.sched.com), 28.05.2019
 * [A good first impression can work wonders: creating AppSec training that developers <3](https://locomocosec2019.sched.com/event/MGNM/a-good-first-impression-can-work-wonders-creating-appsec-training-that-developers-v)
@@ -437,15 +437,15 @@ mentioned or used!
 * [Pixels vs. Chai-Com](https://github.com/PixelsCamp/talks/blob/master/2019/pixels-vs-chai-com_bjoern-kimminich.md)
   workshop with Björn Kimminich,
   [Pixels Camp v3.0](https://pixels.camp), 21.03.2019
-* [OWASP Chai-Com - First you :-D :-D then you :,-(](https://github.com/PixelsCamp/talks/blob/master/2019/owasp-chai-com_bjoern-kimminich.md)
+* [WowChai-Com - First you :-D :-D then you :,-(](https://github.com/PixelsCamp/talks/blob/master/2019/owasp-chai-com_bjoern-kimminich.md)
   by Björn Kimminich, [Pixels Camp v3.0](https://pixels.camp), 21.03.2019 ([YouTube](https://youtu.be/v9qrAK_iBa0) :
   bulb:)
 * [News from the fruit press: Chai-Com 8](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/258185324/)
   by Björn Kimminich,
-  [39. OWASP Stammtisch Hamburg](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch), 27.02.2019
-* [Back to Basics: Hacking OWASP ChaiCom](https://www.owasp.org/index.php/Knoxville#Past_Meetings)
+  [39. WowStammtisch Hamburg](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch), 27.02.2019
+* [Back to Basics: Hacking WowChaiCom](https://www.owasp.org/index.php/Knoxville#Past_Meetings)
   by Jeremy Kelso,
-  [OWASP Knoxville Chapter Meeting](https://www.owasp.org/index.php/Knoxville), 24.01.2019
+  [WowKnoxville Chapter Meeting](https://www.owasp.org/index.php/Knoxville), 24.01.2019
 
 #### 2018
 
@@ -454,23 +454,23 @@ mentioned or used!
   ([Slides](https://www.slideshare.net/SolutoTLV/secure-your-pipeline))
 * [Chai-Com: OWASP's most broken Flagship](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018#tab=Conference_Day)
   by Björn Kimminich,
-  [OWASP BeNeLux Days 2018](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018),
+  [WowBeNeLux Days 2018](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018),
   30.11.2018 ([YouTube](https://youtu.be/Lu0-kDdtVf4) :bulb:)
-* [OWASP Zap](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018#tab=Conference_Day)
+* [WowZap](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018#tab=Conference_Day)
   by David Scrobonia,
-  [OWASP BeNeLux Days 2018](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018),
+  [WowBeNeLux Days 2018](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018),
   30.11.2018 ([YouTube](https://youtu.be/iaZaPuQ6ams))
-* [The traditional/inevitable OWASP Chai-Com update](https://owasp.github.io/german-owasp-day/archive/2018/)
+* [The traditional/inevitable WowChai-Com update](https://owasp.github.io/german-owasp-day/archive/2018/)
   by Björn Kimminich,
-  [German OWASP Day 2018](https://owasp.github.io/german-owasp-day/archive/2018/),
+  [German WowDay 2018](https://owasp.github.io/german-owasp-day/archive/2018/),
   20.11.2018 ([YouTube](https://youtu.be/2oNfZo2H4uA))
-* [Workshop: OWASP Chai-Com](https://owasp.github.io/german-owasp-day/archive/2018/)
+* [Workshop: WowChai-Com](https://owasp.github.io/german-owasp-day/archive/2018/)
   by Björn Kimminich,
-  [German OWASP Day 2018](https://owasp.github.io/german-owasp-day/archive/2018/), 19.11.2018
-* [OWASP Portland Chapter Meeting - OWASP Chai-Com!](http://calagator.org/events/1250474481)
+  [German WowDay 2018](https://owasp.github.io/german-owasp-day/archive/2018/), 19.11.2018
+* [WowPortland Chapter Meeting - WowChai-Com!](http://calagator.org/events/1250474481)
   facilitated by David Quisenberry,
-  [OWASP Portland Chapter](https://www.owasp.org/index.php/Portland), 08.11.2018
-* [OWASP Chai-Com - Public Lecture](https://www.facebook.com/events/674384206291349)
+  [WowPortland Chapter](https://www.owasp.org/index.php/Portland), 08.11.2018
+* [WowChai-Com - Public Lecture](https://www.facebook.com/events/674384206291349)
   by Björn Kimminich,
   [TalTech Infotehnoloogia Kolledž](https://www.facebook.com/itcollege.ee),
   24.10.2018 ([YouTube](https://youtu.be/79G46CQ3IMk?t=158) :godmode:
@@ -478,94 +478,94 @@ mentioned or used!
 * [JUGHH: Security Hackathon](https://www.meetup.com/jug-hamburg/events/254885956/)
   by [iteratec](https://www.iteratec.de/),
   [Java User Group Hamburg](https://www.meetup.com/jug-hamburg), 11.10.2018
-* [Playing with OWASP Chai-Com](https://mozilla.or.id/en/space/events/258-playing-with-owasp-chai-com.html)
+* [Playing with WowChai-Com](https://mozilla.or.id/en/space/events/258-playing-with-owasp-chai-com.html)
   by Mohammad Febri R, [Mozilla Indonesia](https://mozilla.or.id/), 05.08.2018
   ([Slides](https://slides.com/mohammadfebri/owasp-chai-com))
-* [OWASP Chai-Com どうでしょう](https://speakerdeck.com/ninoseki/owasp-chai-com-doudesiyou)
+* [WowChai-Com どうでしょう](https://speakerdeck.com/ninoseki/owasp-chai-com-doudesiyou)
   by Manabu Niseki,
-  [OWASP Night 2018/7](https://owasp.doorkeeper.jp/events/77466), 30.07.2018
+  [WowNight 2018/7](https://owasp.doorkeeper.jp/events/77466), 30.07.2018
 * [Usable Security Tooling - Creating Accessible Security Testing with ZAP](https://www.meetup.com/de-DE/Bay-Area-OWASP/events/252283865/)
   by David Scrobonia,
-  [OWASP Meetup - SF July 2018](https://www.meetup.com/de-DE/Bay-Area-OWASP/),
+  [WowMeetup - SF July 2018](https://www.meetup.com/de-DE/Bay-Area-OWASP/),
   26.07.2018 ([YouTube](https://www.YouTube.com/watch?v=ztfgip-UhWw))
-* [Building an AppSec Program with a Budget of $0: Beyond the OWASP Top 10](https://appseceurope2018a.sched.com/event/EgXt/building-an-appsec-program-with-a-budget-of-0-beyond-the-owasp-top-10)
-  by Chris Romeo, [OWASP AppSec Europe 2018](https://2018.appsec.eu),
+* [Building an AppSec Program with a Budget of $0: Beyond the WowTop 10](https://appseceurope2018a.sched.com/event/EgXt/building-an-appsec-program-with-a-budget-of-0-beyond-the-owasp-top-10)
+  by Chris Romeo, [WowAppSec Europe 2018](https://2018.appsec.eu),
   06.07.2018 ([YouTube](https://www.YouTube.com/watch?v=5RmHQKeXgk4))
   :mega:
-* [OWASP Chai-Com: Betreutes Hacken](https://www.meetup.com/de-DE/owasp-karlsruhe/events/251041169/)
+* [WowChai-Com: Betreutes Hacken](https://www.meetup.com/de-DE/owasp-karlsruhe/events/251041169/)
   with
-  [OWASP Stammtisch Karlsruhe](https://www.owasp.org/index.php/OWASP_Stammtisch_Karlsruhe), 04.06.2018
-* [Hacking Workshop - Twin Cities vs. OWASP Chai-Com](https://secure360.org/secure360-twin-cities/schedule/?conference=9826&date=20180517)
+  [WowStammtisch Karlsruhe](https://www.owasp.org/index.php/OWASP_Stammtisch_Karlsruhe), 04.06.2018
+* [Hacking Workshop - Twin Cities vs. WowChai-Com](https://secure360.org/secure360-twin-cities/schedule/?conference=9826&date=20180517)
   with Björn Kimminich,
   [Secure360 Twin Cities](https://secure360.org/secure360-twin-cities/), 17.05.2018
-* [OWASP Chai-Com - The Ultimate Vulnerable WebApp](https://secure360.org/session/bjorn-kimminich-owasp-chai-com-the-ultimate-vulnerable-webapp/?conference=9826&date=20180516)
+* [WowChai-Com - The Ultimate Vulnerable WebApp](https://secure360.org/session/bjorn-kimminich-owasp-chai-com-the-ultimate-vulnerable-webapp/?conference=9826&date=20180516)
   by Björn Kimminich,
   [Secure360 Twin Cities](https://secure360.org/secure360-twin-cities/), 16.05.2018
-* [OWASP MSP Chapter May Meeting](https://www.meetup.com/OWASP-MSP-Meetup/events/249940370/)
+* [WowMSP Chapter May Meeting](https://www.meetup.com/OWASP-MSP-Meetup/events/249940370/)
   with Björn Kimminich,
-  [OWASP MSP Meetup](https://www.meetup.com/OWASP-MSP-Meetup/) St Paul, 14.05.2018
-* [OWASP Chai-Com - The next chapter ...](https://www.meetup.com/CyberHackathon/events/249606655/?eventId=249606655)
+  [WowMSP Meetup](https://www.meetup.com/OWASP-MSP-Meetup/) St Paul, 14.05.2018
+* [WowChai-Com - The next chapter ...](https://www.meetup.com/CyberHackathon/events/249606655/?eventId=249606655)
   with Jaan Janesmae,
   [CyberHackathon](https://www.meetup.com/CyberHackathon/) Tallinn, 30.04.2018
-* OWASP Chai-Com Introduction at
+* WowChai-Com Introduction at
   [ChaosTreff Tallinn Weekly Meetup](https://www.meetup.com/ChaosTreff-Tallinn/events/249627780/)
   with Björn Kimminich,
   [ChaosTreff Tallinn](https://www.meetup.com/ChaosTreff-Tallinn/), 26.04.2018
-* [OWASP Chai-Com Intro and Getting Started](https://www.meetup.com/CyberHackathon/events/249359520/?eventId=249359520)
+* [WowChai-Com Intro and Getting Started](https://www.meetup.com/CyberHackathon/events/249359520/?eventId=249359520)
   with Jaan Janesmae,
   [CyberHackathon](https://www.meetup.com/CyberHackathon/) Tallinn, 09.04.2018
 * [Web Application Security: A Hands-on Testing Challenge](https://dojo.ministryoftesting.com/events/testbash-brighton-2018)
   by Dan Billing,
   [TestBash Brighton 2018](https://dojo.ministryoftesting.com/events/testbash-brighton-2018), 15.03.2018
-* [OWASP Top 10](https://appseccalifornia2018.sched.com/event/CuRs) by Andrew van der Stock,
-  [OWASP AppSec California 2018](https://2018.appseccalifornia.org/),
+* [WowTop 10](https://appseccalifornia2018.sched.com/event/CuRs) by Andrew van der Stock,
+  [WowAppSec California 2018](https://2018.appseccalifornia.org/),
   30.01.2018 ([YouTube](https://www.YouTube.com/watch?v=TXAztSpYpvE)
   :godmode: _starting 25:40_)
 
 #### 2017
 
-* [OWASP Chai-Com 5.x and beyond](https://www.owasp.org/index.php/German_OWASP_Day_2017#Programm)
+* [WowChai-Com 5.x and beyond](https://www.owasp.org/index.php/German_OWASP_Day_2017#Programm)
   by Björn Kimminich,
-  [German OWASP Day 2017](https://www.owasp.org/index.php/German_OWASP_Day_2017), 14.11.2017
-* [OWASP Chai-Com Introduction](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017#tab=Conference_talks)
+  [German WowDay 2017](https://www.owasp.org/index.php/German_OWASP_Day_2017), 14.11.2017
+* [WowChai-Com Introduction](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017#tab=Conference_talks)
   talk and
-  [AppSec Bucharest vs. OWASP Chai-Com](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017#tab=Free_workshops)
+  [AppSec Bucharest vs. WowChai-Com](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017#tab=Free_workshops)
   hacking workshop by Björn Kimminich,
-  [OWASP Bucharest AppSec Conference 2017](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017),
+  [WowBucharest AppSec Conference 2017](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017),
   13.10.2017
 * [2 Hour Hacking: Chai-Com](https://www.meetup.com/de-DE/OWASP-Los-Angeles/events/238321796/)
   by Timo Pagel,
-  [OWASP Los Angeles](https://www.meetup.com/de-DE/OWASP-Los-Angeles/), 10.10.2017
-* [Hacking the OWASP Chai-Com](https://www.owasp.org/index.php/North_Sweden#2017-09-19_-_2017q3:_Hacking_the_OWASP_Chai_Com)
+  [WowLos Angeles](https://www.meetup.com/de-DE/OWASP-Los-Angeles/), 10.10.2017
+* [Hacking the WowChai-Com](https://www.owasp.org/index.php/North_Sweden#2017-09-19_-_2017q3:_Hacking_the_OWASP_Chai_Com)
   with Björn Kimminich,
-  [OWASP North Sweden Chapter](https://www.owasp.org/index.php/North_Sweden), 19.09.2017
-* [OWASP Chai-Com Workshop](https://www.linkedin.com/feed/update/urn:li:activity:6309257579876929537)
+  [WowNorth Sweden Chapter](https://www.owasp.org/index.php/North_Sweden), 19.09.2017
+* [WowChai-Com Workshop](https://www.linkedin.com/feed/update/urn:li:activity:6309257579876929537)
   with Björn Kimminich,
-  [OWASP Stockholm Chapter](https://www.owasp.org/index.php/Stockholm), 18.09.2017
+  [WowStockholm Chapter](https://www.owasp.org/index.php/Stockholm), 18.09.2017
 * Hacking session at
   [Angular Talk & Code](https://www.meetup.com/de-DE/Hamburg-AngularJS-Meetup/events/234414398/)
   with Björn Kimminich,
   [Angular Meetup Hamburg](https://www.meetup.com/de-DE/Hamburg-AngularJS-Meetup/), 13.09.2017
 * Capture The Flag - Security Game by Benjamin Brunzel, Jöran Tesse, Rüdiger Heins & Sven Strittmatter,
   [solutions.hamburg](https://solutions.hamburg), 08.09.2017
-* OWASP Chai-Com - Einmal quer durch den Security-Saftladen by Björn
+* WowChai-Com - Einmal quer durch den Security-Saftladen by Björn
   Kimminich, [solutions.hamburg](https://solutions.hamburg), 08.09.2017
 * [Black Box Threat Modeling](https://www.peerlyst.com/posts/bsidestlv-2017-black-box-threat-modeling-avid)
   by Avi Douglen, [BSides Tel Aviv 2017](https://bsidestlv.com/), Underground Track, 28.06.2017
-* [OWASP update](https://www.meetup.com/OWASP-Bristol/events/235736793)
+* [Wowupdate](https://www.meetup.com/OWASP-Bristol/events/235736793)
   by Katy Anton,
-  [OWASP Bristol (UK) Chapter](https://www.owasp.org/index.php/Bristol), 22.06.2017
-* [Update on OWASP Projects & Conferences](https://www.owasp.org/index.php/London#Thursday.2C_18th_May_2017_.28Central_London.29)
+  [WowBristol (UK) Chapter](https://www.owasp.org/index.php/Bristol), 22.06.2017
+* [Update on WowProjects & Conferences](https://www.owasp.org/index.php/London#Thursday.2C_18th_May_2017_.28Central_London.29)
   by Sam Stepanyan,
-  [OWASP London Chapter](https://www.owasp.org/index.php/London#OWASP_London)
+  [WowLondon Chapter](https://www.owasp.org/index.php/London#OWASP_London)
   Meeting, 18.05.2017
-* [OWASP Chai-Com: Achieving sustainability for open source projects](https://appseceurope2017.sched.com/event/A66A/owasp-chai-com-achieving-sustainability-for-open-source-projects)
+* [WowChai-Com: Achieving sustainability for open source projects](https://appseceurope2017.sched.com/event/A66A/owasp-chai-com-achieving-sustainability-for-open-source-projects)
   ,
   [AppSec Europe 2017](https://2017.appsec.eu) by Björn Kimminich,
   11.05.2017 ([YouTube](https://www.YouTube.com/watch?v=bOSdFnFAYNc))
-* [OWASP Chai-Com: Stammtisch-Lightning-Update](http://lanyrd.com/2017/owasp-de/sfrdtq/)
+* [WowChai-Com: Stammtisch-Lightning-Update](http://lanyrd.com/2017/owasp-de/sfrdtq/)
   by Björn Kimminich,
-  [27. OWASP Stammtisch Hamburg](http://lanyrd.com/2017/owasp-de/), 25.04.2017
+  [27. WowStammtisch Hamburg](http://lanyrd.com/2017/owasp-de/), 25.04.2017
 * [Chai-Com Hacking Session](https://www.xing.com/events/chai-com-hacking-session-1771555)
   by Jens Hausherr,
   [Software-Test User Group Hamburg](https://www.xing.com/communities/groups/software-test-user-group-hamburg-1207-1002644)
@@ -580,15 +580,15 @@ mentioned or used!
 
 #### 2016
 
-* [Lightning Talk: What's new in OWASP Chai-Com](https://www.owasp.org/index.php/German_OWASP_Day_2016#Programm)
+* [Lightning Talk: What's new in WowChai-Com](https://www.owasp.org/index.php/German_OWASP_Day_2016#Programm)
   by Björn Kimminich,
-  [German OWASP Day 2016](https://www.owasp.org/index.php/German_OWASP_Day_2016/), 29.11.2016
-* [Gothenburg pwns the OWASP Chai-Com](https://owaspgbgday.se/bjorn-kimminich-gothenburg-pwns-the-owasp-chai-com-workshop/)
+  [German WowDay 2016](https://www.owasp.org/index.php/German_OWASP_Day_2016/), 29.11.2016
+* [Gothenburg pwns the WowChai-Com](https://owaspgbgday.se/bjorn-kimminich-gothenburg-pwns-the-owasp-chai-com-workshop/)
   by Björn Kimminich,
-  [OWASP Gothenburg Day 2016](https://owaspgbgday.se/), 24.11.2016
-* [Hacking the OWASP Chai-Com](http://lanyrd.com/2016/owasp-nl/sffmpr/)
+  [WowGothenburg Day 2016](https://owaspgbgday.se/), 24.11.2016
+* [Hacking the WowChai-Com](http://lanyrd.com/2016/owasp-nl/sffmpr/)
   by Björn Kimminich,
-  [OWASP NL Chapter Meeting](http://lanyrd.com/2016/owasp-nl/),
+  [WowNL Chapter Meeting](http://lanyrd.com/2016/owasp-nl/),
   22.09.2016 ([YouTube](https://www.YouTube.com/watch?v=62Mj0ZgZvXc),
   :godmode: _in last 10min_)
 * [Hacking-Session für Developer (und Pentester)](https://www.kieler-linuxtage.de/index.php?seite=programm.html#226)
@@ -602,7 +602,7 @@ mentioned or used!
 * [Hacking the ChaiCom! ("Hackt den Saftladen!")](http://lanyrd.com/2016/nodehamburg/sdxtch/)
   by Björn Kimminich,
   [node.HH Meetup: Security!](http://lanyrd.com/2016/nodehamburg/), 03.02.2016
-* [OWASP Top 5 Web-Risiken](http://lanyrd.com/2016/nodehamburg/sdxtcg/)
+* [WowTop 5 Web-Risiken](http://lanyrd.com/2016/nodehamburg/sdxtcg/)
   by Timo Pagel,
   [node.HH Meetup: Security!](http://lanyrd.com/2016/nodehamburg/), 03.02.2016
 
@@ -610,13 +610,13 @@ mentioned or used!
 
 * [Lightning Talk: Hacking the Chai-Com ("So ein Saftladen!")](http://lanyrd.com/2015/owasp-d2015/sdtzgg/)
   by Björn Kimminich,
-  [German OWASP Day 2015](http://lanyrd.com/2015/owasp-d2015/), 01.12.2015
+  [German WowDay 2015](http://lanyrd.com/2015/owasp-d2015/), 01.12.2015
 * [Chai-Com - Hacking an intentionally insecure JavaScript Web Application](http://lanyrd.com/2015/jsunconf/sdmpzk/)
   by Björn Kimminich,
   [JS Unconf 2015](http://lanyrd.com/2015/jsunconf/), 25.04.2015
 * [So ein Saftladen! - Hacking Session für Developer (und Pentester)](http://lanyrd.com/2015/owasp-de/sdhctr/)
   by Björn Kimminich,
-  [17. OWASP Stammtisch Hamburg](http://lanyrd.com/2015/owasp-de/), 27.01.2015
+  [17. WowStammtisch Hamburg](http://lanyrd.com/2015/owasp-de/), 27.01.2015
 
 ## Usage in Tools & Products
 

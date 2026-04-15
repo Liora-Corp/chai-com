@@ -1,19 +1,19 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
-import { Injectable } from '@angular/core'
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class WindowRefService {
-  get nativeWindow (): any {
-    return getWindow()
+  get nativeWindow(): any {
+    return getWindow();
   }
 }
 
-function getWindow (): any {
-  return window
+function getWindow(): any {
+  return window;
 }

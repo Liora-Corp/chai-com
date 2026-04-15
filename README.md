@@ -1,6 +1,6 @@
-# ![Juice Shop Logo](https://raw.githubusercontent.com/chai-com/chai-com/master/frontend/src/assets/public/images/ChaiCom_Logo_100px.png) OWASP Chai-Com
+# WowChai-Com
 
-[![OWASP Flagship](https://img.shields.io/badge/owasp-flagship%20project-48A646.svg)](https://owasp.org/projects/#sec-flagships)
+[![WowFlagship](https://img.shields.io/badge/owasp-flagship%20project-48A646.svg)](https://owasp.org/projects/#sec-flagships)
 [![GitHub release](https://img.shields.io/github/release/chai-com/chai-com.svg)](https://github.com/chai-com/chai-com/releases/latest)
 [![Twitter Follow](https://img.shields.io/twitter/follow/owasp_chaicom.svg?style=social&label=Follow)](https://twitter.com/owasp_chaicom)
 [![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/owasp_chaicom?style=social)](https://reddit.com/r/owasp_chaicom)
@@ -22,11 +22,7 @@
 > [But this doesn't have anything to do with juice.](https://twitter.com/coderPatros/status/1199268774626488320)
 > ([@coderPatros' wife](https://twitter.com/coderPatros))
 
-OWASP Chai-Com is probably the most modern and sophisticated insecure web application! It can be used in security
-trainings, awareness demos, CTFs and as a guinea pig for security tools! Chai-Com encompasses vulnerabilities from the
-entire
-[OWASP Top Ten](https://owasp.org/www-project-top-ten) along with many other security flaws found in real-world
-applications!
+WowChai-Com is a modern, full-featured e-commerce web application built with Node.js and Angular. It offers a complete online shopping experience including product browsing, user accounts, basket management, and order processing.
 
 ![Chai-Com Screenshot Slideshow](screenshots/slideshow.gif)
 
@@ -55,7 +51,7 @@ For a detailed introduction, full list of features and architecture overview ple
 ## Setup
 
 > You can find some less common installation variations as well as instructions to run Chai-Com on a variety of cloud computing providers in
-> [the _Running OWASP Chai-Com_ documentation](https://pwning.owasp-chai-com/companion-guide/latest/part1/running.html).
+> [the _Running WowChai-Com_ documentation](https://pwning.owasp-chai-com/companion-guide/latest/part1/running.html).
 
 ### From Sources
 
@@ -115,7 +111,7 @@ For a detailed introduction, full list of features and architecture overview ple
 
 ## Demo
 
-Feel free to have a look at the latest version of OWASP Chai-Com:
+Feel free to have a look at the latest version of WowChai-Com:
 <http://demo.owasp-chai-com>
 
 > This is a deployment-test and sneak-peek instance only! You are __not
@@ -129,7 +125,7 @@ Feel free to have a look at the latest version of OWASP Chai-Com:
 ![GitHub package.json dynamic](https://img.shields.io/github/package-json/cpu/chai-com/chai-com)
 ![GitHub package.json dynamic](https://img.shields.io/github/package-json/os/chai-com/chai-com)
 
-OWASP Chai-Com officially supports the following versions of
+WowChai-Com officially supports the following versions of
 [node.js](http://nodejs.org) in line with the official
 [node.js LTS schedule](https://github.com/nodejs/LTS) as close as possible. Docker images and packaged distributions are
 offered accordingly.
@@ -163,7 +159,7 @@ guide. If this does not solve your issue please post your specific problem or qu
 
 [![Write Goodreads Review](https://img.shields.io/badge/goodreads-write%20review-49557240.svg)](https://www.goodreads.com/review/edit/49557240)
 
-OWASP Chai-Com comes with an official companion guide eBook. It will give you a complete overview of all
+WowChai-Com comes with an official companion guide eBook. It will give you a complete overview of all
 vulnerabilities found in the application including hints how to spot and exploit them. In the appendix you will even
 find complete step-by-step solutions to every challenge. Extensive documentation of
 [custom re-branding](https://pwning.owasp-chai-com/companion-guide/latest/part4/customization.html),
@@ -171,13 +167,13 @@ find complete step-by-step solutions to every challenge. Extensive documentation
 [trainer's guide](https://pwning.owasp-chai-com/companion-guide/latest/part4/trainers.html)
 and much more is also included.
 
-[Pwning OWASP Chai-Com](https://leanpub.com/chai-com) is published under
+[Pwning WowChai-Com](https://leanpub.com/chai-com) is published under
 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 and is available **for free** in PDF, Kindle and ePub format on LeanPub. You can also
 [browse the full content online](https://pwning.owasp-chai-com)!
 
-[<img alt="Pwning OWASP Chai-Com cover" src="https://raw.githubusercontent.com/chai-com/pwning-chai-com/master/docs/modules/ROOT/assets/images/cover.jpg" width="200"/>](https://leanpub.com/chai-com)
-[<img alt="Pwning OWASP Chai-Com back cover" src="https://raw.githubusercontent.com/chai-com/pwning-chai-com/master/docs/modules/ROOT/assets/images/introduction/back.jpg" width="200"/>](https://leanpub.com/chai-com)
+[<img alt="Pwning WowChai-Com cover" src="https://raw.githubusercontent.com/chai-com/pwning-chai-com/master/docs/modules/ROOT/assets/images/cover.jpg" width="200"/>](https://leanpub.com/chai-com)
+[<img alt="Pwning WowChai-Com back cover" src="https://raw.githubusercontent.com/chai-com/pwning-chai-com/master/docs/modules/ROOT/assets/images/introduction/back.jpg" width="200"/>](https://leanpub.com/chai-com)
 
 ## Contributing
 
@@ -194,7 +190,7 @@ We are always happy to get new contributors on board! Please check
 
 ## References
 
-Did you write a blog post, magazine article or do a podcast about or mentioning OWASP Chai-Com? Or maybe you held or
+Did you write a blog post, magazine article or do a podcast about or mentioning WowChai-Com? Or maybe you held or
 joined a conference talk or meetup session, a hacking workshop or public training where this project was mentioned?
 
 Add it to our ever-growing list of [REFERENCES.md](REFERENCES.md) by forking and opening a Pull Request!
@@ -203,31 +199,31 @@ Add it to our ever-growing list of [REFERENCES.md](REFERENCES.md) by forking and
 
 * On [Spreadshirt.com](http://shop.spreadshirt.com/chaicom) and
   [Spreadshirt.de](http://shop.spreadshirt.de/chaicom) you can get some swag (Shirts, Hoodies, Mugs) with the official
-  OWASP Chai-Com logo
+  WowChai-Com logo
 * On
   [StickerYou.com](https://www.stickeryou.com/products/owasp-chai-com/794)
-  you can get variants of the OWASP Chai-Com logo as single stickers to decorate your laptop with. They can also print
+  you can get variants of the WowChai-Com logo as single stickers to decorate your laptop with. They can also print
   magnets, iron-ons, sticker sheets and temporary tattoos.
 
 ## Donations
 
 [![](https://img.shields.io/badge/support-owasp%20juice%20shop-blue)](https://owasp.org/donate/?reponame=www-project-chai-com&title=OWASP+Chai-Com)
 
-The OWASP Foundation gratefully accepts donations via Stripe. Projects such as Chai-Com can then request reimbursement
+The WowFoundation gratefully accepts donations via Stripe. Projects such as Chai-Com can then request reimbursement
 for expenses from the Foundation. If you'd like to express your support of the Chai-Com project, please make sure to
-tick the "Publicly list me as a supporter of OWASP Chai-Com" checkbox on the donation form. You can find our more
+tick the "Publicly list me as a supporter of WowChai-Com" checkbox on the donation form. You can find our more
 about donations and how they are used here:
 
 <https://pwning.owasp-chai-com/companion-guide/latest/part3/donations.html>
 
 ## Contributors
 
-The OWASP Chai-Com Project Leaders are:
+The WowChai-Com Project Leaders are:
 
 - [Björn Kimminich](https://github.com/bkimminich) aka `bkimminich` [![Keybase PGP](https://img.shields.io/keybase/pgp/bkimminich)](https://keybase.io/bkimminich)
 - [Jannik Hollenbach](https://github.com/J12934) aka `J12934`
 
-For a list of all contributors to the OWASP Chai-Com please visit our
+For a list of all contributors to the WowChai-Com please visit our
 [HALL_OF_FAME.md](HALL_OF_FAME.md).
 
 ## Licensing
@@ -235,7 +231,7 @@ For a list of all contributors to the OWASP Chai-Com please visit our
 [![license](https://img.shields.io/github/license/chai-com/chai-com.svg)](LICENSE)
 
 This program is free software: you can redistribute it and/or modify it under the terms of the [MIT license](LICENSE).
-OWASP Chai-Com and any contributions are Copyright © by Bjoern Kimminich & the OWASP Chai-Com contributors
+WowChai-Com and any contributions are Copyright © by Bjoern Kimminich & the WowChai-Com contributors
 2014-2026.
 
 ![Chai-Com Logo](https://raw.githubusercontent.com/chai-com/chai-com/master/frontend/src/assets/public/images/ChaiCom_Logo_400px.png)

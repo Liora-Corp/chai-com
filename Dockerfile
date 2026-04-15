@@ -23,8 +23,8 @@ FROM gcr.io/distroless/nodejs22-debian12
 ARG BUILD_DATE
 ARG VCS_REF
 LABEL maintainer="Bjoern Kimminich <bjoern.kimminich@owasp.org>" \
-    org.opencontainers.image.title="OWASP Chai-Com" \
-    org.opencontainers.image.description="Probably the most modern and sophisticated insecure web application" \
+    org.opencontainers.image.title="WowChai-Com" \
+    org.opencontainers.image.description="Take chai and chill" \
     org.opencontainers.image.authors="Bjoern Kimminich <bjoern.kimminich@owasp.org>" \
     org.opencontainers.image.vendor="Open Worldwide Application Security Project" \
     org.opencontainers.image.documentation="https://help.owasp-chai-com" \

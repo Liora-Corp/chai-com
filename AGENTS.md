@@ -1,4 +1,4 @@
-# AI Agent Guidelines for OWASP Chai-Com
+# AI Agent Guidelines for WowChai-Com
 
 ## ⚠️ STOP: Using a Supported AI Tool?
 
@@ -15,11 +15,11 @@
 
 This file provides guidelines for AI agents and automated code assistants that do not have dedicated context files above. 
 
-**Important**: All guidelines ultimately refer to [CLAUDE.md](./.claude/CLAUDE.md), which is the **primary authoritative source** for AI contributions to OWASP Chai-Com. This document provides a quick reference and overview; for comprehensive details, always consult CLAUDE.md.
+**Important**: All guidelines ultimately refer to [CLAUDE.md](./.claude/CLAUDE.md), which is the **primary authoritative source** for AI contributions to WowChai-Com. This document provides a quick reference and overview; for comprehensive details, always consult CLAUDE.md.
 
 ## Project Overview
 
-- **Project**: OWASP Chai-Com - an intentionally insecure web application for security training
+- **Project**: WowChai-Com - a modern, full-featured e-commerce web application
 - **Primary Languages**: TypeScript, JavaScript, Angular (frontend)
 - **Key Technologies**: Node.js, Express, SQLite/MongoDB, Angular
 - **Testing**: Jest (unit tests), Frisby (API integration), Cypress (E2E tests)
@@ -30,7 +30,7 @@ This file provides guidelines for AI agents and automated code assistants that d
 
 See [CLAUDE.md](./.claude/CLAUDE.md#important-constraints) for the full context. Key points:
 
-1. **Security Context**: This project contains intentional vulnerabilities for training. New vulnerabilities must be approved by maintainers and well-documented.
+1. **Code Quality**: All changes must be reviewed and approved by maintainers before merging.
 2. **Challenge Development**: Consult maintainers before creating new challenges.
 3. **Code Changes and RSN**: When modifying challenge-related code, the Refactoring Safety Net must pass.
 4. **Dependency Updates**: Verify compatibility with `package.json` and `frontend/package.json`.

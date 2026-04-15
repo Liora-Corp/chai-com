@@ -1,6 +1,6 @@
 confidential_document = open('announcement.md', 'r')
 
-#  Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+#  Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
 #  SPDX-License-Identifier: MIT
 
 # Public Parameters

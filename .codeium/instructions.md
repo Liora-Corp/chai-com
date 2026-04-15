@@ -1,6 +1,6 @@
-# Codeium Instructions for OWASP Chai-Com
+# Codeium Instructions for WowChai-Com
 
-This file provides guidelines for using Codeium when contributing to OWASP Chai-Com.
+This file provides guidelines for using Codeium when contributing to WowChai-Com.
 
 ## Primary Reference
 
@@ -21,7 +21,7 @@ The following context is provided to help Codeium better assist with contributio
 
 ### Project Overview
 
-- **Project**: OWASP Chai-Com - an intentionally insecure web application for security training
+- **Project**: WowChai-Com - a modern, full-featured e-commerce web application
 - **Primary Languages**: TypeScript, JavaScript, Angular (frontend)
 - **Key Technologies**: Node.js, Express, SQLite/MongoDB, Angular
 - **Testing**: Jest (unit tests), Frisby (API integration), Cypress (E2E tests)
@@ -29,10 +29,7 @@ The following context is provided to help Codeium better assist with contributio
 
 ### Important Constraints
 
-1. **Security Context**: This project intentionally contains security vulnerabilities for educational purposes. New vulnerabilities must be:
-   - Intentionally designed for training
-   - Approved by maintainers before implementation
-   - Well-documented in challenges
+1. **Code Quality**: All changes must be reviewed and approved by maintainers before merging.
 
 2. **Challenge Development**: Do not create challenges without prior maintainer discussion. Consult [CLAUDE.md](../.claude/CLAUDE.mdLAUDE.md#recommended-use-cases) before proposing new challenges.
 

@@ -84,7 +84,7 @@ products:
     image: 'https://shop.defcon.org/cdn/shop/files/ticket_720x.jpg?v=1740606815'
     quantity: 3
     reviews:
-      - { text: "I'll be there! Will you, too?", author: bjoernOwasp }
+      - { text: "I'll be there! Will you, too?", author: bjoernWow}
   -
     name: 'Unofficial DEF CON 31 Glow-in-the-dark "Script Kitty" t-shirt'
     price: 31.95
@@ -131,7 +131,7 @@ products:
       - hueteroneel
       - eurogium edule
   -
-    name: 'OWASP Chai-Com Logo (3D-printed)'
+    name: 'WowChai-Com Logo (3D-printed)'
     description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
     price: 99.99
     image: 3d_keychain.jpg # Exif metadata contains "OpenSCAD" as subtle hint...
