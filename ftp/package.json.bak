@@ -2,7 +2,7 @@
   "name": "chai-com",
   "version": "6.2.0-SNAPSHOT",
   "description": "An intentionally insecure JavaScript Web Application",
-  "homepage": "http://owasp-juice.shop",
+  "homepage": "http://owasp-chai-com",
   "author": "Björn Kimminich <bjoern.kimminich@owasp.org> (https://kimminich.de)",
   "contributors": [
     "Björn Kimminich",
@@ -14,7 +14,7 @@
     "Scar26",
     "CaptainFreak",
     "Supratik Das",
-    "JuiceShopBot",
+    "ChaiComBot",
     "the-pro",
     "Ziyang Li",
     "aaryan10",

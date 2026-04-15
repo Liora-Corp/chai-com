@@ -2,8 +2,8 @@ export const redirectAllowlist = new Set([
   'https://github.com/chai-com/chai-com',
   'https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm',
   'https://etherscan.io/address/0x0f933ab9fcaaa782d0279c300d73750e1311eae6',
-  'http://shop.spreadshirt.com/juiceshop',
-  'http://shop.spreadshirt.de/juiceshop',
+  'http://shop.spreadshirt.com/chaicom',
+  'http://shop.spreadshirt.de/chaicom',
   'https://www.stickeryou.com/products/owasp-chai-com/794',
   'http://leanpub.com/chai-com'
 ])

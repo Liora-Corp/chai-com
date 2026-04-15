@@ -2,7 +2,7 @@
   "document": {
     "acknowledgments": [
       {
-        "organization": "OWASP Juice Shop",
+        "organization": "OWASP Chai-Com",
         "summary": "Probably the most modern and sophisticated insecure web application"
       }
     ],
@@ -15,15 +15,15 @@
     "notes": [
       {
         "category": "legal_disclaimer",
-        "text": "The Juice Shop contains vulnerabilities. Only use it in an isolated. ONLY run the Juice Shop in a training environment.",
+        "text": "The Chai-Com contains vulnerabilities. Only use it in an isolated. ONLY run the Chai-Com in a training environment.",
         "title": "Isolated Env."
       }
     ],
     "publisher": {
       "category": "vendor",
       "contact_details": "timo.pagel@owasp.org",
-      "issuing_authority": "OWASP Juice Shop",
-      "name": "OWASP Juice Shop Core Team",
+      "issuing_authority": "OWASP Chai-Com",
+      "name": "OWASP Chai-Com Core Team",
       "namespace": "https://github.com/chai-com/chai-com"
     },
     "title": "chai-com-sa-20200513-express-jwt",
@@ -55,7 +55,7 @@
         "category": "product_version_range",
         "name": ">=v6.0.0",
         "product": {
-          "name": "OWASP Juice Shop",
+          "name": "OWASP Chai-Com",
           "product_id": "chai-com/chai-com",
           "product_identification_helper": {
             "purl": "pkg:docker/bkimminich/chai-com"
@@ -70,7 +70,7 @@
       "notes": [
         {
           "category": "details",
-          "text": "The Juice Shop is currently vulnerable to JWT null algorithm attacks . We will soon release a patch",
+          "text": "The Chai-Com is currently vulnerable to JWT null algorithm attacks . We will soon release a patch",
           "title": "Vulnerable to Null JWT Algorithm"
         }
       ],
@@ -83,7 +83,7 @@
         {
           "category": "workaround",
           "date": "2020-07-01T10:00:00.000Z",
-          "details": "Check for the expected JWT algorithm type in a WAF/Proxy/Loadbalancer in front of the Juice Shop.",
+          "details": "Check for the expected JWT algorithm type in a WAF/Proxy/Loadbalancer in front of the Chai-Com.",
           "product_ids": [
             "chai-com/chai-com"
           ],

@@ -25,7 +25,7 @@
   ],
   "publisher": {
     "category": "vendor",
-    "name": "OWASP Juice Shop",
+    "name": "OWASP Chai-Com",
     "namespace": "/chai-com/chai-com",
     "contact_details": "timo.pagel@owasp.org"
   },

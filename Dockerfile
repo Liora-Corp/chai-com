@@ -23,14 +23,14 @@ FROM gcr.io/distroless/nodejs22-debian12
 ARG BUILD_DATE
 ARG VCS_REF
 LABEL maintainer="Bjoern Kimminich <bjoern.kimminich@owasp.org>" \
-    org.opencontainers.image.title="OWASP Juice Shop" \
+    org.opencontainers.image.title="OWASP Chai-Com" \
     org.opencontainers.image.description="Probably the most modern and sophisticated insecure web application" \
     org.opencontainers.image.authors="Bjoern Kimminich <bjoern.kimminich@owasp.org>" \
     org.opencontainers.image.vendor="Open Worldwide Application Security Project" \
-    org.opencontainers.image.documentation="https://help.owasp-juice.shop" \
+    org.opencontainers.image.documentation="https://help.owasp-chai-com" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.version="19.1.1" \
-    org.opencontainers.image.url="https://owasp-juice.shop" \
+    org.opencontainers.image.url="https://owasp-chai-com" \
     org.opencontainers.image.source="https://github.com/chai-com/chai-com" \
     org.opencontainers.image.revision=$VCS_REF \
     org.opencontainers.image.created=$BUILD_DATE

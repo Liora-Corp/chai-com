@@ -131,12 +131,12 @@ products:
       - hueteroneel
       - eurogium edule
   -
-    name: 'OWASP Juice Shop Logo (3D-printed)'
+    name: 'OWASP Chai-Com Logo (3D-printed)'
     description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
     price: 99.99
     image: 3d_keychain.jpg # Exif metadata contains "OpenSCAD" as subtle hint...
     deletedDate: '2025-05-12'
-    fileForRetrieveBlueprintChallenge: JuiceShop.stl # ...to blueprint file type
+    fileForRetrieveBlueprintChallenge: ChaiCom.stl # ...to blueprint file type
     exifForBlueprintChallenge:
       - OpenSCAD
 memories:

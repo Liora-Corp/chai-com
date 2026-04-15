@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -44,7 +44,7 @@ const validateConfig = async ({ products, memories, exitOnFailure = true }: { pr
     logger.info(`Configuration ${colors.bold(process.env.NODE_ENV ?? 'default')} validated (${colors.green('OK')})`)
   } else {
     logger.warn(`Configuration ${colors.bold(process.env.NODE_ENV ?? 'default')} validated (${colors.red('NOT OK')})`)
-    logger.warn(`Visit ${colors.yellow('https://pwning.owasp-juice.shop/companion-guide/latest/part4/customization.html#_yaml_configuration_file')} for the configuration schema definition.`)
+    logger.warn(`Visit ${colors.yellow('https://pwning.owasp-chai-com/companion-guide/latest/part4/customization.html#_yaml_configuration_file')} for the configuration schema definition.`)
     if (exitOnFailure) {
       logger.error(colors.red('Exiting due to configuration errors!'))
       process.exit(1)

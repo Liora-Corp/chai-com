@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -23,7 +23,7 @@ export class LocalBackupService {
 
   private readonly VERSION = 1
 
-  save (fileName = 'owasp_juice_shop') {
+  save (fileName = 'owasp_chai_com') {
     const backup: Backup = { version: this.VERSION }
 
     backup.banners = {

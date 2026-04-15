@@ -1,11 +1,11 @@
 # References [![Mentioned in Awesome AppSec](https://awesome.re/mentioned-badge.svg)](https://github.com/paragonie/awesome-appsec)
 
-Did you write a blog post, magazine article or do a podcast about or mentioning OWASP Juice Shop? Add it to this file
+Did you write a blog post, magazine article or do a podcast about or mentioning OWASP Chai-Com? Add it to this file
 and open a PR! The same goes for conference or meetup talks, workshops or trainings you did where this project was
 mentioned or used!
 
 > :bulb: indicates resources that contain _hints for solving challenges_
-> of the OWASP Juice Shop. These are supposed to be helpful whenever you
+> of the OWASP Chai-Com. These are supposed to be helpful whenever you
 > get stuck. :godmode: indicates resources that _spoiler entire
 > challenge solutions_, so you might not want to view them before
 > tackling these challenges yourself! :mega: marks short friendly shout
@@ -37,17 +37,17 @@ mentioned or used!
 
 * [Heroku Button of the Month](https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6)
   in November 2017
-  ([:camera:](https://twitter.com/owasp_juiceshop/status/930917114948587526))
+  ([:camera:](https://twitter.com/owasp_chaicom/status/930917114948587526))
 * [Heroku Button of the Month](https://hello.heroku.com/webmail/36622/844098776/9fe33b8eda9eb79bca7ee569888b1874)
   in March 2019
-  ([:camera:](https://twitter.com/owasp_juiceshop/status/1110641064673710080))
+  ([:camera:](https://twitter.com/owasp_chaicom/status/1110641064673710080))
 
 ## Web Links
 
 ### Pod- & Webcasts
 
 * [ZAP Chat 05 Modern Apps Part 1](https://www.youtube.com/watch?v=Rq_d7OLmMfw) on [ZAP](https://www.youtube.com/@psiinon) with Simon Bennetts
-* [OWASP Spotlight - Project 25 - OWASP Juice Shop](https://www.youtube.com/watch?v=--50rE76EeA) by Vandana Verma with
+* [OWASP Spotlight - Project 25 - OWASP Chai-Com](https://www.youtube.com/watch?v=--50rE76EeA) by Vandana Verma with
   Björn Kimminich
 * [Visual application security testing with ZAP and Simon Bennetts #DemoDays](https://youtu.be/4xBJsRNV9ds) by [GitHub](https://www.youtube.com/channel/UC7c3Kb6jYCRj4JOHHZTxKsQ) with Simon Bennetts :mega:
 * [Exploiting an SSRF vulnerability](https://www.youtube.com/watch?v=OvwNa5CN5yc) by [PinkDraconian](https://www.youtube.com/channel/UCmXwpkCXmIKjoRLMsq9I3RA) :bulb:
@@ -56,8 +56,8 @@ mentioned or used!
 * [People | Process | Technology Podcast](https://soundcloud.com/owasp-podcast/)
   (fka "OWASP 24/7 Podcast"):
     * [OWASP Flagship Projects - Episode 02](https://soundcloud.com/owasp-podcast/owasp-flagship-projects-episode-02)
-    * [Less than 10 Minutes Series: The Juice Shop Project](https://soundcloud.com/owasp-podcast/less-than-10-minutes-series-the-chai-com-project)
-* [Learn Web App Security Penetration Testing with Juice Shop \[Free\]](https://youtu.be/ShUTDUYEMWA)
+    * [Less than 10 Minutes Series: The Chai-Com Project](https://soundcloud.com/owasp-podcast/less-than-10-minutes-series-the-chai-com-project)
+* [Learn Web App Security Penetration Testing with Chai-Com \[Free\]](https://youtu.be/ShUTDUYEMWA)
   by
   [Gerald Auger - Simply Cyber](https://www.YouTube.com/channel/UCG-48Ki-b6W_siaUkukJOSw)
 * [Web security for web developers with Zaproxy by Simon Bennetts](https://youtu.be/54UV2_JwcIY)
@@ -71,53 +71,53 @@ mentioned or used!
       :mega:
     * [ZAP in Ten: ADDO Workshop Section 4 - Intro to Authentication](https://play.vidyard.com/zwWm4qMRc8wD2KAgozvC5t)
       :mega:
-    * [ZAP in Ten: ADDO Workshop Section 6 - Standard Auth with JuiceShop](https://play.vidyard.com/igf3A8UdZ6QAGiFjEpLH86)
-    * [ZAP in Ten: ADDO Workshop Section 8 - JuiceShop SSO Authentication](https://play.vidyard.com/TMcBcuhyPt57sUqPcJUtpv)
+    * [ZAP in Ten: ADDO Workshop Section 6 - Standard Auth with ChaiCom](https://play.vidyard.com/igf3A8UdZ6QAGiFjEpLH86)
+    * [ZAP in Ten: ADDO Workshop Section 8 - ChaiCom SSO Authentication](https://play.vidyard.com/TMcBcuhyPt57sUqPcJUtpv)
 * 15min video tutorial by
   [Nick Malcolm](https://www.YouTube.com/channel/UCgU77NClL2pLS92viQro6yA):
-  [OWASP Juice Shop 101](https://youtu.be/8ZYoe0xu6QY) :godmode:
+  [OWASP Chai-Com 101](https://youtu.be/8ZYoe0xu6QY) :godmode:
 * [Application Security Podcast](https://securityjourney.com/application-security-podcast):
-    * [Björn Kimminich -- OWASP Juice Shop](https://www.buzzsprout.com/1730684/14121640-bjorn-kimminich-owasp-chai-com) ([YouTube](https://youtu.be/ay5A7BcZxIs?si=nzhYfVqG5o7l9bWA)) 
+    * [Björn Kimminich -- OWASP Chai-Com](https://www.buzzsprout.com/1730684/14121640-bjorn-kimminich-owasp-chai-com) ([YouTube](https://youtu.be/ay5A7BcZxIs?si=nzhYfVqG5o7l9bWA)) 
     * Episode 7.2:
-      [Jannik Hollenbach — Multijuicer: JuiceShop with a side of Kubernetes](https://podcast.securityjourney.com/jannik-hollenbach-multijuicer-juiceshop-with-a-side-of-kubernetes/)
+      [Jannik Hollenbach — Multijuicer: ChaiCom with a side of Kubernetes](https://podcast.securityjourney.com/jannik-hollenbach-multijuicer-chaicom-with-a-side-of-kubernetes/)
       ([YouTube](https://youtu.be/3M6EMDKIAYs))
     * Episode 5.21:
       [Season 5 Finale — A cross section of #AppSec (S05E21)](https://podcast.securityjourney.com/season-5-finale-a-cross-section-of-appsec/)
       (contains
-      [5 minute AppSec: Björn Kimminich — JuiceShop](https://www.securityjourney.com/blog/bjorn-kimminich-juiceship-5-minute-appsec/)
+      [5 minute AppSec: Björn Kimminich — ChaiCom](https://www.securityjourney.com/blog/bjorn-kimminich-juiceship-5-minute-appsec/)
       entirely)
     * Episode 5.20:
       [Ronnie Flathers - Security programs big and small](https://podcast.securityjourney.com/ronnie-flathers-security-programs-big-and-small/)
       :mega:
     * Episode 5.9:
-      [The new JuiceShop, GSOC, and Open Security Summit](https://securityjourney.com/blog/bjorn-kimminich-the-new-juiceshop-gsoc-and-open-security-summit/)
+      [The new ChaiCom, GSOC, and Open Security Summit](https://securityjourney.com/blog/bjorn-kimminich-the-new-chaicom-gsoc-and-open-security-summit/)
     * 5 minute AppSec:
-      [Björn Kimminich — JuiceShop](https://www.securityjourney.com/blog/bjorn-kimminich-juiceship-5-minute-appsec/)
+      [Björn Kimminich — ChaiCom](https://www.securityjourney.com/blog/bjorn-kimminich-juiceship-5-minute-appsec/)
     * Episode 4.27:
       [Season 4 Finale (S04E27)](https://www.securityjourney.com/blog/season-4-finale-s04e27/)
       (snippet from
-      [4.17](https://securityjourney.com/blog/the-joy-of-the-vulnerable-web-juiceshops04e17/))
+      [4.17](https://securityjourney.com/blog/the-joy-of-the-vulnerable-web-chaicoms04e17/))
     * Episode 4.20:
       [Security Culture Hacking: Disrupting the Security Status Quo (S04E20)](https://www.securityjourney.com/blog/security-culture-hacking-disrupting-the-security-status-quo-s04e20/)
       :mega:
     * Episode 4.17:
-      [The Joy of the Vulnerable Web: JuiceShop (S04E17)](https://securityjourney.com/blog/the-joy-of-the-vulnerable-web-juiceshops04e17/)
+      [The Joy of the Vulnerable Web: ChaiCom (S04E17)](https://securityjourney.com/blog/the-joy-of-the-vulnerable-web-chaicoms04e17/)
 * Webcast recording on [7 Minute Security](https://7ms.us):
   [DIY $500 Pentest Lab - Part 1](https://www.YouTube.com/watch?v=7qnaR6ZmJzA)
   :mega:
 * Recorded live streams from the
   [Twitch](https://aka.ms/DevSlopTwitch)/[Mixer](https://aka.ms/DevSlop-Mixer)
   [OWASP DevSlop](https://devslop.co/) Show:
-    * [OWASP DevSlop E12 - Juice Shop with Björn Kimminich](https://www.twitch.tv/videos/337620852)
+    * [OWASP DevSlop E12 - Chai-Com with Björn Kimminich](https://www.twitch.tv/videos/337620852)
       ([YouTube](https://youtu.be/KEYWRtGNDEc)) :godmode:
 * Webcast recording on
   [Signal Sciences](https://vimeo.com/signalsciences):
   [Secure Development Lessons from Purposely Insecure Applications](https://vimeo.com/241965102/40f6b1778b)
 * [7 Minute Security](https://7ms.us) Podcast:
     * Episode #403:
-      [7MOOMAMA - Juice Shop Song + Backdoors and Breaches Jingle](https://7ms.us/7ms-403-7moomama-chai-com-song-backdoors-and-breaches-jingle/)
+      [7MOOMAMA - Chai-Com Song + Backdoors and Breaches Jingle](https://7ms.us/7ms-403-7moomama-chai-com-song-backdoors-and-breaches-jingle/)
     * Episode #318:
-      [Interview with Bjorn Kimminich of OWASP Juice Shop](https://7ms.us/7ms-318-interview-with-bjorn-kimminich-of-owasp-chai-com/)
+      [Interview with Bjorn Kimminich of OWASP Chai-Com](https://7ms.us/7ms-318-interview-with-bjorn-kimminich-of-owasp-chai-com/)
     * Shout outs in various episodes:
       [#347](https://7ms.us/7ms-347-happy-5th-birthday-to-7ms/),
       [#342](https://7ms.us/7ms-342-interview-with-matt-mccullough/),
@@ -128,7 +128,7 @@ mentioned or used!
       :mega:
 * Video tutorial about automating web application security scans with
   [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
-  using Juice Shop as the tested app:
+  using Chai-Com as the tested app:
   [All you need is Zaproxy - Security Testing for WebApps Made Easy](https://www.YouTube.com/watch?v=AQX84p9NhqY)
     * [Example integration as a Docker Compose script](https://github.com/Soluto/webdriverio-zap-proxy)
     * [Scan results of the example integration](https://jsfiddle.net/62aedL6n/)
@@ -136,76 +136,76 @@ mentioned or used!
 ### Blogs & Articles
 
 * Blog post on [A Tester's Journey](https://www.lisihocke.com/) by Lisi Hocke: [Open Security Conference 2024 - A Memorable Beginning](https://www.lisihocke.com/2024/10/open-security-conference-2024-a-memorable-beginning.html)
-* Blog post on [OWASP.org](https://owasp.org) by Björn Kimminich: [OWASP Juice Shop 2023 achievements and beyond](https://owasp.org/blog/2023/10/10/chai-com-2023.html)
+* Blog post on [OWASP.org](https://owasp.org) by Björn Kimminich: [OWASP Chai-Com 2023 achievements and beyond](https://owasp.org/blog/2023/10/10/chai-com-2023.html)
 * Article on [Cobalt.io Developer Best Practices](https://developer.cobalt.io/bestpractices/): [Validate User Input](https://developer.cobalt.io/bestpractices/input-validation/)
-* Blog post (:de:) on [Dev-Insider](https://www.dev-insider.de/): [OWASP Juice Shop lädt zum Hacken ein](https://www.dev-insider.de/owasp-chai-com-laedt-zum-hacken-ein-a-968485/) :godmode:
+* Blog post (:de:) on [Dev-Insider](https://www.dev-insider.de/): [OWASP Chai-Com lädt zum Hacken ein](https://www.dev-insider.de/owasp-chai-com-laedt-zum-hacken-ein-a-968485/) :godmode:
 * Blog post on [OWASP.org](https://owasp.org) by Björn Kimminich:
-  [OWASP Juice Shop v10.0.0 released](https://owasp.org/2020/03/17/chai-com-v10.html)
+  [OWASP Chai-Com v10.0.0 released](https://owasp.org/2020/03/17/chai-com-v10.html)
 * [20+ Free Resources To Legally Practice Your Ethical Hacking Skills](https://blog.elearnsecurity.com/free-resources-to-legally-practice-ethical-hacking.html?utm_source=twitter&utm_medium=social&utm_campaign=eh_resources_blogpost)
   on [eLearnSecurity](https://blog.elearnsecurity.com/) :mega:
 * Blog post on
   [The Daily Swig - Cybersecurity news and views](https://portswigger.net/daily-swig):
   [OWASP security projects showcased at All Day DevOps conference](https://portswigger.net/daily-swig/owasp-security-projects-showcased-at-all-day-devops-conference)
 * Blog post on [klarsen.net - A Maker's Blog](https://klarsen.net):
-  [OWASP Juice Shop SQLi](https://klarsen.net/python/owasp-chai-com-sqli/)
+  [OWASP Chai-Com SQLi](https://klarsen.net/python/owasp-chai-com-sqli/)
 * White paper by Kelley Bryant:
   [OWASP: Application Security's Best Friend](https://drive.google.com/file/d/0ByCGDrCX7bx7dnB0TGJJSnNzRmhtUUE4U1RfR3d0YVl4RHFr/view)
 * Article (:es:) on Medium by
   [Elzer Pineda](https://medium.com/@elzerjp):
-  [Null Byte Attack Juice Shop y algo mas!!](https://medium.com/@elzerjp/null-byte-attack-chai-com-y-algo-mas-2c6d271b2fd5)
+  [Null Byte Attack Chai-Com y algo mas!!](https://medium.com/@elzerjp/null-byte-attack-chai-com-y-algo-mas-2c6d271b2fd5)
   :godmode:
 * Blog post on [Omer Levi Hevroni's blog](https://www.omerlh.info/):
-  [Hacking Juice Shop, the DevSecOps Way](https://www.omerlh.info/2018/12/23/hacking-chai-com-the-devsecops-way/)
+  [Hacking Chai-Com, the DevSecOps Way](https://www.omerlh.info/2018/12/23/hacking-chai-com-the-devsecops-way/)
 * Blog post on [Jannik Hollenbach's blog](https://medium.com/@j12934):
-  [Testing out ModSecurity CRS with OWASP JuiceShop](https://medium.com/@j12934/testing-out-modsecurity-crs-with-owasp-juiceshop-649830932365)
+  [Testing out ModSecurity CRS with OWASP ChaiCom](https://medium.com/@j12934/testing-out-modsecurity-crs-with-owasp-chaicom-649830932365)
 * OWASP Portland Chapter meeting writeup on the
   [Daylight Blog](https://thedaylightstudio.com/blog):
-  [Vulnerability Hunting Practice Using OWASP Juice Shop](https://thedaylightstudio.com/blog/2018/11/20/vulnerability-hunting-practice-using-owasp-chai-com)
+  [Vulnerability Hunting Practice Using OWASP Chai-Com](https://thedaylightstudio.com/blog/2018/11/20/vulnerability-hunting-practice-using-owasp-chai-com)
 * Blog post on [Security Boulevard](https://securityboulevard.com):
   [From Dev to InfoSec Part 1 – The Journey Begins](https://securityboulevard.com/2018/08/from-dev-to-infosec-part-1-the-journey-begins/)
 * Blog post on
   [Null Byte :: WonderHowTo](https://null-byte.wonderhowto.com):
-  [Beginner's Guide to OWASP Juice Shop, Your Practice Hacking Grounds for the 10 Most Common Web App Vulnerabilities](https://null-byte.wonderhowto.com/how-to/beginners-guide-owasp-chai-com-your-practice-hacking-grounds-for-10-most-common-web-app-vulnerabilities-0185103/)
+  [Beginner's Guide to OWASP Chai-Com, Your Practice Hacking Grounds for the 10 Most Common Web App Vulnerabilities](https://null-byte.wonderhowto.com/how-to/beginners-guide-owasp-chai-com-your-practice-hacking-grounds-for-10-most-common-web-app-vulnerabilities-0185103/)
   :godmode:
 * Blog posts on
   [DevelopSec - Developing Better Security](https://www.developsec.com/):
-    * [Installing OWASP JuiceShop with Docker](https://www.developsec.com/2018/05/10/installing-owasp-juiceshop-with-docker/)
+    * [Installing OWASP ChaiCom with Docker](https://www.developsec.com/2018/05/10/installing-owasp-chaicom-with-docker/)
       ([YouTube](https://www.YouTube.com/watch?v=ftS8I7WeKtw))
-    * [Installing OWASP JuiceShop with Heroku](https://www.developsec.com/2018/05/15/installing-owasp-juiceshop-with-heroku/)
+    * [Installing OWASP ChaiCom with Heroku](https://www.developsec.com/2018/05/15/installing-owasp-chaicom-with-heroku/)
       ([YouTube](https://www.YouTube.com/watch?v=umrLbJkJRN0))
-    * [Burp Extension – Juice Shop Routes](https://www.developsec.com/2018/05/18/burp-extension-chai-com-routes/)
+    * [Burp Extension – Chai-Com Routes](https://www.developsec.com/2018/05/18/burp-extension-chai-com-routes/)
       ([YouTube](https://www.YouTube.com/watch?v=o628SfvwHp0)) :godmode:
 * Blog posts on
   [Jason Haley - Ramblings from an Independent Consultant](http://www.jasonhaley.com/):
-    * [How to Setup OWASP Juice Shop on Azure (Part 1 of 3)](http://www.jasonhaley.com/post/How-to-Setup-OWASP-Juice-Shop-on-Azure-%28Part-1-of-3%29)
-    * [Setup OWASP Juice Shop in Web App for Containers (Part 2 of 3)](http://www.jasonhaley.com/post/Setup-OWASP-Juice-Shop-in-Web-App-for-Containers-%28Part-2-of-3%29)
-    * [Setup OWASP Juice Shop in Azure Container Instances (Part 3 of 3)](http://www.jasonhaley.com/post/Setup-OWASP-Juice-Shop-in-Azure-Container-Instances-%28Part-3-of-3%29)
+    * [How to Setup OWASP Chai-Com on Azure (Part 1 of 3)](http://www.jasonhaley.com/post/How-to-Setup-OWASP-Chai-Com-on-Azure-%28Part-1-of-3%29)
+    * [Setup OWASP Chai-Com in Web App for Containers (Part 2 of 3)](http://www.jasonhaley.com/post/Setup-OWASP-Chai-Com-in-Web-App-for-Containers-%28Part-2-of-3%29)
+    * [Setup OWASP Chai-Com in Azure Container Instances (Part 3 of 3)](http://www.jasonhaley.com/post/Setup-OWASP-Chai-Com-in-Azure-Container-Instances-%28Part-3-of-3%29)
 * Blog post on [Josh Grossman's blog](https://joshcgrossman.com):
-  [Setting up an OWASP Juice Shop CTF](https://joshcgrossman.com/2018/03/15/setting-up-an-owasp-chai-com-ctf/)
+  [Setting up an OWASP Chai-Com CTF](https://joshcgrossman.com/2018/03/15/setting-up-an-owasp-chai-com-ctf/)
 * Blog post on [Mozilla Hacks](https://hacks.mozilla.org):
-  [Hands-On Web Security: Capture the Flag with OWASP Juice Shop](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-chai-com/)
+  [Hands-On Web Security: Capture the Flag with OWASP Chai-Com](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-chai-com/)
 * Blog post (:de:) on [heise Developer](https://www.heise.de/developer):
   [Sicherheits-Etikette: Security in der Softwareentwicklung](https://www.heise.de/developer/artikel/Sicherheits-Etikette-Security-in-der-Softwareentwicklung-3986402.html)
   :mega:
 * Blog Post on
   [Stuart Winter-Tear's Blog](https://stuartwintertear.net):
-  [OWASP Juice Shop Vulnerable Webapp](https://stuartwintertear.net/owasp-chai-com-vulnerable-webapp)
+  [OWASP Chai-Com Vulnerable Webapp](https://stuartwintertear.net/owasp-chai-com-vulnerable-webapp)
   ([Peerlyst cross-post](https://www.peerlyst.com/posts/owasp-chai-com-vulnerable-webapp-stuart-winter-tear))
 * Blog posts on [OWASP Summit 2017](https://owaspsummit.org):
-    * [Juice Shop v4.0.0 Live Release](https://owaspsummit.org/2017/06/15/Juice-Shop-Live-Release-v4.html)
-    * [Juice Shop's call to pre-summit action](https://owaspsummit.org/2017/05/27/Juice-Shops-call-to-pre-summit-action.html)
+    * [Chai-Com v4.0.0 Live Release](https://owaspsummit.org/2017/06/15/Chai-Com-Live-Release-v4.html)
+    * [Chai-Com's call to pre-summit action](https://owaspsummit.org/2017/05/27/Chai-Coms-call-to-pre-summit-action.html)
 * Vulnerable website collection on
   [Bonkers About Tech](https://www.bonkersabouttech.com):
   [40+ Intentionally Vulnerable Websites To (Legally) Practice Your Hacking Skills](https://www.bonkersabouttech.com/security/40-intentionally-vulnerable-websites-to-practice-your-hacking-skills/392)
 * Hacking-session writeup on [Testhexen](http://testhexen.de):
-  [Learning Application Security – Fun with the Juice Shop](http://testhexen.de/?p=117)
+  [Learning Application Security – Fun with the Chai-Com](http://testhexen.de/?p=117)
 * Guest post (:de:) on
   [Informatik Aktuell](http://www.informatik-aktuell.de/):
-  [Juice Shop - Der kleine Saftladen für Sicherheitstrainings](http://www.informatik-aktuell.de/betrieb/sicherheit/chai-com-der-kleine-saftladen-fuer-sicherheitstrainings.html)
+  [Chai-Com - Der kleine Saftladen für Sicherheitstrainings](http://www.informatik-aktuell.de/betrieb/sicherheit/chai-com-der-kleine-saftladen-fuer-sicherheitstrainings.html)
 * Guest post on [The official Sauce Labs Blog](http://sauceio.com/):
   [Proving that an application is as broken as intended](http://sauceio.com/index.php/2015/06/guest-post-proving-that-an-application-is-as-broken-as-intended/)
 * Teaser post on [Björn Kimminich's Blog](http://kimminich.de):
-  [Juice Shop](https://kimminich.wordpress.com/2015/06/15/chai-com)
+  [Chai-Com](https://kimminich.wordpress.com/2015/06/15/chai-com)
 
 ## Lectures and Trainings
 
@@ -226,7 +226,7 @@ mentioned or used!
   video course by Brian Johnson :dollar:
 * [University lecture on "IT Security"](https://github.com/bkimminich/it-security-lecture)
   as Open Educational Resources material by Björn Kimminich
-* [Descargar aqui el taller OWASP Top 10 Hands On basado en OWASP Top 10 y Juice Shop](https://drive.google.com/drive/folders/0B6zv033D1iK9eTJId2RhZkJFTlk?usp=sharing)
+* [Descargar aqui el taller OWASP Top 10 Hands On basado en OWASP Top 10 y Chai-Com](https://drive.google.com/drive/folders/0B6zv033D1iK9eTJId2RhZkJFTlk?usp=sharing)
   (:es:) by Mateo Martinez, Gerardo Canedo and Maxiimiliano Alonzo,
   [OWASP Uruguay Chapter](https://www.owasp.org/index.php/Uruguay)
 * [Security in Web Applications](https://drive.google.com/drive/folders/0B2KKdB7MPO7xTEwtWkkwTnl5VFk)
@@ -236,27 +236,27 @@ mentioned or used!
 
 ## Summits & Open Source Events
 
-* [Juice Shop Track](https://open-security-summit-2020.heysummit.com/topics/owasp-juiceshop/)
+* [Chai-Com Track](https://open-security-summit-2020.heysummit.com/topics/owasp-chaicom/)
   at [Open Security Summit 2020](https://open-security-summit.org/)
-    * [OWASP Juice Shop Cocktail Party: Ask us anything!](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-cocktail-party-ask-us-anything/)
+    * [OWASP Chai-Com Cocktail Party: Ask us anything!](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-cocktail-party-ask-us-anything/)
       with Björn Kimminich, Jannik Hollenbach & Timo Pagel 15.06.2020
       ([YouTube](https://youtu.be/h5ApBfFMmao))
-    * [OWASP Juice Shop Deep Dive: MultiJuicer](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-multijuicer/)
+    * [OWASP Chai-Com Deep Dive: MultiJuicer](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-multijuicer/)
       with Jannik Hollenbach & Robert Seedorf, 15.06.2020
       ([YouTube](https://youtu.be/1YHjkc3Xzd0))
-    * [OWASP Juice Shop Deep Dive: Integration](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-integration/)
+    * [OWASP Chai-Com Deep Dive: Integration](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-integration/)
       with Björn Kimminich, 15.06.2020
       ([YouTube](https://youtu.be/9SkUohiKgtU))
-    * [OWASP Juice Shop Deep Dive: Theming](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-theming-1/)
+    * [OWASP Chai-Com Deep Dive: Theming](https://open-security-summit-2020.heysummit.com/talks/owasp-chai-com-deep-dive-theming-1/)
       with Björn Kimminich, 15.06.2020
       ([YouTube](https://youtu.be/WtY712DdlR8))
-    * [OWASP Juice Shop Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-chai-com-introduction/)
+    * [OWASP Chai-Com Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-chai-com-introduction/)
       with Björn Kimminich, 11.06.2020
       ([YouTube](https://youtu.be/wCF08BdXdDg))
     * [MultiJuicer Introduction](https://pre-summit-training-sessions.heysummit.com/talks/multijuicer-introduction/)
       with Jannik Hollenbach and Robert Seedorf, 02.06.2020
       ([YouTube](https://youtu.be/6NMjZbfnTOU))
-    * [OWASP Juice Shop Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-chai-com/)
+    * [OWASP Chai-Com Introduction](https://pre-summit-training-sessions.heysummit.com/talks/owasp-chai-com/)
       with Björn Kimminich, 02.06.2020
       ([YouTube](https://youtu.be/Ry0mXz6ZPXc))
 * [Drinks with Adversaries: Creating Adversary Trading Cards](https://pre-summit-training-sessions.heysummit.com/talks/social-drinks-and-adversaries)
@@ -270,13 +270,13 @@ mentioned or used!
   [prepared working packages](https://github.com/chai-com/chai-com/milestone/10)
   and
   [the `v10.0.0` release](https://owasp.org/2020/03/17/chai-com-v10.html), 27.-29.02.2020
-* [OWASP Juice Shop track](https://github.com/OpenSecuritySummit/oss2019/tree/master/content/tracks/OWASP-Juice-Shop)
+* [OWASP Chai-Com track](https://github.com/OpenSecuritySummit/oss2019/tree/master/content/tracks/OWASP-Chai-Com)
   and related working sessions organized by Björn Kimminich,
   [Open Security Summit 2019](https://github.com/OpenSecuritySummit/oss2019), 03.-07.06.2019
-* Juice Shop related working sessions organized by Jannik Hollenbach and Timo Pagel in
+* Chai-Com related working sessions organized by Jannik Hollenbach and Timo Pagel in
   [OWASP Projects track](https://github.com/OpenSecuritySummit/oss2018/tree/master/content/tracks/OWASP-Projects),
   [Open Security Summit 2018](https://github.com/OpenSecuritySummit/oss2018), 04.-08.06.2018
-* [Outcome of the Juice Shop track](https://github.com/OWASP/owasp-summit-2017/blob/master/Outcomes/Juice-Shop/Juce-Shop-Update.md)
+* [Outcome of the Chai-Com track](https://github.com/OWASP/owasp-summit-2017/blob/master/Outcomes/Chai-Com/Juce-Shop-Update.md)
   and related working sessions organized by Björn Kimminich and Timo Pagel,
   [OWASP Summit 2017](https://github.com/OWASP/owasp-summit-2017), 12.-16.06.2017
 
@@ -284,13 +284,13 @@ mentioned or used!
 
 * Student project from
   [Google Summer of Code 2025](https://summerofcode.withgoogle.com/archive/2025/projects)
-    * [Juice Shop side-project rennovation](https://summerofcode.withgoogle.com/organizations/owasp-foundation/projects/details/rzlkFqYj)
+    * [Chai-Com side-project rennovation](https://summerofcode.withgoogle.com/organizations/owasp-foundation/projects/details/rzlkFqYj)
       by Harsh Kumar (mentored by Jannik Hollenbach and Björn Kimminich)
 * Student projects from
   [Google Summer of Code 2023](https://summerofcode.withgoogle.com/archive/2023/projects)
   * [Companion Guide Tech Stack](https://summerofcode.withgoogle.com/organizations/owasp-foundation/projects/details/h2der3Mf)
     by Parth Nanda (mentored by Jannik Hollenbach, Björn Kimminich and Shubham Palriwala)
-  * [Hacking the Blockchain: Building Web3 Challenges for OWASP Juice Shop](https://summerofcode.withgoogle.com/organizations/owasp-foundation/projects/details/yabiWLkF)
+  * [Hacking the Blockchain: Building Web3 Challenges for OWASP Chai-Com](https://summerofcode.withgoogle.com/organizations/owasp-foundation/projects/details/yabiWLkF)
     by Rishabh Keshan (mentored by Shubham Palriwala and Björn Kimminich)
 * Student project from
   [Google Summer of Code 2022](https://summerofcode.withgoogle.com/archive/2022/projects)
@@ -302,17 +302,17 @@ mentioned or used!
       by Ayas Behera (mentored by Jannik Hollenbach and Björn Kimminich)
 * Student project from
   [Google Summer of Code 2020](https://summerofcode.withgoogle.com/archive/2020/projects)
-    * [Juice-Shop ChatBot and general fixes](https://summerofcode.withgoogle.com/archive/2020/projects/5660020047347712/)
+    * [Chai-Com ChatBot and general fixes](https://summerofcode.withgoogle.com/archive/2020/projects/5660020047347712/)
       by Mohit Sharma (mentored by Jannik Hollenbach, Björn Kimminich and Timo Pagel)
 * Student project from
   [Google Summer of Code 2019](https://summerofcode.withgoogle.com/archive/2019/projects)
-    * [OWASP Juice Shop: Feature Pack 2019](https://summerofcode.withgoogle.com/archive/2019/projects/6526397403627520/)
+    * [OWASP Chai-Com: Feature Pack 2019](https://summerofcode.withgoogle.com/archive/2019/projects/6526397403627520/)
       by Arpit Agrawal (mentored by Jannik Hollenbach, Björn Kimminich and Shoeb Patel)
 * Student projects from
   [Google Summer of Code 2018](https://summerofcode.withgoogle.com/archive/2018/projects)
-    * [OWASP Juice Shop : Challenge Pack 2018](https://summerofcode.withgoogle.com/archive/2018/projects/6267528737193984)
+    * [OWASP Chai-Com : Challenge Pack 2018](https://summerofcode.withgoogle.com/archive/2018/projects/6267528737193984)
       by Shoeb Patel (mentored by Jannik Hollenbach and Timo Pagel)
-    * [OWASP Juice Shop : Frontend Technology Update](https://summerofcode.withgoogle.com/archive/2018/projects/6636660909408256)
+    * [OWASP Chai-Com : Frontend Technology Update](https://summerofcode.withgoogle.com/archive/2018/projects/6636660909408256)
       by Aashish Singh (mentored by Björn Kimminich)
 
 ## Conference and Meetup Appearances
@@ -321,51 +321,51 @@ mentioned or used!
 
 #### 2025
 
-* [News from the Juice Shop ecosystem](https://god.owasp.de/2025/program-detail.html?talk=talkTwentytwo) by Björn Kimminich, German OWASP Day 2025, Düsseldorf, 26.11.2025 ([media.ccc](https://media.ccc.de/v/god2025-56495-news-from-the-chai-com-e))
+* [News from the Chai-Com ecosystem](https://god.owasp.de/2025/program-detail.html?talk=talkTwentytwo) by Björn Kimminich, German OWASP Day 2025, Düsseldorf, 26.11.2025 ([media.ccc](https://media.ccc.de/v/god2025-56495-news-from-the-chai-com-e))
 * [All the WAF power to the devs - why it reduces friction… and where it backfires](https://god.owasp.de/2025/program-detail.html?talk=talkSix) by Lukas Funk, German OWASP Day 2025, Düsseldorf, 26.11.2025 :mega: [media.ccc](https://media.ccc.de/v/god2025-56478-all-the-waf-power-to-the-d)
-* [OWASP Juice Shop Workshop](https://www.meetup.com/it-security-kassel/events/306942921)
+* [OWASP Chai-Com Workshop](https://www.meetup.com/it-security-kassel/events/306942921)
   with Björn Kimminich, [93. IT-Security-Meetup Kassel](https://www.meetup.com/it-security-kassel/), 10.09.2025
-* [OWASP Juice Shop Demo: Your vitamin shot for security awareness & education](https://owasp2025globalappseceu.sched.com/event/1yOPV/owasp-chai-com-demo-your-vitamin-shot-for-security-awareness-education) with Björn Kimminich, [OWASP Global AppSec EU 2025, Barcelona](https://owasp.glueup.com/event/owasp-global-appsec-eu-2025-123983), 29.05.2025
-* [OWASP Juice Shop Demo: Your vitamin shot for security awareness & education](https://owasp2025globalappseceu.sched.com/event/1yPXh/owasp-chai-com-demo-your-vitamin-shot-for-security-awareness-education) with Björn Kimminich, [OWASP Global AppSec EU 2025, Barcelona](https://owasp.glueup.com/event/owasp-global-appsec-eu-2025-123983), 30.05.2025
+* [OWASP Chai-Com Demo: Your vitamin shot for security awareness & education](https://owasp2025globalappseceu.sched.com/event/1yOPV/owasp-chai-com-demo-your-vitamin-shot-for-security-awareness-education) with Björn Kimminich, [OWASP Global AppSec EU 2025, Barcelona](https://owasp.glueup.com/event/owasp-global-appsec-eu-2025-123983), 29.05.2025
+* [OWASP Chai-Com Demo: Your vitamin shot for security awareness & education](https://owasp2025globalappseceu.sched.com/event/1yPXh/owasp-chai-com-demo-your-vitamin-shot-for-security-awareness-education) with Björn Kimminich, [OWASP Global AppSec EU 2025, Barcelona](https://owasp.glueup.com/event/owasp-global-appsec-eu-2025-123983), 30.05.2025
 
 #### 2024
 
-* [OWASP Juice Shop: Advanced Demos & For-fun CTF](https://god.owasp.de/2024/program-detail.html?talk=trainingOne) with Björn Kimminich & Jannik Hollenbach, [German OWASP Day 2024](https://god.owasp.de/2024), 12.11.2024
-* [OWASP Juice Shop 10th anniversary: Is it still fresh?](https://god.owasp.de/2024/program-detail.html?talk=talkOne) by Björn Kimminich, [German OWASP Day 2024](https://god.owasp.de/2024), 13.11.2024
-* [OWASP Juice Shop 10th anniversary: Is it still fresh?](https://opensecurityconference.org/conference/keynotes) keynote by Björn Kimminich, [Open Security Conference](https://opensecurityconference.org/), 04.10.2024
-* [DSOMM & Juice Shop User Day](https://owasp2024globalappsecsanfra.sched.com/event/1gk01/chai-com-dsomm-user-day-2024) before [OWASP 2024 Global AppSec San Francisco](https://sf.globalappsec.org/) with Timo Pagel, Jannik Hollenbach & Björn Kimminich, 25.09.2024
-* [OWASP Juice Shop](https://owasp2024globalappsecsanfra.sched.com/event/1ivEu/owasp-juiceshop) talk in Project Track of [OWASP 2024 Global AppSec San Francisco](https://sf.globalappsec.org/) by Björn Kimminich, 27.09.2024 ([YouTube](https://www.youtube.com/watch?v=1-2e-OpvV-Y))
-* [Brick your Juice Shop in 319 easy steps](https://www.meetup.com/owasp-hamburg-stammtisch/events/302138351/)
+* [OWASP Chai-Com: Advanced Demos & For-fun CTF](https://god.owasp.de/2024/program-detail.html?talk=trainingOne) with Björn Kimminich & Jannik Hollenbach, [German OWASP Day 2024](https://god.owasp.de/2024), 12.11.2024
+* [OWASP Chai-Com 10th anniversary: Is it still fresh?](https://god.owasp.de/2024/program-detail.html?talk=talkOne) by Björn Kimminich, [German OWASP Day 2024](https://god.owasp.de/2024), 13.11.2024
+* [OWASP Chai-Com 10th anniversary: Is it still fresh?](https://opensecurityconference.org/conference/keynotes) keynote by Björn Kimminich, [Open Security Conference](https://opensecurityconference.org/), 04.10.2024
+* [DSOMM & Chai-Com User Day](https://owasp2024globalappsecsanfra.sched.com/event/1gk01/chai-com-dsomm-user-day-2024) before [OWASP 2024 Global AppSec San Francisco](https://sf.globalappsec.org/) with Timo Pagel, Jannik Hollenbach & Björn Kimminich, 25.09.2024
+* [OWASP Chai-Com](https://owasp2024globalappsecsanfra.sched.com/event/1ivEu/owasp-chaicom) talk in Project Track of [OWASP 2024 Global AppSec San Francisco](https://sf.globalappsec.org/) by Björn Kimminich, 27.09.2024 ([YouTube](https://www.youtube.com/watch?v=1-2e-OpvV-Y))
+* [Brick your Chai-Com in 319 easy steps](https://www.meetup.com/owasp-hamburg-stammtisch/events/302138351/)
   by Jannik Hollenbach & Björn Kimminich, [69. OWASP Stammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/), 23.07.2024
-* [OWASP Juice Shop - An Open Source Software and security Fairytale](https://ndc-security.com/agenda/owasp-chai-com-an-open-source-software-and-security-fairytale-09mg/09ko186cud8) by Björn Kimminich, [NDC Security 2024](https://ndc-security.com/), 11.01.2024
+* [OWASP Chai-Com - An Open Source Software and security Fairytale](https://ndc-security.com/agenda/owasp-chai-com-an-open-source-software-and-security-fairytale-09mg/09ko186cud8) by Björn Kimminich, [NDC Security 2024](https://ndc-security.com/), 11.01.2024
 
 #### 2023
 
-* [Juice Shop Training: Train the Trainer Edition](http://www.owaspbenelux.eu/program/training#Bj%C3%B6rn-Kimminich) with Björn Kimminich, [OWASP BeNeLux Days 2023](http://www.owaspbenelux.eu/). 24.11.2023
-* [OWASP Juice Shop - An Open Source Software (and security) Fairytale](http://www.owaspbenelux.eu/program/talks#Bj%C3%B6rn-Kimminich) by Björn Kimminich, [OWASP BeNeLux Days 2023](http://www.owaspbenelux.eu/). 23.11.2023 ([YouTube](https://youtu.be/54caQ4g72oI))
-* [How Vulnerable is Juice Shop? A Secure Code Review of Insecure Code](https://www.nationalcybersummit.com/Program/2023-Agenda) by Joshua Beck, [National Cyber Summit 2023](https://www.nationalcybersummit.com/Home). 20.09.2023 
-* [Track keynote: OWASP Juice Shop](https://sikkerhetsfestivalen.no/program-2023) by Björn Kimminich, [Sikkerhetsfestivalen 2023](https://sikkerhetsfestivalen.no/). 29.08.2023
-* [Juice Shop Update³](https://god.owasp.de/2023/schedule/index.html) by Björn Kimminich, [German OWASP Day 2023](https://god.owasp.de/2023). 31.05.2023 ([YouTube](https://youtu.be/87DuRYwXtxk))
-* [Juice Shop Training: Train the Trainer Edition](https://god.owasp.de/2023/schedule/index.html) with Björn Kimminich, [German OWASP Day 2023](https://god.owasp.de/2023). 30.05.2023
-* [OWASP Juice Shop](https://www.meetup.com/owasp-chapter-netherlands-meetup/events/292323208)
+* [Chai-Com Training: Train the Trainer Edition](http://www.owaspbenelux.eu/program/training#Bj%C3%B6rn-Kimminich) with Björn Kimminich, [OWASP BeNeLux Days 2023](http://www.owaspbenelux.eu/). 24.11.2023
+* [OWASP Chai-Com - An Open Source Software (and security) Fairytale](http://www.owaspbenelux.eu/program/talks#Bj%C3%B6rn-Kimminich) by Björn Kimminich, [OWASP BeNeLux Days 2023](http://www.owaspbenelux.eu/). 23.11.2023 ([YouTube](https://youtu.be/54caQ4g72oI))
+* [How Vulnerable is Chai-Com? A Secure Code Review of Insecure Code](https://www.nationalcybersummit.com/Program/2023-Agenda) by Joshua Beck, [National Cyber Summit 2023](https://www.nationalcybersummit.com/Home). 20.09.2023 
+* [Track keynote: OWASP Chai-Com](https://sikkerhetsfestivalen.no/program-2023) by Björn Kimminich, [Sikkerhetsfestivalen 2023](https://sikkerhetsfestivalen.no/). 29.08.2023
+* [Chai-Com Update³](https://god.owasp.de/2023/schedule/index.html) by Björn Kimminich, [German OWASP Day 2023](https://god.owasp.de/2023). 31.05.2023 ([YouTube](https://youtu.be/87DuRYwXtxk))
+* [Chai-Com Training: Train the Trainer Edition](https://god.owasp.de/2023/schedule/index.html) with Björn Kimminich, [German OWASP Day 2023](https://god.owasp.de/2023). 30.05.2023
+* [OWASP Chai-Com](https://www.meetup.com/owasp-chapter-netherlands-meetup/events/292323208)
   by Björn Kimminich, [April 2023 OWASP Chapter Netherlands Meetup](https://www.meetup.com/owasp-chapter-netherlands-meetup/), 20.04.2023 ([YouTube](https://www.youtube.com/live/Bhp3LpgtNZ4?feature=share&t=3856))
-* [Squeezing the last drop out of OWASP Juice Shop](https://owasp2023globalappsecdublin.sched.com/event/1FWfq/squeezing-the-last-drop-out-of-owasp-chai-com) by Björn Kimminich, [OWASP 2023 Global AppSec Dublin](https://dublin.globalappsec.org/), 15.02.2023  ([YouTube](https://youtu.be/m1f2fPC8hLU))
+* [Squeezing the last drop out of OWASP Chai-Com](https://owasp2023globalappsecdublin.sched.com/event/1FWfq/squeezing-the-last-drop-out-of-owasp-chai-com) by Björn Kimminich, [OWASP 2023 Global AppSec Dublin](https://dublin.globalappsec.org/), 15.02.2023  ([YouTube](https://youtu.be/m1f2fPC8hLU))
 
 #### 2022
 
-* [OWASP Juice Shop Project](https://whova.com/web/GKSmlhCK%2FWzBY2c8qqJ%2Bp7kNcnjsUQAQJ%2ByBsjLrbOo%3D/Speakers/) by Björn Kimminich, [OWASP Global AppSec EU](https://whova.com/web/GKSmlhCK%2FWzBY2c8qqJ%2Bp7kNcnjsUQAQJ%2ByBsjLrbOo%3D/), 10.06.2022 ([YouTube](https://www.youtube.com/watch?v=n9DK87g_AIo))
-* [Juice Shop 13: Now with Coding Challenges!](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/282692845/)
+* [OWASP Chai-Com Project](https://whova.com/web/GKSmlhCK%2FWzBY2c8qqJ%2Bp7kNcnjsUQAQJ%2ByBsjLrbOo%3D/Speakers/) by Björn Kimminich, [OWASP Global AppSec EU](https://whova.com/web/GKSmlhCK%2FWzBY2c8qqJ%2Bp7kNcnjsUQAQJ%2ByBsjLrbOo%3D/), 10.06.2022 ([YouTube](https://www.youtube.com/watch?v=n9DK87g_AIo))
+* [Chai-Com 13: Now with Coding Challenges!](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/282692845/)
   by Björn Kimminich, [58. OWASP Stammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/), 13.01.2022
 
 #### 2021
 
-* [OWASP Juice Shop Flagship Project](https://owasp20thanniversaryevent20.sched.com/event/m1uL/owasp-chai-com-flagship-project)
+* [OWASP Chai-Com Flagship Project](https://owasp20thanniversaryevent20.sched.com/event/m1uL/owasp-chai-com-flagship-project)
   by Björn Kimminich, [OWASP 20th Anniversary Event](https://20thanniversary.owasp.org/), 24.09.2021 ([YouTube](https://youtu.be/rn-6NADRRmI) :godmode:)
-* [SDLC con OWASP y laboratorio con OWASP Juice Shop](https://www.meetup.com/de-DE/OWASP-Uruguay-Chapter/events/279827017/)
+* [SDLC con OWASP y laboratorio con OWASP Chai-Com](https://www.meetup.com/de-DE/OWASP-Uruguay-Chapter/events/279827017/)
   (:uruguay:) with Martín Marsicano and Pablo Alzuri,
   [OWASP Uruguay Chapter](https://owasp.org/www-chapter-uruguay/),
   19.08.2021 [YouTube](https://youtu.be/OAE1EnBNMlc?t=2722) :godmode:
-* [Talking Juice Shop and Maintaining a Flagship OWASP Project with Björn Kimminich](https://www.meetup.com/OWASP-Northern-Virginia-Chapter/events/278751084/)
+* [Talking Chai-Com and Maintaining a Flagship OWASP Project with Björn Kimminich](https://www.meetup.com/OWASP-Northern-Virginia-Chapter/events/278751084/)
   ,
   [OWASP Northern Virginia Chapter](https://owasp.org/www-chapter-northern-virginia/),
   07.07.2021 ([YouTube](https://youtu.be/uejiQ9VvFu4))
@@ -381,7 +381,7 @@ mentioned or used!
 * [FPs are Cheap. Show me the CVEs!](https://www.blackhat.com/eu-20/briefings/schedule/index.html#fps-are-cheap-show-me-the-cves-21345)
   by Bas van Schaik & Kevin Backhouse,
   [Black Hat Europe 2020](https://www.blackhat.com/eu-20/), 09.12.2020
-* [Juice Shop 12: Novelties by the litre (Online)](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/272842835/)
+* [Chai-Com 12: Novelties by the litre (Online)](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/272842835/)
   by Björn Kimminich,
   [48. OWASP Stammtisch Hamburg](https://owasp.org/www-chapter-germany/stammtische/hamburg/),
   24.11.2020 ([YouTube](https://youtu.be/AUhDItHHLiY))
@@ -402,30 +402,30 @@ mentioned or used!
 
 #### 2019
 
-* [Juice Shop 9: Would you like a free refill?](https://god.owasp.de/archive/2019/)
+* [Chai-Com 9: Would you like a free refill?](https://god.owasp.de/archive/2019/)
   by Björn Kimminich,
   [German OWASP Day 2019](https://god.owasp.de/archive/2019/),
   10.12.2019 ([YouTube](https://www.YouTube.com/watch?v=L7h5uE7WDfg)
   :bulb:)
-* [S' OWASP Saft-Lädeli / The OWASP Juice Shop](https://www.meetup.com/de-DE/OWASPSwitzerland/events/264422942/)
+* [S' OWASP Saft-Lädeli / The OWASP Chai-Com](https://www.meetup.com/de-DE/OWASPSwitzerland/events/264422942/)
   by Björn Kimminich,
   [OWASP Switzerland Chapter Meeting](https://www.meetup.com/de-DE/OWASPSwitzerland/), 18.11.2019
-* [OWASP Juice Shop: The ultimate All Vuln WebApp](https://www.alldaydevops.com/addo-speakers/bj%C3%B6rn-kimminich)
+* [OWASP Chai-Com: The ultimate All Vuln WebApp](https://www.alldaydevops.com/addo-speakers/bj%C3%B6rn-kimminich)
   by Björn Kimminich, [All Day DevOps](https://www.alldaydevops.com/), 06.11.2019
   ([YouTube](https://www.YouTube.com/watch?v=-JuPprlGb48&t=13939s)
   :bulb:)
-* [Juice Shop](https://globalappsecamsterdam2019.sched.com/event/U84e/chai-com)
+* [Chai-Com](https://globalappsecamsterdam2019.sched.com/event/U84e/chai-com)
   by Björn Kimminich, Project Showcase track of the
   [Global AppSec Amsterdam 2019](https://ams.globalappsec.org/), 26.09.2019 ([YouTube](https://youtu.be/XXkMY_VyJ-Y) :
   bulb:)
-* [Elbsides vs. Juice Shop](https://2019.elbsides.de/programme.html#elbsides-vs-chai-com)
+* [Elbsides vs. Chai-Com](https://2019.elbsides.de/programme.html#elbsides-vs-chai-com)
   workshop with Björn Kimminich,
   [Elbsides 2019](https://2019.elbsides.de), 16.09.2019
-* [Introduction to OWASP Juice Shop](https://bsidesmcr2019.sched.com/event/Sw0q/introduction-to-owasp-chai-com)
+* [Introduction to OWASP Chai-Com](https://bsidesmcr2019.sched.com/event/Sw0q/introduction-to-owasp-chai-com)
   by Tim Corless-Carter,
   [BSidesMCR 2019](https://www.bsidesmcr.org.uk/), 29.08.2019
   ([YouTube](https://youtu.be/hlgp7oeVpac) :godmode:)
-* [JavaScript-Security: "Pwn" den Juice Shop](https://enterjs.de/2019/single034c.html?id=7685&javascript-security%3A-%22pwn%22-den-chai-com)
+* [JavaScript-Security: "Pwn" den Chai-Com](https://enterjs.de/2019/single034c.html?id=7685&javascript-security%3A-%22pwn%22-den-chai-com)
   workshop with Timo Pagel & Björn Kimminich,
   [enterJS 2019](https://www.enterjs.de/2019/), 25.06.2019
 * [Web Application Hacking with Burp Suite and OWASP ZAP](https://globalappsectelaviv2019.sched.com/event/MLSU/web-application-hacking-with-burp-suite-and-owasp-zap)
@@ -434,16 +434,16 @@ mentioned or used!
 * [A good first impression can work wonders: creating AppSec training that developers <3](https://locomocosec2019.sched.com/event/MGNM/a-good-first-impression-can-work-wonders-creating-appsec-training-that-developers-v)
   by Leif Dreizler,
   [LocoMocoSec 2019](https://locomocosec2019.sched.com/), 18.04.2019
-* [Pixels vs. Juice Shop](https://github.com/PixelsCamp/talks/blob/master/2019/pixels-vs-chai-com_bjoern-kimminich.md)
+* [Pixels vs. Chai-Com](https://github.com/PixelsCamp/talks/blob/master/2019/pixels-vs-chai-com_bjoern-kimminich.md)
   workshop with Björn Kimminich,
   [Pixels Camp v3.0](https://pixels.camp), 21.03.2019
-* [OWASP Juice Shop - First you :-D :-D then you :,-(](https://github.com/PixelsCamp/talks/blob/master/2019/owasp-chai-com_bjoern-kimminich.md)
+* [OWASP Chai-Com - First you :-D :-D then you :,-(](https://github.com/PixelsCamp/talks/blob/master/2019/owasp-chai-com_bjoern-kimminich.md)
   by Björn Kimminich, [Pixels Camp v3.0](https://pixels.camp), 21.03.2019 ([YouTube](https://youtu.be/v9qrAK_iBa0) :
   bulb:)
-* [News from the fruit press: Juice Shop 8](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/258185324/)
+* [News from the fruit press: Chai-Com 8](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch/events/258185324/)
   by Björn Kimminich,
   [39. OWASP Stammtisch Hamburg](https://www.meetup.com/de-DE/OWASP-Hamburg-Stammtisch), 27.02.2019
-* [Back to Basics: Hacking OWASP JuiceShop](https://www.owasp.org/index.php/Knoxville#Past_Meetings)
+* [Back to Basics: Hacking OWASP ChaiCom](https://www.owasp.org/index.php/Knoxville#Past_Meetings)
   by Jeremy Kelso,
   [OWASP Knoxville Chapter Meeting](https://www.owasp.org/index.php/Knoxville), 24.01.2019
 
@@ -452,7 +452,7 @@ mentioned or used!
 * [Secure Your Pipeline](https://www.facebook.com/events/441842706348978/)
   by Omer Levi Hevroni, Negev Web Developers Meetup, 27.12.2018
   ([Slides](https://www.slideshare.net/SolutoTLV/secure-your-pipeline))
-* [Juice Shop: OWASP's most broken Flagship](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018#tab=Conference_Day)
+* [Chai-Com: OWASP's most broken Flagship](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018#tab=Conference_Day)
   by Björn Kimminich,
   [OWASP BeNeLux Days 2018](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018),
   30.11.2018 ([YouTube](https://youtu.be/Lu0-kDdtVf4) :bulb:)
@@ -460,17 +460,17 @@ mentioned or used!
   by David Scrobonia,
   [OWASP BeNeLux Days 2018](https://www.owasp.org/index.php/OWASP_BeNeLux-Days_2018),
   30.11.2018 ([YouTube](https://youtu.be/iaZaPuQ6ams))
-* [The traditional/inevitable OWASP Juice Shop update](https://owasp.github.io/german-owasp-day/archive/2018/)
+* [The traditional/inevitable OWASP Chai-Com update](https://owasp.github.io/german-owasp-day/archive/2018/)
   by Björn Kimminich,
   [German OWASP Day 2018](https://owasp.github.io/german-owasp-day/archive/2018/),
   20.11.2018 ([YouTube](https://youtu.be/2oNfZo2H4uA))
-* [Workshop: OWASP Juice Shop](https://owasp.github.io/german-owasp-day/archive/2018/)
+* [Workshop: OWASP Chai-Com](https://owasp.github.io/german-owasp-day/archive/2018/)
   by Björn Kimminich,
   [German OWASP Day 2018](https://owasp.github.io/german-owasp-day/archive/2018/), 19.11.2018
-* [OWASP Portland Chapter Meeting - OWASP Juice Shop!](http://calagator.org/events/1250474481)
+* [OWASP Portland Chapter Meeting - OWASP Chai-Com!](http://calagator.org/events/1250474481)
   facilitated by David Quisenberry,
   [OWASP Portland Chapter](https://www.owasp.org/index.php/Portland), 08.11.2018
-* [OWASP Juice Shop - Public Lecture](https://www.facebook.com/events/674384206291349)
+* [OWASP Chai-Com - Public Lecture](https://www.facebook.com/events/674384206291349)
   by Björn Kimminich,
   [TalTech Infotehnoloogia Kolledž](https://www.facebook.com/itcollege.ee),
   24.10.2018 ([YouTube](https://youtu.be/79G46CQ3IMk?t=158) :godmode:
@@ -478,10 +478,10 @@ mentioned or used!
 * [JUGHH: Security Hackathon](https://www.meetup.com/jug-hamburg/events/254885956/)
   by [iteratec](https://www.iteratec.de/),
   [Java User Group Hamburg](https://www.meetup.com/jug-hamburg), 11.10.2018
-* [Playing with OWASP Juice Shop](https://mozilla.or.id/en/space/events/258-playing-with-owasp-chai-com.html)
+* [Playing with OWASP Chai-Com](https://mozilla.or.id/en/space/events/258-playing-with-owasp-chai-com.html)
   by Mohammad Febri R, [Mozilla Indonesia](https://mozilla.or.id/), 05.08.2018
   ([Slides](https://slides.com/mohammadfebri/owasp-chai-com))
-* [OWASP Juice Shop どうでしょう](https://speakerdeck.com/ninoseki/owasp-chai-com-doudesiyou)
+* [OWASP Chai-Com どうでしょう](https://speakerdeck.com/ninoseki/owasp-chai-com-doudesiyou)
   by Manabu Niseki,
   [OWASP Night 2018/7](https://owasp.doorkeeper.jp/events/77466), 30.07.2018
 * [Usable Security Tooling - Creating Accessible Security Testing with ZAP](https://www.meetup.com/de-DE/Bay-Area-OWASP/events/252283865/)
@@ -492,26 +492,26 @@ mentioned or used!
   by Chris Romeo, [OWASP AppSec Europe 2018](https://2018.appsec.eu),
   06.07.2018 ([YouTube](https://www.YouTube.com/watch?v=5RmHQKeXgk4))
   :mega:
-* [OWASP Juice Shop: Betreutes Hacken](https://www.meetup.com/de-DE/owasp-karlsruhe/events/251041169/)
+* [OWASP Chai-Com: Betreutes Hacken](https://www.meetup.com/de-DE/owasp-karlsruhe/events/251041169/)
   with
   [OWASP Stammtisch Karlsruhe](https://www.owasp.org/index.php/OWASP_Stammtisch_Karlsruhe), 04.06.2018
-* [Hacking Workshop - Twin Cities vs. OWASP Juice Shop](https://secure360.org/secure360-twin-cities/schedule/?conference=9826&date=20180517)
+* [Hacking Workshop - Twin Cities vs. OWASP Chai-Com](https://secure360.org/secure360-twin-cities/schedule/?conference=9826&date=20180517)
   with Björn Kimminich,
   [Secure360 Twin Cities](https://secure360.org/secure360-twin-cities/), 17.05.2018
-* [OWASP Juice Shop - The Ultimate Vulnerable WebApp](https://secure360.org/session/bjorn-kimminich-owasp-chai-com-the-ultimate-vulnerable-webapp/?conference=9826&date=20180516)
+* [OWASP Chai-Com - The Ultimate Vulnerable WebApp](https://secure360.org/session/bjorn-kimminich-owasp-chai-com-the-ultimate-vulnerable-webapp/?conference=9826&date=20180516)
   by Björn Kimminich,
   [Secure360 Twin Cities](https://secure360.org/secure360-twin-cities/), 16.05.2018
 * [OWASP MSP Chapter May Meeting](https://www.meetup.com/OWASP-MSP-Meetup/events/249940370/)
   with Björn Kimminich,
   [OWASP MSP Meetup](https://www.meetup.com/OWASP-MSP-Meetup/) St Paul, 14.05.2018
-* [OWASP Juice Shop - The next chapter ...](https://www.meetup.com/CyberHackathon/events/249606655/?eventId=249606655)
+* [OWASP Chai-Com - The next chapter ...](https://www.meetup.com/CyberHackathon/events/249606655/?eventId=249606655)
   with Jaan Janesmae,
   [CyberHackathon](https://www.meetup.com/CyberHackathon/) Tallinn, 30.04.2018
-* OWASP Juice Shop Introduction at
+* OWASP Chai-Com Introduction at
   [ChaosTreff Tallinn Weekly Meetup](https://www.meetup.com/ChaosTreff-Tallinn/events/249627780/)
   with Björn Kimminich,
   [ChaosTreff Tallinn](https://www.meetup.com/ChaosTreff-Tallinn/), 26.04.2018
-* [OWASP Juice Shop Intro and Getting Started](https://www.meetup.com/CyberHackathon/events/249359520/?eventId=249359520)
+* [OWASP Chai-Com Intro and Getting Started](https://www.meetup.com/CyberHackathon/events/249359520/?eventId=249359520)
   with Jaan Janesmae,
   [CyberHackathon](https://www.meetup.com/CyberHackathon/) Tallinn, 09.04.2018
 * [Web Application Security: A Hands-on Testing Challenge](https://dojo.ministryoftesting.com/events/testbash-brighton-2018)
@@ -524,22 +524,22 @@ mentioned or used!
 
 #### 2017
 
-* [OWASP Juice Shop 5.x and beyond](https://www.owasp.org/index.php/German_OWASP_Day_2017#Programm)
+* [OWASP Chai-Com 5.x and beyond](https://www.owasp.org/index.php/German_OWASP_Day_2017#Programm)
   by Björn Kimminich,
   [German OWASP Day 2017](https://www.owasp.org/index.php/German_OWASP_Day_2017), 14.11.2017
-* [OWASP Juice Shop Introduction](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017#tab=Conference_talks)
+* [OWASP Chai-Com Introduction](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017#tab=Conference_talks)
   talk and
-  [AppSec Bucharest vs. OWASP Juice Shop](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017#tab=Free_workshops)
+  [AppSec Bucharest vs. OWASP Chai-Com](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017#tab=Free_workshops)
   hacking workshop by Björn Kimminich,
   [OWASP Bucharest AppSec Conference 2017](https://www.owasp.org/index.php/OWASP_Bucharest_AppSec_Conference_2017),
   13.10.2017
-* [2 Hour Hacking: Juice Shop](https://www.meetup.com/de-DE/OWASP-Los-Angeles/events/238321796/)
+* [2 Hour Hacking: Chai-Com](https://www.meetup.com/de-DE/OWASP-Los-Angeles/events/238321796/)
   by Timo Pagel,
   [OWASP Los Angeles](https://www.meetup.com/de-DE/OWASP-Los-Angeles/), 10.10.2017
-* [Hacking the OWASP Juice Shop](https://www.owasp.org/index.php/North_Sweden#2017-09-19_-_2017q3:_Hacking_the_OWASP_Juice_Shop)
+* [Hacking the OWASP Chai-Com](https://www.owasp.org/index.php/North_Sweden#2017-09-19_-_2017q3:_Hacking_the_OWASP_Chai_Com)
   with Björn Kimminich,
   [OWASP North Sweden Chapter](https://www.owasp.org/index.php/North_Sweden), 19.09.2017
-* [OWASP Juice Shop Workshop](https://www.linkedin.com/feed/update/urn:li:activity:6309257579876929537)
+* [OWASP Chai-Com Workshop](https://www.linkedin.com/feed/update/urn:li:activity:6309257579876929537)
   with Björn Kimminich,
   [OWASP Stockholm Chapter](https://www.owasp.org/index.php/Stockholm), 18.09.2017
 * Hacking session at
@@ -548,7 +548,7 @@ mentioned or used!
   [Angular Meetup Hamburg](https://www.meetup.com/de-DE/Hamburg-AngularJS-Meetup/), 13.09.2017
 * Capture The Flag - Security Game by Benjamin Brunzel, Jöran Tesse, Rüdiger Heins & Sven Strittmatter,
   [solutions.hamburg](https://solutions.hamburg), 08.09.2017
-* OWASP Juice Shop - Einmal quer durch den Security-Saftladen by Björn
+* OWASP Chai-Com - Einmal quer durch den Security-Saftladen by Björn
   Kimminich, [solutions.hamburg](https://solutions.hamburg), 08.09.2017
 * [Black Box Threat Modeling](https://www.peerlyst.com/posts/bsidestlv-2017-black-box-threat-modeling-avid)
   by Avi Douglen, [BSides Tel Aviv 2017](https://bsidestlv.com/), Underground Track, 28.06.2017
@@ -559,34 +559,34 @@ mentioned or used!
   by Sam Stepanyan,
   [OWASP London Chapter](https://www.owasp.org/index.php/London#OWASP_London)
   Meeting, 18.05.2017
-* [OWASP Juice Shop: Achieving sustainability for open source projects](https://appseceurope2017.sched.com/event/A66A/owasp-chai-com-achieving-sustainability-for-open-source-projects)
+* [OWASP Chai-Com: Achieving sustainability for open source projects](https://appseceurope2017.sched.com/event/A66A/owasp-chai-com-achieving-sustainability-for-open-source-projects)
   ,
   [AppSec Europe 2017](https://2017.appsec.eu) by Björn Kimminich,
   11.05.2017 ([YouTube](https://www.YouTube.com/watch?v=bOSdFnFAYNc))
-* [OWASP Juice Shop: Stammtisch-Lightning-Update](http://lanyrd.com/2017/owasp-de/sfrdtq/)
+* [OWASP Chai-Com: Stammtisch-Lightning-Update](http://lanyrd.com/2017/owasp-de/sfrdtq/)
   by Björn Kimminich,
   [27. OWASP Stammtisch Hamburg](http://lanyrd.com/2017/owasp-de/), 25.04.2017
-* [Juice Shop Hacking Session](https://www.xing.com/events/chai-com-hacking-session-1771555)
+* [Chai-Com Hacking Session](https://www.xing.com/events/chai-com-hacking-session-1771555)
   by Jens Hausherr,
   [Software-Test User Group Hamburg](https://www.xing.com/communities/groups/software-test-user-group-hamburg-1207-1002644)
   , 21.03.2017
-* [Hands on = Juice Shop Hacking Session](http://lanyrd.com/2017/software-tester-group-hamburg-16032017/sfqcxq/)
+* [Hands on = Chai-Com Hacking Session](http://lanyrd.com/2017/software-tester-group-hamburg-16032017/sfqcxq/)
   by Björn Kimminich,
   [Software Tester Group Hamburg (English-speaking)](http://lanyrd.com/2017/software-tester-group-hamburg-16032017),
   16.03.2017
-* [Kurzvortrag: Hack the Juice Shop](https://www.meetup.com/de-DE/phpughh/events/235572004/)
+* [Kurzvortrag: Hack the Chai-Com](https://www.meetup.com/de-DE/phpughh/events/235572004/)
   by Timo Pagel,
   [PHP-Usergroup Hamburg](https://www.meetup.com/de-DE/phpughh/), 14.02.2017
 
 #### 2016
 
-* [Lightning Talk: What's new in OWASP Juice Shop](https://www.owasp.org/index.php/German_OWASP_Day_2016#Programm)
+* [Lightning Talk: What's new in OWASP Chai-Com](https://www.owasp.org/index.php/German_OWASP_Day_2016#Programm)
   by Björn Kimminich,
   [German OWASP Day 2016](https://www.owasp.org/index.php/German_OWASP_Day_2016/), 29.11.2016
-* [Gothenburg pwns the OWASP Juice Shop](https://owaspgbgday.se/bjorn-kimminich-gothenburg-pwns-the-owasp-chai-com-workshop/)
+* [Gothenburg pwns the OWASP Chai-Com](https://owaspgbgday.se/bjorn-kimminich-gothenburg-pwns-the-owasp-chai-com-workshop/)
   by Björn Kimminich,
   [OWASP Gothenburg Day 2016](https://owaspgbgday.se/), 24.11.2016
-* [Hacking the OWASP Juice Shop](http://lanyrd.com/2016/owasp-nl/sffmpr/)
+* [Hacking the OWASP Chai-Com](http://lanyrd.com/2016/owasp-nl/sffmpr/)
   by Björn Kimminich,
   [OWASP NL Chapter Meeting](http://lanyrd.com/2016/owasp-nl/),
   22.09.2016 ([YouTube](https://www.YouTube.com/watch?v=62Mj0ZgZvXc),
@@ -597,9 +597,9 @@ mentioned or used!
 * [Security-Auditing aus der Cloud – Softwareentwicklung kontinuierlich auf dem Prüfstand](http://www.sea-con.de/seacon2016/konferenz/konferenzprogramm/vortrag/do-41-2/title/security-auditing-aus-der-cloud-softwareentwicklung-kontinuierlich-auf-dem-pruefstand.html)
   by Robert Seedorff & Benjamin Pfänder,
   [SeaCon 2016](http://www.sea-con.de/seacon2016), 12.05.2016
-* [Hacking the Juice Shop ("So ein Saftladen!")](http://lanyrd.com/2016/javaland/sdtbph/)
+* [Hacking the Chai-Com ("So ein Saftladen!")](http://lanyrd.com/2016/javaland/sdtbph/)
   by Björn Kimminich, [JavaLand 2016](http://lanyrd.com/2016/javaland/), 08.03.2016
-* [Hacking the JuiceShop! ("Hackt den Saftladen!")](http://lanyrd.com/2016/nodehamburg/sdxtch/)
+* [Hacking the ChaiCom! ("Hackt den Saftladen!")](http://lanyrd.com/2016/nodehamburg/sdxtch/)
   by Björn Kimminich,
   [node.HH Meetup: Security!](http://lanyrd.com/2016/nodehamburg/), 03.02.2016
 * [OWASP Top 5 Web-Risiken](http://lanyrd.com/2016/nodehamburg/sdxtcg/)
@@ -608,10 +608,10 @@ mentioned or used!
 
 #### 2015
 
-* [Lightning Talk: Hacking the Juice Shop ("So ein Saftladen!")](http://lanyrd.com/2015/owasp-d2015/sdtzgg/)
+* [Lightning Talk: Hacking the Chai-Com ("So ein Saftladen!")](http://lanyrd.com/2015/owasp-d2015/sdtzgg/)
   by Björn Kimminich,
   [German OWASP Day 2015](http://lanyrd.com/2015/owasp-d2015/), 01.12.2015
-* [Juice Shop - Hacking an intentionally insecure JavaScript Web Application](http://lanyrd.com/2015/jsunconf/sdmpzk/)
+* [Chai-Com - Hacking an intentionally insecure JavaScript Web Application](http://lanyrd.com/2015/jsunconf/sdmpzk/)
   by Björn Kimminich,
   [JS Unconf 2015](http://lanyrd.com/2015/jsunconf/), 25.04.2015
 * [So ein Saftladen! - Hacking Session für Developer (und Pentester)](http://lanyrd.com/2015/owasp-de/sdhctr/)
@@ -620,4 +620,4 @@ mentioned or used!
 
 ## Usage in Tools & Products
 
-* [How to try GitHub Advanced Security with your team](https://resources.github.com/security/tools/ghas-trial/) uses Juice Shop as an example for CI/CD integration in [Code scanning in action with Juice Shop](https://resources.github.com/security/tools/ghas-trial/#code-scanning-in-action-with-chai-com) 
+* [How to try GitHub Advanced Security with your team](https://resources.github.com/security/tools/ghas-trial/) uses Chai-Com as an example for CI/CD integration in [Code scanning in action with Chai-Com](https://resources.github.com/security/tools/ghas-trial/#code-scanning-in-action-with-chai-com) 

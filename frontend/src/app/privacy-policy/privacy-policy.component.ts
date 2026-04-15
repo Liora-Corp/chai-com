@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -20,7 +20,7 @@ export class PrivacyPolicyComponent implements OnInit {
   private readonly _document = inject<HTMLDocument>(DOCUMENT);
   private readonly configurationService = inject(ConfigurationService);
 
-  public applicationName = 'OWASP Juice Shop'
+  public applicationName = 'OWASP Chai-Com'
   public privacyContactEmail!: string
   public applicationUrl!: string
 

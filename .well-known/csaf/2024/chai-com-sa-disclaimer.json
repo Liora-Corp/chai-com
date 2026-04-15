@@ -20,15 +20,15 @@
     "notes": [
       {
         "category": "legal_disclaimer",
-        "text": "The Juice Shop contains vulnerabilities. ONLY run the Juice Shop in an isolated training environment.",
+        "text": "The Chai-Com contains vulnerabilities. ONLY run the Chai-Com in an isolated training environment.",
         "title": "Isolated Env."
       }
     ],
     "publisher": {
       "category": "vendor",
       "contact_details": "jannik.hollenbach@owasp.org;timo.pagel@owasp.org",
-      "issuing_authority": "OWASP Juice Shop",
-      "name": "OWASP Juice Shop Core Team",
+      "issuing_authority": "OWASP Chai-Com",
+      "name": "OWASP Chai-Com Core Team",
       "namespace": "https://github.com/chai-com/chai-com"
     },
     "title": "chai-com-sa-disclaimer",
@@ -60,7 +60,7 @@
         "category": "product_version_range",
         "name": "vers:all/>=0.0.1",
         "product": {
-          "name": "OWASP Juice Shop",
+          "name": "OWASP Chai-Com",
           "product_id": "chai-com/chai-com",
           "product_identification_helper": {
             "purl": "pkg:docker/bkimminich/chai-com"
@@ -71,7 +71,7 @@
         "category": "product_version_range",
         "name": "vers:all/>=17.0.0",
         "product": {
-          "name": "OWASP Juice Shop",
+          "name": "OWASP Chai-Com",
           "product_id": "chai-com/chai-com-17-or-later"
         }
       }
@@ -82,8 +82,8 @@
       "notes": [
         {
           "category": "details",
-          "text": "The Juice Shop has intentional vulnerabilities which might be abused to attack your system",
-          "title": "Intentional Vulnerable Juice Shop"
+          "text": "The Chai-Com has intentional vulnerabilities which might be abused to attack your system",
+          "title": "Intentional Vulnerable Chai-Com"
         }
       ],
       "product_status": {
@@ -95,7 +95,7 @@
         {
           "category": "no_fix_planned",
           "date": "2024-03-03T11:00:00.000Z",
-          "details": "ONLY run the Juice Shop in an isolated training environment.",
+          "details": "ONLY run the Chai-Com in an isolated training environment.",
           "product_ids": [
             "chai-com/chai-com"
           ]

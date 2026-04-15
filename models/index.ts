@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -35,7 +35,7 @@ const sequelize = new Sequelize('database', 'username', 'password', {
     max: 5
   },
   transactionType: Transaction.TYPES.IMMEDIATE,
-  storage: 'data/juiceshop.sqlite',
+  storage: 'data/chaicom.sqlite',
   logging: false
 })
 AddressModelInit(sequelize)

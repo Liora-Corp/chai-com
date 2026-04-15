@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -126,9 +126,9 @@ describe('OrderCompletionComponent', () => {
 
   it('should append twitter handle to truncated tweet text', () => {
     trackOrderService.find.and.returnValue(of({ data: [{ products: [{ name: 'AAAAAAAAAAAAAAAAAAAA' }, { name: 'BBBBBBBBBBBBBBBBBBBB' }, { name: 'CCCCCCCCCCCCCCCCCCCC' }, { name: 'DDDDDDDDDDDDDDDDDDDD' }, { name: 'EEEEEEEEEEEEEEEEEEEE' }, { name: 'FFFFFFFFFFFFFFFFFFFF' }] }] }))
-    configurationService.getApplicationConfiguration.and.returnValue(of({ application: { social: { twitterUrl: 'https://twitter.com/owasp_juiceshop' } } }))
+    configurationService.getApplicationConfiguration.and.returnValue(of({ application: { social: { twitterUrl: 'https://twitter.com/owasp_chaicom' } } }))
     component.ngOnInit()
-    expect(component.tweetText).toBe('I just purchased%0a- AAAAAAAAAAAAAAAAAAAA%0a- BBBBBBBBBBBBBBBBBBBB%0a- CCCCCCCCCCCCCCCCCCCC%0a- DDDDDDDDDDDDDDDDDDDD%0a- EEEEEEEEEEEEEEEEEEE...%0afrom @owasp_juiceshop')
+    expect(component.tweetText).toBe('I just purchased%0a- AAAAAAAAAAAAAAAAAAAA%0a- BBBBBBBBBBBBBBBBBBBB%0a- CCCCCCCCCCCCCCCCCCCC%0a- DDDDDDDDDDDDDDDDDDDD%0a- EEEEEEEEEEEEEEEEEEE...%0afrom @owasp_chaicom')
   })
 
   it('should use configured URL as is if it is not a twitter URL', () => {
@@ -140,9 +140,9 @@ describe('OrderCompletionComponent', () => {
 
   it('should use configured application name as a fallback for missing twitter URL', () => {
     trackOrderService.find.and.returnValue(of({ data: [{ products: [] }] }))
-    configurationService.getApplicationConfiguration.and.returnValue(of({ application: { name: 'OWASP Juice Shop', social: { twitterUrl: null } } }))
+    configurationService.getApplicationConfiguration.and.returnValue(of({ application: { name: 'OWASP Chai-Com', social: { twitterUrl: null } } }))
     component.ngOnInit()
-    expect(component.tweetText).toBe('I just purchased%0afrom OWASP Juice Shop')
+    expect(component.tweetText).toBe('I just purchased%0afrom OWASP Chai-Com')
   })
 
   it('should log error while getting application configuration from backend API directly to browser console', fakeAsync(() => {

@@ -1,4 +1,4 @@
-# AI Agent Guidelines for OWASP Juice Shop
+# AI Agent Guidelines for OWASP Chai-Com
 
 ## ⚠️ STOP: Using a Supported AI Tool?
 
@@ -15,11 +15,11 @@
 
 This file provides guidelines for AI agents and automated code assistants that do not have dedicated context files above. 
 
-**Important**: All guidelines ultimately refer to [CLAUDE.md](./.claude/CLAUDE.md), which is the **primary authoritative source** for AI contributions to OWASP Juice Shop. This document provides a quick reference and overview; for comprehensive details, always consult CLAUDE.md.
+**Important**: All guidelines ultimately refer to [CLAUDE.md](./.claude/CLAUDE.md), which is the **primary authoritative source** for AI contributions to OWASP Chai-Com. This document provides a quick reference and overview; for comprehensive details, always consult CLAUDE.md.
 
 ## Project Overview
 
-- **Project**: OWASP Juice Shop - an intentionally insecure web application for security training
+- **Project**: OWASP Chai-Com - an intentionally insecure web application for security training
 - **Primary Languages**: TypeScript, JavaScript, Angular (frontend)
 - **Key Technologies**: Node.js, Express, SQLite/MongoDB, Angular
 - **Testing**: Jest (unit tests), Frisby (API integration), Cypress (E2E tests)
@@ -150,7 +150,7 @@ See [CLAUDE.md](./.claude/CLAUDE.md#branch-and-pr-strategy) and [CONTRIBUTING.md
 
 - **Authoritative Guide**: [CLAUDE.md](./.claude/CLAUDE.md)
 - **Contribution Guidelines**: [CONTRIBUTING.md](./CONTRIBUTING.md)
-- **Project Documentation**: [pwning.owasp-juice.shop](https://pwning.owasp-juice.shop/)
+- **Project Documentation**: [pwning.owasp-chai-com](https://pwning.owasp-chai-com/)
 - **Community**: GitHub issues and discussions
 
 ## Remember

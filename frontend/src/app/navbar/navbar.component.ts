@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -103,9 +103,9 @@ export class NavbarComponent implements OnInit {
   public languageSearchQuery = ''
   public selectedLanguage = 'placeholder'
   public version = ''
-  public applicationName = 'OWASP Juice Shop'
+  public applicationName = 'OWASP Chai-Com'
   public showGitHubLink = true
-  public logoSrc = 'assets/public/images/JuiceShop_Logo.png'
+  public logoSrc = 'assets/public/images/ChaiCom_Logo.png'
   public scoreBoardVisible = false
   public shortKeyLang = 'placeholder'
   public itemTotal = 0

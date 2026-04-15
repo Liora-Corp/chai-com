@@ -1,6 +1,6 @@
-# Continue Instructions for OWASP Juice Shop
+# Continue Instructions for OWASP Chai-Com
 
-This file provides guidelines for using Continue.dev when contributing to OWASP Juice Shop.
+This file provides guidelines for using Continue.dev when contributing to OWASP Chai-Com.
 
 ## Primary Reference
 
@@ -21,7 +21,7 @@ The following context is provided to help Continue.dev better assist with contri
 
 ### Project Overview
 
-- **Project**: OWASP Juice Shop - an intentionally insecure web application for security training
+- **Project**: OWASP Chai-Com - an intentionally insecure web application for security training
 - **Primary Languages**: TypeScript, JavaScript, Angular (frontend)
 - **Key Technologies**: Node.js, Express, SQLite/MongoDB, Angular
 - **Testing**: Jest (unit tests), Frisby (API integration), Cypress (E2E tests)
@@ -94,7 +94,7 @@ Before suggesting code or accepting Continue suggestions, ensure:
 
 - Review [CLAUDE.md](../.claude/CLAUDE.mdLAUDE.md) for detailed guidance
 - Check the [Contribution Guide](../CONTRIBUTING.md)
-- Refer to the [project documentation](https://pwning.owasp-juice.shop/)
+- Refer to the [project documentation](https://pwning.owasp-chai-com/)
 - Connect with the community via Slack or GitHub issues
 
 ---

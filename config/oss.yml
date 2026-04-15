@@ -41,7 +41,7 @@ products:
     description: "Every happy camper needs a unique camper mug. It's lightweight, durable and multifunctional. Use it for your favorite beverage or a hot meal, and attach it to your bag for easy access on a hike."
     image: 'https://cdn.shopify.com/s/files/1/0276/0474/6320/products/mockup-c4c074da_280x420.jpg?v=1590062996'
   -
-    name: 'OSS2020 - Juice Shop Track Sticker'
+    name: 'OSS2020 - Chai-Com Track Sticker'
     price: 1.80
     description: "These stickers are printed on durable, high opacity adhesive vinyl which makes them perfect for regular use, as well as for covering other stickers or paint. The high-quality vinyl ensures there are no bubbles when applying the stickers."
     image: 'https://cdn.shopify.com/s/files/1/0276/0474/6320/products/mockup-306c4dc0_280x420.jpg?v=1591012423'
@@ -91,11 +91,11 @@ products:
       - hueteroneel
       - eurogium edule
   -
-    name: 'OWASP Juice Shop Logo (3D-printed)'
+    name: 'OWASP Chai-Com Logo (3D-printed)'
     description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
     price: 99.99
     image: 3d_keychain.jpg # Exif metadata contains "OpenSCAD" as subtle hint...
-    fileForRetrieveBlueprintChallenge: JuiceShop.stl # ...to blueprint file type
+    fileForRetrieveBlueprintChallenge: ChaiCom.stl # ...to blueprint file type
     exifForBlueprintChallenge:
       - ~
 memories:

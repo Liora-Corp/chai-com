@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #
-# Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+# Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
 # SPDX-License-Identifier: MIT
 #
 
@@ -21,7 +21,7 @@ apt-get install -qy apache2 docker-ce
 # Put the relevant files in place
 cp /tmp/chai-com/default.conf /etc/apache2/sites-available/000-default.conf
 
-# Download and start docker image with Juice Shop
+# Download and start docker image with Chai-Com
 docker run --restart=always -d -p 3000:3000 --name chai-com bkimminich/chai-com
 
 # Enable proxy modules in apache and restart

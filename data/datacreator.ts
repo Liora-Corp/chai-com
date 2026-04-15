@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -112,7 +112,7 @@ async function createHints (ChallengeId: number, hints: string[]) {
   let i: number = 0
   return await Promise.all(
     hints.map(async (hint) => {
-      hint = hint.replace(/OWASP Juice Shop/, `${config.get<string>('application.name')}`)
+      hint = hint.replace(/OWASP Chai-Com/, `${config.get<string>('application.name')}`)
       return await HintModel.create({
         ChallengeId,
         text: hint,

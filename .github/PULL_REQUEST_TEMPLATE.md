@@ -6,7 +6,7 @@ does NOT fall into any of the following categories
 
 🚫 Spam PRs (accidental or intentional) - these will result in a 30-days or even
 ∞ ban from interacting with the project depending on reoccurrence and severity.
-You can find more information [here](https://pwning.owasp-juice.shop/companion-guide/latest/part3/contribution.html#_handling_of_spam_prs). 
+You can find more information [here](https://pwning.owasp-chai-com/companion-guide/latest/part3/contribution.html#_handling_of_spam_prs). 
 
 🚫 Lazy typo fixing PRs - if you fix a typo in a file, your PR will only be merged
 if all other typos in the same file are also fixed with the same PR

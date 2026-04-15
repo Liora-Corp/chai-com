@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -19,13 +19,13 @@ describe('/redirect', () => {
       .expect('status', 302)
   })
 
-  it('GET redirected to http://shop.spreadshirt.com/juiceshop when this URL is passed as "to" parameter', () => {
-    return frisby.get(`${URL}/redirect?to=http://shop.spreadshirt.com/juiceshop`, { redirect: 'manual' })
+  it('GET redirected to http://shop.spreadshirt.com/chaicom when this URL is passed as "to" parameter', () => {
+    return frisby.get(`${URL}/redirect?to=http://shop.spreadshirt.com/chaicom`, { redirect: 'manual' })
       .expect('status', 302)
   })
 
-  it('GET redirected to http://shop.spreadshirt.de/juiceshop when this URL is passed as "to" parameter', () => {
-    return frisby.get(`${URL}/redirect?to=http://shop.spreadshirt.de/juiceshop`, { redirect: 'manual' })
+  it('GET redirected to http://shop.spreadshirt.de/chaicom when this URL is passed as "to" parameter', () => {
+    return frisby.get(`${URL}/redirect?to=http://shop.spreadshirt.de/chaicom`, { redirect: 'manual' })
       .expect('status', 302)
   })
 

@@ -1,6 +1,6 @@
 ---
 name: "\U0001F41BBug report"
-about: Report a bug in OWASP Juice Shop
+about: Report a bug in OWASP Chai-Com
 title: '[🐛] '
 labels: bug
 assignees: ''
@@ -12,7 +12,7 @@ assignees: ''
 To expedite issue processing please search open and closed issues before submitting a new one.
 Existing issues often contain information about workarounds, resolution, or progress updates.
 
-Please also make sure to check the official [Troubleshooting guide](https://pwning.owasp-juice.shop/companion-guide/latest/part4/troubleshooting.html) before opening a bug report.
+Please also make sure to check the official [Troubleshooting guide](https://pwning.owasp-chai-com/companion-guide/latest/part4/troubleshooting.html) before opening a bug report.
 
 🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅-->
 

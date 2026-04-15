@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Juice Shop contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -140,7 +140,7 @@ describe('PaymentComponent', () => {
 
   it('should hold the default applicationName if not defined in configuration', () => {
     configurationService.getApplicationConfiguration.and.returnValue(of({}))
-    expect(component.applicationName).toBe('OWASP Juice Shop')
+    expect(component.applicationName).toBe('OWASP Chai-Com')
   })
 
   it('should use custom blueSky URL if configured', () => {

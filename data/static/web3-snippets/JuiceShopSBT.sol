@@ -7,12 +7,12 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract JuiceShopSBT is ERC721, ERC721URIStorage, Ownable {
+contract ChaiComSBT is ERC721, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("JuiceShopSBT", "JS") {}
+    constructor() ERC721("ChaiComSBT", "JS") {}
 
     function safeMint(address to, string memory uri) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current(); // vuln-code-snippet vuln-line nftUnlockChallenge
