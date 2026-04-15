@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chai-com
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chai-com
+  template:
+    metadata:
+      labels:
+        app: chai-com
+    spec:
+      containers:
+        - name: chai-com
+          image: bkimminich/juice-shop:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_OPTIONS
+              value: "--max_old_space_size=4096"
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "4.5Gi"
+              cpu: "1000m"
+          readinessProbe:
+            httpGet:
+              path: /rest/admin/application-version
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 10
