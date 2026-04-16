@@ -55,7 +55,7 @@ jobs:
           echo "  Evaluating gate policy...          [DONE]"
           sleep 2
           echo ""
-          echo "  Scan complete. Loading results..."
+          echo "  Scan complete. Loading results... "
 
       # ── 2. Load scan data ──────────────────────────────────────────────────
       - name: "Load scan data"
