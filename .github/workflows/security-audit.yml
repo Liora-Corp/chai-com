@@ -30,6 +30,8 @@ jobs:
             --output semgrep-results.json \
             --no-error-on-findings \
             . || true
+          # Ensure file always exists even if semgrep failed before writing
+          [ -f semgrep-results.json ] || echo '{"results":[],"errors":[{"message":"Semgrep did not produce output"}]}' > semgrep-results.json
 
       - name: "Convert Semgrep JSON → HTML report"
         run: |
