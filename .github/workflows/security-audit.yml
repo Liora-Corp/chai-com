@@ -19,7 +19,9 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
 
       - name: "Run Semgrep (TypeScript / Node.js / OWASP Top 10)"
+        continue-on-error: true
         run: |
+          set +e
           pip install semgrep --quiet
           semgrep scan \
             --config "p/typescript" \
@@ -29,52 +31,15 @@ jobs:
             --json \
             --output semgrep-results.json \
             --no-error-on-findings \
-            . || true
-          # Ensure file always exists even if semgrep failed before writing
-          [ -f semgrep-results.json ] || echo '{"results":[],"errors":[{"message":"Semgrep did not produce output"}]}' > semgrep-results.json
+            .
+          exit 0
 
       - name: "Convert Semgrep JSON → HTML report"
         run: |
-          python3 - <<'EOF'
-          import json, html, os
-
-          if os.path.exists("semgrep-results.json"):
-              with open("semgrep-results.json") as f:
-                  data = json.load(f)
-          else:
-              data = {"results": [], "errors": [{"message": "Semgrep did not run or produced no output"}]}
-
-          findings = data.get("results", [])
-          errors   = data.get("errors", [])
-
-          rows = ""
-          for r in findings:
-              sev   = r.get("extra", {}).get("severity", "INFO")
-              color = {"ERROR": "#f8d7da", "WARNING": "#fff3cd", "INFO": "#d1ecf1"}.get(sev, "#f8f9fa")
-              rows += f"""<tr style="background:{color}">
-                <td>{html.escape(r.get('check_id',''))}</td>
-                <td>{html.escape(sev)}</td>
-                <td>{html.escape(r.get('path',''))}: {r.get('start',{}).get('line','')}</td>
-                <td>{html.escape(r.get('extra',{}).get('message',''))}</td>
-              </tr>"""
-
-          report = f"""<!DOCTYPE html><html><head>
-          <meta charset="utf-8"><title>SAST Report – Semgrep</title>
-          <style>body{{font-family:sans-serif;margin:2rem}}
-          table{{border-collapse:collapse;width:100%}}
-          th,td{{border:1px solid #ccc;padding:.5rem;text-align:left}}
-          th{{background:#343a40;color:#fff}}</style></head><body>
-          <h1>SAST Report – Semgrep</h1>
-          <p>Findings: <strong>{len(findings)}</strong> &nbsp;|&nbsp; Errors: <strong>{len(errors)}</strong></p>
-          <table><tr><th>Rule</th><th>Severity</th><th>Location</th><th>Message</th></tr>
-          {rows if rows else '<tr><td colspan=4>No findings</td></tr>'}
-          </table></body></html>"""
-
-          with open("sast-report.html", "w") as f:
-              f.write(report)
-
-          print(f"SAST: {len(findings)} finding(s)")
-          EOF
+          [ -f semgrep-results.json ] || \
+            echo '{"results":[],"errors":[{"message":"Semgrep did not run or produced no output"}]}' \
+            > semgrep-results.json
+          python3 .github/scripts/sast_report.py
 
       - name: "Upload SAST report"
         uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b #v4.5.0
@@ -116,54 +81,7 @@ jobs:
         continue-on-error: true
 
       - name: "Build combined SCA report"
-        run: |
-          python3 - <<'EOF'
-          import json, html as h
-
-          with open("npm-audit.json") as f:
-              audit = json.load(f)
-
-          vulns = audit.get("vulnerabilities", {})
-          rows  = ""
-          for name, info in vulns.items():
-              sev   = info.get("severity", "").upper()
-              color = {"CRITICAL": "#f8d7da", "HIGH": "#f8d7da",
-                       "MODERATE": "#fff3cd", "LOW": "#d1ecf1"}.get(sev, "#f8f9fa")
-              via   = ", ".join(
-                  str(v.get("source", v)) if isinstance(v, dict) else str(v)
-                  for v in info.get("via", [])
-              )
-              rows += f"""<tr style="background:{color}">
-                <td>{h.escape(name)}</td>
-                <td>{h.escape(sev)}</td>
-                <td>{h.escape(info.get('range',''))}</td>
-                <td>{h.escape(str(info.get('fixAvailable','')))}</td>
-                <td style="font-size:.8em">{h.escape(via[:120])}</td>
-              </tr>"""
-
-          total = audit.get("metadata", {}).get("vulnerabilities", {})
-          summary_line = " | ".join(f"{k}: <strong>{v}</strong>" for k, v in total.items() if v)
-
-          report = f"""<!DOCTYPE html><html><head>
-          <meta charset="utf-8"><title>SCA Report – npm audit</title>
-          <style>body{{font-family:sans-serif;margin:2rem}}
-          table{{border-collapse:collapse;width:100%}}
-          th,td{{border:1px solid #ccc;padding:.5rem;text-align:left;word-break:break-word}}
-          th{{background:#343a40;color:#fff}}</style></head><body>
-          <h1>SCA Report – npm audit</h1>
-          <p>{summary_line or 'No vulnerabilities found'}</p>
-          <table><tr><th>Package</th><th>Severity</th><th>Range</th><th>Fix Available</th><th>Via</th></tr>
-          {rows if rows else '<tr><td colspan=5>No vulnerabilities</td></tr>'}
-          </table>
-          <hr><p>See also <code>trivy-sca-report.html</code> artifact for Trivy analysis.</p>
-          </body></html>"""
-
-          with open("sca-report.html", "w") as f:
-              f.write(report)
-
-          counts = audit.get("metadata", {}).get("vulnerabilities", {})
-          print("SCA:", counts)
-          EOF
+        run: python3 .github/scripts/sca_report.py
 
       - name: "Upload SCA reports"
         uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b #v4.5.0
@@ -175,20 +93,7 @@ jobs:
             npm-audit.json
 
       - name: "Output SCA summary"
-        run: |
-          python3 - <<'EOF'
-          import json
-          with open("npm-audit.json") as f:
-              d = json.load(f)
-          v = d.get("metadata", {}).get("vulnerabilities", {})
-          print(f"### SCA (npm audit + Trivy)")
-          print(f"| Severity | Count |")
-          print(f"|----------|-------|")
-          for k, n in v.items():
-              print(f"| {k} | {n} |")
-          print("Download `sca-report.html` from Artifacts.")
-          EOF
-          >> $GITHUB_STEP_SUMMARY
+        run: python3 .github/scripts/sca_summary.py >> $GITHUB_STEP_SUMMARY
 
   # ── IaC ──────────────────────────────────────────────────────────────────────
   iac:
@@ -227,30 +132,7 @@ jobs:
             iac-results.json
 
       - name: "Output IaC summary"
-        run: |
-          python3 - <<'EOF'
-          import json, os
-          if not os.path.exists("iac-results.json"):
-              print("### IaC (Trivy)\nNo results file generated.")
-          else:
-              with open("iac-results.json") as f:
-                  data = json.load(f)
-              counts = {}
-              for result in data.get("Results", []):
-                  for m in result.get("Misconfigurations", []):
-                      sev = m.get("Severity","UNKNOWN")
-                      counts[sev] = counts.get(sev, 0) + 1
-              print("### IaC (Trivy – k8s + Dockerfile)")
-              print("| Severity | Count |")
-              print("|----------|-------|")
-              for sev in ["CRITICAL","HIGH","MEDIUM","LOW","UNKNOWN"]:
-                  if sev in counts:
-                      print(f"| {sev} | {counts[sev]} |")
-              if not counts:
-                  print("| — | No misconfigurations found |")
-              print("Download `iac-report.html` from Artifacts.")
-          EOF
-          >> $GITHUB_STEP_SUMMARY
+        run: python3 .github/scripts/iac_summary.py >> $GITHUB_STEP_SUMMARY
 
   # ── PR comment with links to artifacts ───────────────────────────────────────
   pr-comment:
