@@ -125,7 +125,7 @@ jobs:
               color = {"CRITICAL": "#f8d7da", "HIGH": "#f8d7da",
                        "MODERATE": "#fff3cd", "LOW": "#d1ecf1"}.get(sev, "#f8f9fa")
               via   = ", ".join(
-                  v.get("source", str(v)) if isinstance(v, dict) else str(v)
+                  str(v.get("source", v)) if isinstance(v, dict) else str(v)
                   for v in info.get("via", [])
               )
               rows += f"""<tr style="background:{color}">
