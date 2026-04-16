@@ -107,7 +107,7 @@ jobs:
                 "k8s/configmap.yaml",
                 "routes/appConfiguration.ts",
                 "lib/config.types.ts",
-                "test/api/profileImageUploadSpec.ts",
+                "test/api/profileImageUploadSpec.ts"
               ],
               "insertions": 203,
               "deletions": 11,
