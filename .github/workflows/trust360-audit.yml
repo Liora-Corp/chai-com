@@ -1,0 +1,351 @@
+name: "Trust360 Audit"
+
+# Triggered manually (paste the scan JSON payload) or by an upstream system
+# via repository_dispatch (type: trust360-scan-complete, client_payload: <scan JSON>).
+on:
+  workflow_dispatch:
+    inputs:
+      scan_payload:
+        description: "Trust360 scan result JSON payload"
+        required: true
+        type: string
+  repository_dispatch:
+    types: [trust360-scan-complete]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  # ── Parse → Report → Artifacts → Summary ────────────────────────────────────
+  trust360-audit:
+    name: "Trust360 — PR Security Gate"
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Normalise payload ────────────────────────────────────────────────
+      - name: "Load scan payload"
+        id: load
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo '${{ toJson(github.event.client_payload) }}' > scan.json
+          else
+            echo '${{ inputs.scan_payload }}' > scan.json
+          fi
+          echo "Payload written to scan.json"
+          cat scan.json | python3 -m json.tool --no-ensure-ascii > /dev/null \
+            || (echo "::error::scan_payload is not valid JSON"; exit 1)
+
+      # ── 2. Extract fields into step outputs ────────────────────────────────
+      - name: "Parse scan fields"
+        id: parse
+        run: |
+          python3 - <<'PY'
+          import json, os
+
+          with open("scan.json") as f:
+              d = json.load(f)
+
+          fc    = d.get("findingCounts", {})
+          diff  = d.get("diffMeta", {})
+          files = diff.get("filesChanged", [])
+
+          pairs = {
+              "scan_id":      d.get("scanId", ""),
+              "pr_number":    d.get("prNumber", ""),
+              "pr_title":     d.get("prTitle", ""),
+              "pr_author":    d.get("prAuthor", ""),
+              "pr_branch":    d.get("prBranch", ""),
+              "service":      d.get("serviceName", ""),
+              "gate":         d.get("gate", "UNKNOWN"),
+              "gate_reason":  d.get("gateReason", ""),
+              "ci_status":    d.get("ciStatus", ""),
+              "completed_at": d.get("completedAt", ""),
+              "critical":     str(fc.get("critical", 0)),
+              "high":         str(fc.get("high",     0)),
+              "medium":       str(fc.get("medium",   0)),
+              "low":          str(fc.get("low",      0)),
+              "files_changed": str(len(files)),
+              "insertions":   str(diff.get("insertions", 0)),
+              "deletions":    str(diff.get("deletions",  0)),
+              "pr_link":      diff.get("prLink", ""),
+          }
+
+          env_file = os.environ["GITHUB_OUTPUT"]
+          with open(env_file, "a") as ef:
+              for k, v in pairs.items():
+                  # Escape newlines so multi-line values don't break GITHUB_OUTPUT
+                  safe = v.replace("\n", " ").replace("\r", "")
+                  ef.write(f"{k}={safe}\n")
+
+          print("Parsed fields:")
+          for k, v in pairs.items():
+              print(f"  {k}: {v}")
+          PY
+
+      # ── 3. Generate HTML report artifact ───────────────────────────────────
+      - name: "Generate HTML report"
+        run: |
+          python3 - <<'PY'
+          import json, html, datetime
+
+          with open("scan.json") as f:
+              d = json.load(f)
+
+          fc   = d.get("findingCounts", {})
+          diff = d.get("diffMeta", {})
+          gate = d.get("gate", "UNKNOWN")
+
+          GATE_COLOUR = {"BLOCKED": "#c0392b", "PASS": "#27ae60"}.get(gate, "#7f8c8d")
+          BADGE_COLOUR = {
+              "BLOCKED": "background:#c0392b;color:#fff",
+              "PASS":    "background:#27ae60;color:#fff",
+          }.get(gate, "background:#7f8c8d;color:#fff")
+
+          SEVER_STYLES = {
+              "CRITICAL": "background:#c0392b;color:#fff",
+              "HIGH":     "background:#e67e22;color:#fff",
+              "MEDIUM":   "background:#f1c40f;color:#333",
+              "LOW":      "background:#3498db;color:#fff",
+          }
+
+          def badge(label, count, style):
+              return (
+                  f'<span style="display:inline-block;padding:4px 12px;border-radius:4px;'
+                  f'font-weight:700;font-size:1rem;{style}">{label}: {count}</span>'
+              )
+
+          raw_diff = html.escape(diff.get("rawDiff", "(no diff available)"))
+          files    = diff.get("filesChanged", [])
+          files_html = "".join(f"<li><code>{html.escape(f)}</code></li>" for f in files)
+
+          report = f"""<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width,initial-scale=1"/>
+            <title>Trust360 Audit — {html.escape(d.get('prTitle',''))}</title>
+            <style>
+              body{{font-family:system-ui,sans-serif;margin:0;padding:0;background:#f4f6f8;color:#222}}
+              .header{{background:{GATE_COLOUR};color:#fff;padding:24px 32px}}
+              .header h1{{margin:0 0 4px;font-size:1.5rem}}
+              .header p{{margin:0;opacity:.85;font-size:.9rem}}
+              .gate-badge{{display:inline-block;padding:6px 18px;border-radius:6px;
+                           font-size:1.2rem;font-weight:800;letter-spacing:.05em;
+                           {BADGE_COLOUR};margin-top:12px}}
+              .container{{max-width:960px;margin:32px auto;padding:0 16px}}
+              .card{{background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.1);
+                     padding:24px;margin-bottom:24px}}
+              .card h2{{margin-top:0;font-size:1.1rem;border-bottom:1px solid #eee;
+                        padding-bottom:8px}}
+              .counts{{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}}
+              table{{width:100%;border-collapse:collapse;font-size:.9rem}}
+              th{{text-align:left;padding:8px 12px;background:#f0f0f0;border-bottom:2px solid #ddd}}
+              td{{padding:8px 12px;border-bottom:1px solid #eee;vertical-align:top}}
+              pre{{background:#1e1e1e;color:#d4d4d4;padding:16px;border-radius:6px;
+                   overflow-x:auto;font-size:.82rem;white-space:pre}}
+              .footer{{text-align:center;font-size:.8rem;color:#999;margin:32px 0}}
+            </style>
+          </head>
+          <body>
+            <div class="header">
+              <h1>Trust360 Security Audit</h1>
+              <p>{html.escape(d.get('prTitle',''))} &nbsp;|&nbsp;
+                 {html.escape(d.get('prNumber',''))} &nbsp;|&nbsp;
+                 {html.escape(d.get('serviceName',''))}</p>
+              <div class="gate-badge">{gate}</div>
+            </div>
+
+            <div class="container">
+
+              <!-- Finding counts -->
+              <div class="card">
+                <h2>Finding Counts</h2>
+                <div class="counts">
+                  {badge("CRITICAL", fc.get("critical", 0), SEVER_STYLES["CRITICAL"])}
+                  {badge("HIGH",     fc.get("high",     0), SEVER_STYLES["HIGH"])}
+                  {badge("MEDIUM",   fc.get("medium",   0), SEVER_STYLES["MEDIUM"])}
+                  {badge("LOW",      fc.get("low",      0), SEVER_STYLES["LOW"])}
+                </div>
+              </div>
+
+              <!-- Gate decision -->
+              <div class="card">
+                <h2>Gate Decision</h2>
+                <table>
+                  <tr><th>Field</th><th>Value</th></tr>
+                  <tr><td>Gate</td>
+                      <td><strong style="color:{GATE_COLOUR}">{gate}</strong></td></tr>
+                  <tr><td>Reason</td>
+                      <td>{html.escape(d.get('gateReason',''))}</td></tr>
+                  <tr><td>CI Status</td>
+                      <td>{html.escape(d.get('ciStatus',''))}</td></tr>
+                  <tr><td>Completed At</td>
+                      <td>{html.escape(d.get('completedAt',''))}</td></tr>
+                </table>
+              </div>
+
+              <!-- PR metadata -->
+              <div class="card">
+                <h2>Pull Request</h2>
+                <table>
+                  <tr><th>Field</th><th>Value</th></tr>
+                  <tr><td>PR</td>
+                      <td><a href="{html.escape(diff.get('prLink','#'))}" target="_blank">
+                          {html.escape(d.get('prNumber',''))}</a></td></tr>
+                  <tr><td>Title</td><td>{html.escape(d.get('prTitle',''))}</td></tr>
+                  <tr><td>Author</td><td>{html.escape(d.get('prAuthor',''))}</td></tr>
+                  <tr><td>Branch</td>
+                      <td><code>{html.escape(d.get('prBranch',''))}</code>
+                          → <code>{html.escape(diff.get('prBaseBranch',''))}</code></td></tr>
+                  <tr><td>Diff</td>
+                      <td>+{diff.get('insertions',0)} / -{diff.get('deletions',0)} lines
+                          across {len(files)} files</td></tr>
+                </table>
+              </div>
+
+              <!-- Files changed -->
+              <div class="card">
+                <h2>Files Changed ({len(files)})</h2>
+                <ul>{files_html}</ul>
+              </div>
+
+              <!-- Raw diff -->
+              <div class="card">
+                <h2>Raw Diff</h2>
+                <pre>{raw_diff}</pre>
+              </div>
+
+            </div>
+            <div class="footer">
+              Generated by Trust360 Audit &nbsp;|&nbsp; Scan ID: {html.escape(d.get('scanId',''))}
+              &nbsp;|&nbsp; {datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}
+            </div>
+          </body>
+          </html>"""
+
+          with open("trust360-report.html", "w") as f:
+              f.write(report)
+          print("trust360-report.html written")
+          PY
+
+      # ── 4. Generate JSON summary artifact ──────────────────────────────────
+      - name: "Generate JSON summary"
+        run: |
+          python3 - <<'PY'
+          import json, datetime
+
+          with open("scan.json") as f:
+              d = json.load(f)
+
+          summary = {
+              "generatedAt":   datetime.datetime.utcnow().isoformat() + "Z",
+              "scanId":        d.get("scanId"),
+              "prNumber":      d.get("prNumber"),
+              "prTitle":       d.get("prTitle"),
+              "prAuthor":      d.get("prAuthor"),
+              "prBranch":      d.get("prBranch"),
+              "serviceName":   d.get("serviceName"),
+              "gate":          d.get("gate"),
+              "gateReason":    d.get("gateReason"),
+              "ciStatus":      d.get("ciStatus"),
+              "completedAt":   d.get("completedAt"),
+              "findingCounts": d.get("findingCounts", {}),
+              "diffMeta": {
+                  "filesChanged": d.get("diffMeta", {}).get("filesChanged", []),
+                  "insertions":   d.get("diffMeta", {}).get("insertions",   0),
+                  "deletions":    d.get("diffMeta", {}).get("deletions",    0),
+                  "prLink":       d.get("diffMeta", {}).get("prLink",       ""),
+              },
+          }
+
+          with open("trust360-summary.json", "w") as f:
+              json.dump(summary, f, indent=2)
+          print("trust360-summary.json written")
+          PY
+
+      # ── 5. Upload artifacts ─────────────────────────────────────────────────
+      - name: "Upload Trust360 artifacts"
+        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b #v4.5.0
+        with:
+          name: trust360-audit-${{ steps.parse.outputs.scan_id }}
+          path: |
+            trust360-report.html
+            trust360-summary.json
+            scan.json
+          retention-days: 90
+
+      # ── 6. GitHub Step Summary ─────────────────────────────────────────────
+      - name: "Write step summary"
+        run: |
+          python3 - <<'PY'
+          import json, os
+
+          with open("scan.json") as f:
+              d = json.load(f)
+
+          fc    = d.get("findingCounts", {})
+          diff  = d.get("diffMeta", {})
+          gate  = d.get("gate", "UNKNOWN")
+          files = diff.get("filesChanged", [])
+
+          GATE_EMOJI = {"BLOCKED": "🚫", "PASS": "✅"}.get(gate, "❓")
+
+          SEV_EMOJI = {
+              "CRITICAL": "🔴",
+              "HIGH":     "🟠",
+              "MEDIUM":   "🟡",
+              "LOW":      "🔵",
+          }
+
+          lines = [
+              f"## {GATE_EMOJI} Trust360 Audit — {gate}",
+              "",
+              f"> **{d.get('gateReason', '')}**",
+              "",
+              "### Finding Counts",
+              "",
+              "| Severity | Count |",
+              "|----------|------:|",
+              f"| {SEV_EMOJI['CRITICAL']} Critical | **{fc.get('critical', 0)}** |",
+              f"| {SEV_EMOJI['HIGH']}     High     | **{fc.get('high',     0)}** |",
+              f"| {SEV_EMOJI['MEDIUM']}   Medium   | **{fc.get('medium',   0)}** |",
+              f"| {SEV_EMOJI['LOW']}      Low      | **{fc.get('low',      0)}** |",
+              "",
+              "### Pull Request",
+              "",
+              "| Field | Value |",
+              "|-------|-------|",
+              f"| PR | [{d.get('prNumber','')}]({diff.get('prLink','#')}) |",
+              f"| Title | {d.get('prTitle','')} |",
+              f"| Author | `{d.get('prAuthor','')}` |",
+              f"| Service | `{d.get('serviceName','')}` |",
+              f"| Branch | `{d.get('prBranch','')}` → `{diff.get('prBaseBranch','')}` |",
+              f"| Diff size | +{diff.get('insertions',0)} / -{diff.get('deletions',0)} lines in {len(files)} files |",
+              f"| CI Status | `{d.get('ciStatus','')}` |",
+              f"| Scan ID | `{d.get('scanId','')}` |",
+              f"| Completed | `{d.get('completedAt','')}` |",
+              "",
+              "### Files Changed",
+              "",
+          ] + [f"- `{f}`" for f in files] + [
+              "",
+              "---",
+              "> Download **trust360-report.html** or **trust360-summary.json** from the Artifacts section above.",
+          ]
+
+          summary_file = os.environ["GITHUB_STEP_SUMMARY"]
+          with open(summary_file, "a") as sf:
+              sf.write("\n".join(lines) + "\n")
+          print("Step summary written")
+          PY
+
+      # ── 7. Fail the job when gate is BLOCKED ──────────────────────────────
+      - name: "Enforce gate decision"
+        run: |
+          GATE="${{ steps.parse.outputs.gate }}"
+          if [ "$GATE" = "BLOCKED" ]; then
+            echo "::error title=Trust360 Gate BLOCKED::${{ steps.parse.outputs.gate_reason }}"
+            exit 1
+          fi
+          echo "Gate decision: $GATE — pipeline continues."
