@@ -69,11 +69,11 @@ jobs:
             echo '${{ inputs.scan_payload }}' > scan.json
 
           else
-            # Demo data — mirrors real Trust360 scan result for PR #6
+            # Demo data — mirrors real Trust360 scan result for PR #7
             cat > scan.json <<'ENDJSON'
           {
             "scanId": "scan-7c3e9b0f-pr5",
-            "prNumber": "#6",
+            "prNumber": "#7",
             "prTitle": "feat(profile): add avatar upload with S3 + presigned URL endpoint",
             "serviceName": "profile-service",
             "prAuthor": "ashok-yannam",
