@@ -93,8 +93,8 @@ jobs:
                 "src/middleware/auth.ts",
                 "src/services/avatarService.ts",
               ],
-              "insertions": 203,
-              "deletions": 11,
+              "insertions": 325,
+              "deletions": 259,
               "prLink": "https://github.com/Liora-Corp/chai-com/pull/7",
               "prBaseBranch": "main",
               "rawDiff": "diff --git a/src/handlers/avatarUpload.ts b/src/handlers/avatarUpload.ts\nindex 3f4g5h6..7i8j9k0 100644\n--- a/src/handlers/avatarUpload.ts\n+++ b/src/handlers/avatarUpload.ts\n@@ -1,5 +1,38 @@\n+import { S3 } from 'aws-sdk';\n+const s3 = new S3();\n+\n+// CRITICAL: no content-type validation\n+export async function getUploadUrl(req, res) {\n+  const { filename, contentType } = req.body;\n+  const key = 'avatars/' + req.user.id + '/' + filename;\n+  const url = await s3.getSignedUrlPromise('putObject', {\n+    Bucket: process.env.AVATAR_BUCKET,\n+    Key: key,\n+    ContentType: contentType,\n+    Expires: 3600,\n+  });\n+  res.json({ uploadUrl: url, key });\n+}\n+\n+// CRITICAL: path traversal\n+export async function deleteAvatar(req, res) {\n+  const { key } = req.body;\n+  await s3.deleteObject({ Bucket: process.env.AVATAR_BUCKET, Key: key }).promise();\n+  res.json({ deleted: true });\n+}\ndiff --git a/terraform/s3.tf b/terraform/s3.tf\n--- a/terraform/s3.tf\n+++ b/terraform/s3.tf\n@@ -4,6 +4,8 @@\n   name = \"liora-corp-avatars-prod\"\n+  # HIGH: public access block NOT configured\n+  acl  = \"public-read\""
