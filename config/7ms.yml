@@ -102,35 +102,35 @@ products:
     image: 'https://images.squarespace-cdn.com/content/v1/59f9e1c4d0e6281017434039/1587693073228-8GDKF12U0LBBKO5XEPFA/image-asset.jpeg?format=2500w'
     reviews:
       - { text: 'FlipperZero FTW!', author: bjoern }
-      - { text: 'As you mentioned FlipperZero: @Brian, did you get one by now? Any chance we get this RTTTL version of the amazing JS jingle going? See https://github.com/chai-com/pwning-chai-com/issues/105 - Cheers!', author: bjoernOwasp }
+      - { text: 'As you mentioned FlipperZero: @Brian, did you get one by now? Any chance we get this RTTTL version of the amazing JS jingle going? See https://github.com/chai-com/pwning-chai-com/issues/105 - Cheers!', author: bjoernWow}
   -
-    name: '7MS #230: Pentesting OWASP Chai-Com - Part 1'
-    description: 'Today we`re kicking of a multipart series all about hacking the OWASP Chai-Com which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #230: Pentesting WowChai-Com - Part 1'
+    description: 'Today we`re kicking off a multipart series all about exploring the OWASP Chai-Com, a modern e-commerce web application built entirely in JavaScript.'
     price: 1.99
     image: 'https://i.ytimg.com/vi/IC6m249zvI0/hqdefault.jpg'
   -
-    name: '7MS #231: Pentesting OWASP Chai-Com - Part 2'
-    description: 'Today we`re continuing our series on hacking apart the OWASP Chai-Com which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #231: Pentesting WowChai-Com - Part 2'
+    description: 'Today we`re continuing our multipart series exploring the OWASP Chai-Com, a modern e-commerce web application built entirely in JavaScript.'
     price: 1.99
     image: hqdefault.jpg
   -
-    name: '7MS #232: Pentesting OWASP Chai-Com - Part 3'
-    description: 'Today is part <strong>three</strong> of our continuing series on attacking the OWASP Chai-Com which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #232: Pentesting WowChai-Com - Part 3'
+    description: 'Today is part <strong>three</strong> of our continuing series exploring the OWASP Chai-Com, a modern e-commerce web application built entirely in JavaScript.'
     price: 1.99
     image: hqdefault.jpg
   -
-    name: '7MS #233: Pentesting OWASP Chai-Com - Part 4'
-    description: 'Today is part <strong>FOUR</strong> of our continuing series on attacking the OWASP Chai-Com which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #233: Pentesting WowChai-Com - Part 4'
+    description: 'Today is part <strong>FOUR</strong> of our continuing series exploring the OWASP Chai-Com, a modern e-commerce web application built entirely in JavaScript.'
     price: 1.99
     image: hqdefault.jpg
   -
-    name: '7MS #234: Pentesting OWASP Chai-Com - Part 5'
-    description: 'Today is part <strong>FIVE</strong> (insert menacing voice: "<em>the final chapter!!!</em>) of our series on attacking the <a href="https://www.owasp.org/index.php/OWASP_Chai_Com_Project" target="_blank">OWASP Chai-Com</a> which is "an intentionally insecure webapp for security trainings written entirely in Javascript which encompasses the entire OWASP Top Ten and other severe security flaws."'
+    name: '7MS #234: Pentesting WowChai-Com - Part 5'
+    description: 'Today is part <strong>FIVE</strong> (insert menacing voice: "<em>the final chapter!!!</em>) of our series exploring the <a href="https://www.owasp.org/index.php/OWASP_Chai_Com_Project" target="_blank">OWASP Chai-Com</a>, a modern e-commerce web application built entirely in JavaScript.'
     price: 1.99
     image: hqdefault.jpg
   -
-    name: '7MS #606: Hacking OWASP Chai-Com (2024 edition)'
-    description: "Join OWASP's Bjorn Kimminich and Paul Wilch from Project7 as we hack away at what is probably the most modern and sophisticated insecure Web application ever made: Chai-Com!"
+    name: '7MS #606: Hacking WowChai-Com (2024 edition)'
+    description: "Join OWASP's Bjorn Kimminich and Paul Wilch from Project7 as we walk through the OWASP Chai-Com, a modern and feature-rich e-commerce web application."
     price: 1.99
     image: hqdefault.jpg
 memories:

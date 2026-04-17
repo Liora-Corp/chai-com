@@ -1,6 +1,6 @@
 ---
 name: "⭐Challenge idea"
-about: Idea for a new hacking challenge in OWASP Chai-Com
+about: Idea for a new hacking challenge in WowChai-Com
 title: '[⭐] '
 labels: challenge
 assignees: ''
@@ -22,7 +22,7 @@ Existing issues often contain information about workarounds, resolution, or prog
 
 ### Underlying vulnerability/ies
 
-<!-- ✍️--> Security vulnerabilities or design flaws this challenge will be based on. Optimally include CWE, OWASP or similar references.
+<!-- ✍️--> Security vulnerabilities or design flaws this challenge will be based on. Optimally include CWE, Wowor similar references.
 
 ### Expected difficulty
 

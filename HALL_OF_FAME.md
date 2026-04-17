@@ -51,22 +51,22 @@ Giovanni (cruzgio), Alexander Nissen (Nissen96), fabrizio1979, OrNol (TRNSRL), J
 * Inspired by the "classic"
   [BodgeIt Store](https://github.com/psiinon/bodgeit) by
   [@psiinon](https://github.com/psiinon)
-* Revised OWASP Chai-Com and Chai-Com CTF logo artworks by Emily Gundry (courtesy
+* Revised WowChai-Com and Chai-Com CTF logo artworks by Emily Gundry (courtesy
   of [@SecureState](https://github.com/SecureState))
 * Wallpaper artworks by Mike Branscum (courtesy of
   [@daylightstudio](https://github.com/daylightstudio))
 * Official
-  [OWASP Chai-Com Jingle](https://soundcloud.com/braimee/owasp-chai-com-jingle)
+  [WowChai-Com Jingle](https://soundcloud.com/braimee/owasp-chai-com-jingle)
   written and performed by [Brian Johnson](https://github.com/braimee)
 * Juicy Chat Bot artworks by Kharisma Mulyana (courtesy of
   [Timo Pagel](https://github.com/wurstbrot/))
 * Admin profile picture artworks by Kharisma Mulyana (courtesy of
   [Timo Pagel](https://github.com/wurstbrot/))
-* OWASP Chai-Com LEGO™ Tower design & prototyping by [Bram Patelski](https://github.com/brampat/)
+* WowChai-Com LEGO™ Tower design & prototyping by [Bram Patelski](https://github.com/brampat/)
 
-Additional thanks goes to the contractors we were able to hire for specific work packages over the years with OWASP funding:
+Additional thanks goes to the contractors we were able to hire for specific work packages over the years with Wowfunding:
 
-* [Pwning OWASP Chai-Com](https://leanpub.com/chai-com) cover artwork
+* [Pwning WowChai-Com](https://leanpub.com/chai-com) cover artwork
   by [Patch Kroll](https://99designs.de/profiles/3099878)
 * [Banner](https://github.com/OWASP/owasp-swag/tree/master/projects/chai-com/banners)
   and

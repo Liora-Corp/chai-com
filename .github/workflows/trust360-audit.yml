@@ -1,0 +1,332 @@
+name: "Security Gate Review"
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      scan_payload:
+        description: "Trust360 scan result JSON payload (leave blank for demo data)"
+        required: false
+        type: string
+  repository_dispatch:
+    types: [trust360-scan-complete]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  # ── Job 1: scan ─────────────────────────────────────────────────────────────
+  # Always completes. Generates + uploads artifacts, posts PR comment.
+  # Gate decision passed to job 2 via outputs.
+  scan:
+    name: "Security Gate Review — Scan"
+    runs-on: ubuntu-latest
+    outputs:
+      gate:        ${{ steps.report.outputs.gate }}
+      gate_reason: ${{ steps.report.outputs.gate_reason }}
+      scan_id:     ${{ steps.report.outputs.scan_id }}
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
+
+      # ── 1. Simulate scanning phase ─────────────────────────────────────────
+      - name: "Scanning PR diff..."
+        run: |
+          echo "::notice::Security Gate Review initialising..."
+          echo ""
+          echo "  Connecting to Trust360 engine..."
+          sleep 4
+          echo "  Fetching PR diff..."
+          sleep 4
+          echo "  Analysing changed files:"
+          echo "    src/routes/profile.ts            [DONE]"
+          sleep 2
+          echo "    src/handlers/avatarUpload.ts     [DONE]"
+          sleep 2
+          echo "    src/config/s3.ts                 [DONE]"
+          sleep 1
+          echo "    terraform/s3.tf                  [DONE]"
+          sleep 1
+          echo "    src/middleware/auth.ts            [DONE]"
+          sleep 2
+          echo "  Running security rule engine...    [DONE]"
+          sleep 3
+          echo "  Evaluating gate policy...          [DONE]"
+          sleep 2
+          echo ""
+          echo "  Scan complete. Loading results... "
+
+      # ── 2. Load scan data ──────────────────────────────────────────────────
+      - name: "Load scan data"
+        run: |
+          EVENT="${{ github.event_name }}"
+
+          if [ "$EVENT" = "repository_dispatch" ]; then
+            echo '${{ toJson(github.event.client_payload) }}' > scan.json
+
+          elif [ "$EVENT" = "workflow_dispatch" ] && [ -n '${{ inputs.scan_payload }}' ]; then
+            echo '${{ inputs.scan_payload }}' > scan.json
+
+          else
+            # Demo data — mirrors real Trust360 scan result for PR #5
+            cat > scan.json <<'ENDJSON'
+          {
+            "scanId": "scan-7c3e9b0f-pr5",
+            "prNumber": "#5",
+            "prTitle": "feat(profile): add avatar upload with S3 + presigned URL endpoint",
+            "serviceName": "profile-service",
+            "prAuthor": "ShobanaBohs100",
+            "prBranch": "feat/avatar-upload",
+            "prBaseBranch": "main",
+            "repo": "Liora-Corp/chai-com",
+            "gate": "BLOCKED",
+            "gateReason": "BLOCKED — unrestricted file upload with no content-type validation allows malicious file injection.",
+            "completedAt": "2026-04-15T17:52:41Z",
+            "ciStatus": "failing",
+            "findingCounts": { "critical": 2, "high": 1, "medium": 2, "low": 0 },
+            "diffMeta": {
+              "filesChanged": [
+                "src/routes/profile.ts",
+                "src/handlers/avatarUpload.ts",
+                "src/config/s3.ts",
+                "src/middleware/auth.ts",
+                "src/services/avatarService.ts",
+                "src/models/avatar.ts",
+                "src/controllers/profileController.ts",
+                "src/utils/fileValidation.ts",
+                "src/types/profile.ts",
+                "src/lib/s3Client.ts",
+                "src/events/profileEvents.ts",
+                "src/jobs/avatarCleanup.ts",
+                "terraform/s3.tf",
+                "terraform/iam-avatar-policy.tf",
+                "terraform/variables.tf",
+                "k8s/deployment.yaml",
+                "k8s/service.yaml",
+                "k8s/configmap.yaml",
+                "routes/appConfiguration.ts",
+                "lib/config.types.ts",
+                "test/api/profileImageUploadSpec.ts"
+              ],
+              "insertions": 203,
+              "deletions": 11,
+              "prLink": "https://github.com/Liora-Corp/chai-com/pull/5",
+              "prBaseBranch": "main",
+              "rawDiff": "diff --git a/src/handlers/avatarUpload.ts b/src/handlers/avatarUpload.ts\nindex 3f4g5h6..7i8j9k0 100644\n--- a/src/handlers/avatarUpload.ts\n+++ b/src/handlers/avatarUpload.ts\n@@ -1,5 +1,38 @@\n+import { S3 } from 'aws-sdk';\n+const s3 = new S3();\n+\n+// CRITICAL: no content-type validation\n+export async function getUploadUrl(req, res) {\n+  const { filename, contentType } = req.body;\n+  const key = 'avatars/' + req.user.id + '/' + filename;\n+  const url = await s3.getSignedUrlPromise('putObject', {\n+    Bucket: process.env.AVATAR_BUCKET,\n+    Key: key,\n+    ContentType: contentType,\n+    Expires: 3600,\n+  });\n+  res.json({ uploadUrl: url, key });\n+}\n+\n+// CRITICAL: path traversal\n+export async function deleteAvatar(req, res) {\n+  const { key } = req.body;\n+  await s3.deleteObject({ Bucket: process.env.AVATAR_BUCKET, Key: key }).promise();\n+  res.json({ deleted: true });\n+}\ndiff --git a/terraform/s3.tf b/terraform/s3.tf\n--- a/terraform/s3.tf\n+++ b/terraform/s3.tf\n@@ -4,6 +4,8 @@\n   name = \"liora-corp-avatars-prod\"\n+  # HIGH: public access block NOT configured\n+  acl  = \"public-read\""
+            },
+            "findings": [
+              {
+                "id": "T360-001", "severity": "CRITICAL",
+                "rule": "unrestricted-file-upload",
+                "file": "src/handlers/avatarUpload.ts", "line": 9,
+                "title": "No content-type validation on presigned URL",
+                "detail": "contentType is taken from req.body with no allowlist. Attacker can set application/x-php and upload malicious content."
+              },
+              {
+                "id": "T360-002", "severity": "CRITICAL",
+                "rule": "s3-path-traversal",
+                "file": "src/handlers/avatarUpload.ts", "line": 21,
+                "title": "S3 key path traversal via unsanitised filename",
+                "detail": "key in deleteAvatar is user-supplied with no prefix enforcement. Supply ../../secrets/env to delete arbitrary objects."
+              },
+              {
+                "id": "T360-003", "severity": "HIGH",
+                "rule": "s3-public-read-acl",
+                "file": "terraform/s3.tf", "line": 7,
+                "title": "S3 bucket configured with public-read ACL",
+                "detail": "acl=public-read exposes all uploaded files to the internet. Public access block not configured."
+              },
+              {
+                "id": "T360-004", "severity": "MEDIUM",
+                "rule": "missing-file-size-limit",
+                "file": "src/handlers/avatarUpload.ts", "line": 5,
+                "title": "No upload size limit enforced",
+                "detail": "Presigned URL allows unlimited upload size — multi-GB uploads cause DoS or cost spike."
+              },
+              {
+                "id": "T360-005", "severity": "MEDIUM",
+                "rule": "presigned-url-long-expiry",
+                "file": "src/handlers/avatarUpload.ts", "line": 14,
+                "title": "Presigned URL expiry is 1 hour (3600s)",
+                "detail": "Unnecessarily long window. If URL is leaked it can be reused. Recommended: 60-300s."
+              }
+            ]
+          }
+          ENDJSON
+          fi
+
+          python3 -m json.tool scan.json > /dev/null \
+            || (echo "::error::scan.json is not valid JSON"; exit 1)
+          echo "Scan data loaded."
+
+      # ── 3. Generate HTML report + JSON summary + step summary ──────────────
+      - name: "Generate reports"
+        id: report
+        run: python3 .github/scripts/trust360_report.py
+
+      # ── 4. Verify files exist ──────────────────────────────────────────────
+      - name: "Verify report files"
+        run: ls -lh trust360-report.html trust360-summary.json scan.json
+
+      # ── 5. Upload artifacts (always) ───────────────────────────────────────
+      - name: "Upload artifacts"
+        if: always()
+        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b #v4.5.0
+        with:
+          name: security-gate-review-${{ steps.report.outputs.scan_id || github.run_id }}
+          path: |
+            trust360-report.html
+            trust360-summary.json
+            scan.json
+          retention-days: 90
+          if-no-files-found: error
+
+      # ── 6. Post full report in PR comment (always) ─────────────────────────
+      - name: "Post PR comment"
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea #v7.0.1
+        with:
+          script: |
+            const fs = require('fs');
+            const d  = JSON.parse(fs.readFileSync('scan.json', 'utf8'));
+            const fc   = d.findingCounts || {};
+            const diff = d.diffMeta     || {};
+            const gate = d.gate         || 'UNKNOWN';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+
+            const gateIcon = { BLOCKED: '🚫', PASS: '✅' }[gate] || '❓';
+            const sevIcon  = { CRITICAL: '🔴', HIGH: '🟠', MEDIUM: '🟡', LOW: '🔵' };
+            const sevBg    = { CRITICAL: '#c0392b', HIGH: '#e67e22', MEDIUM: '#d4ac0d', LOW: '#2980b9' };
+            const findings = d.findings || [];
+            const files    = (diff.filesChanged || []);
+            const total    = Object.values(fc).reduce((a, b) => a + b, 0);
+
+            // ── finding rows for markdown table ──
+            const findingMdRows = findings.map(fx =>
+              `| \`${fx.id}\` | ${sevIcon[fx.severity]||'⚪'} **${fx.severity}** ` +
+              `| \`${fx.file}:${fx.line}\` | ${fx.title} |`
+            ).join('\n');
+
+            // ── finding rows for HTML table (used inside <details>) ──
+            const findingHtmlRows = findings.map(fx => {
+              const bg = sevBg[fx.severity] || '#888';
+              return `<tr>
+                <td><code>${fx.id}</code></td>
+                <td><span style="background:${bg};color:#fff;padding:2px 8px;border-radius:4px;font-size:.8rem;font-weight:700">${fx.severity}</span></td>
+                <td><code>${fx.file}:${fx.line}</code></td>
+                <td><strong>${fx.title}</strong><br><small>${fx.detail || ''}</small></td>
+              </tr>`;
+            }).join('\n');
+
+            const filesHtml = files.map(f => `<li><code>${f}</code></li>`).join('\n');
+
+            const rawDiff = (diff.rawDiff || '(no diff available)')
+              .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+            const body = [
+              `## ${gateIcon} Security Gate Review — **${gate}**`,
+              `> **${d.gateReason || ''}**`,
+              '',
+              '### Finding Counts',
+              '| 🔴 Critical | 🟠 High | 🟡 Medium | 🔵 Low | Total |',
+              '|:-----------:|:-------:|:---------:|:------:|:-----:|',
+              `| **${fc.critical??0}** | **${fc.high??0}** | **${fc.medium??0}** | **${fc.low??0}** | **${total}** |`,
+              '',
+              ...(findings.length ? [
+                '### Findings',
+                '| ID | Severity | Location | Title |',
+                '|----|----------|----------|-------|',
+                findingMdRows,
+                '',
+              ] : []),
+              '<details>',
+              '<summary><strong>Full report (expanded)</strong></summary>',
+              '',
+              `<table>
+              <tr><th>Field</th><th>Value</th></tr>
+              <tr><td>Service</td><td><code>${d.serviceName}</code></td></tr>
+              <tr><td>PR</td><td><a href="${diff.prLink||'#'}">${d.prNumber}</a></td></tr>
+              <tr><td>Author</td><td><code>${d.prAuthor}</code></td></tr>
+              <tr><td>Branch</td><td><code>${d.prBranch}</code> → <code>${diff.prBaseBranch}</code></td></tr>
+              <tr><td>Diff</td><td>+${diff.insertions??0} / -${diff.deletions??0} lines, ${files.length} files</td></tr>
+              <tr><td>CI Status</td><td><code>${d.ciStatus}</code></td></tr>
+              <tr><td>Scan ID</td><td><code>${d.scanId}</code></td></tr>
+              <tr><td>Completed</td><td>${d.completedAt}</td></tr>
+              </table>`,
+              '',
+              `<details>
+              <summary><strong>Findings detail</strong></summary>
+              <table>
+              <tr><th>ID</th><th>Severity</th><th>Location</th><th>Detail</th></tr>
+              ${findingHtmlRows}
+              </table>
+              </details>`,
+              '',
+              `<details>
+              <summary><strong>Files changed (${files.length})</strong></summary>
+              <ul>${filesHtml}</ul>
+              </details>`,
+              '',
+              `<details>
+              <summary><strong>Raw diff</strong></summary>
+
+              \`\`\`diff
+              ${(diff.rawDiff||'').trim()}
+              \`\`\`
+
+              </details>`,
+              '',
+              '</details>',
+              '',
+              `> 📎 Download [trust360-report.html + trust360-summary.json](${runUrl}) from Artifacts — retained 90 days.`,
+            ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c =>
+              c.user.login === 'github-actions[bot]' &&
+              c.body.includes('Security Gate Review')
+            );
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                comment_id: existing.id, body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: context.issue.number, body,
+              });
+            }
+
+  # ── Job 2: gate ─────────────────────────────────────────────────────────────
+  # Runs after scan always completes. Fails the PR check if gate == BLOCKED.
+  gate:
+    name: "Security Gate Review — Gate"
+    runs-on: ubuntu-latest
+    needs: scan
+    if: always() && needs.scan.result != 'skipped'
+
+    steps:
+      - name: "Evaluate gate decision"
+        env:
+          GATE:        ${{ needs.scan.outputs.gate }}
+          GATE_REASON: ${{ needs.scan.outputs.gate_reason }}
+          SCAN_ID:     ${{ needs.scan.outputs.scan_id }}
+        run: |
+          echo "Scan ID : $SCAN_ID"
+          echo "Gate    : $GATE"
+          echo "Reason  : $GATE_REASON"
+          echo ""
+          if [ "$GATE" = "BLOCKED" ]; then
+            echo "::error title=Security Gate BLOCKED::$GATE_REASON"
+            echo "This PR is blocked. Resolve the findings above and push a new commit."
+            exit 1
+          elif [ "$GATE" = "PASS" ]; then
+            echo "::notice title=Security Gate PASS::All checks passed."
+          else
+            echo "::warning title=Security Gate UNKNOWN::Gate value '$GATE' not recognised."
+          fi

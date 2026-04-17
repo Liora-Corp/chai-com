@@ -1,20 +1,23 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
-import { inject, TestBed } from '@angular/core/testing'
+import { inject, TestBed } from "@angular/core/testing";
 
-import { WindowRefService } from './window-ref.service'
+import { WindowRefService } from "./window-ref.service";
 
-describe('WindowRefService', () => {
+describe("WindowRefService", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [WindowRefService]
-    })
-  })
+      providers: [WindowRefService],
+    });
+  });
 
-  it('should be created', inject([WindowRefService], (service: WindowRefService) => {
-    expect(service).toBeTruthy()
-  }))
-})
+  it("should be created", inject(
+    [WindowRefService],
+    (service: WindowRefService) => {
+      expect(service).toBeTruthy();
+    },
+  ));
+});

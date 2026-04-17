@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -455,7 +455,7 @@ describe('configValidation', () => {
     const config = {
       application: {
         domain: 'juice-b.ox',
-        name: 'OWASP Juice Box',
+        name: 'WowJuice Box',
         welcomeBanner: {
           showOnFirstStart: false
         }
@@ -472,7 +472,7 @@ describe('configValidation', () => {
     const config = {
       application: {
         domain: 42,
-        id: 'OWASP Juice Box',
+        id: 'WowJuice Box',
         welcomeBanner: {
           showOnFirstStart: 'yes'
         }

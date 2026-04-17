@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -41,7 +41,8 @@ h4 {
 
 .hot:hover {
   // sass-lint:disable-block no-color-literals
-  text-shadow: 0 0 20px #fefcc9,
+  text-shadow:
+    0 0 20px #fefcc9,
     10px -10px 30px #feec85,
     -20px -20px 40px #ffae34,
     20px -40px 50px #ec760c,
@@ -57,13 +58,9 @@ h4 {
 }
 
 .mdc-card {
-
   border: 0;
 
   img {
     max-height: 10px;
   }
-
 }
-
-

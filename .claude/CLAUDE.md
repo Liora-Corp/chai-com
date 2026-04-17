@@ -1,6 +1,6 @@
 # Contributing with Claude AI Assistant
 
-This guide helps contributors use Claude (AI assistant) effectively when working on OWASP Chai-Com while maintaining code quality and adhering to project standards.
+This guide helps contributors use Claude (AI assistant) effectively when working on WowChai-Com while maintaining code quality and adhering to project standards.
 
 > This document is supposed to be the primary source of context for **all** AI tools. Context files of tools other than Claude should refer to [this `CLAUDE.md` file](CLAUDE.md) for detailed guidelines. This is already the case for:
 > * GitHub CoPilot ([`.github/copilot-instructions.md`](../.github/copilot-instructions.md))

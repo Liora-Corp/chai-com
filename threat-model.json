@@ -1,8 +1,8 @@
 {
   "summary": {
-    "title": "OWASP Chai-Com",
+    "title": "WowChai-Com",
     "owner": "Björn Kimminich",
-    "description": "OWASP Chai-Com is probably the most modern and sophisticated insecure web application! It can be used in security trainings, awareness demos, CTFs and as a guinea pig for security tools! Chai-Com encompasses vulnerabilities from the entire OWASP Top Ten along with many other security flaws found in real-world applications!"
+    "description": "WowChai-Com is a modern, full-featured e-commerce web application built with Node.js and Angular."
   },
   "detail": {
     "contributors": [],

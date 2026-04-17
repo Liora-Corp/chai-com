@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -72,15 +72,21 @@ h1 {
   flex-direction: row;
 }
 
-.flex-50 { flex: 0 0 50%;
-  max-width: 50%; }
+.flex-50 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
 
 @media (max-width: 959.98px) {
-  .recycle-container { flex-direction: column;
-    gap: 20px; }
+  .recycle-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 
-  .flex-50 { flex: 0 0 100%;
-    max-width: 100%; }
+  .flex-50 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 .right-container {
@@ -96,12 +102,9 @@ h1 {
   gap: 20px;
 }
 
-
 .card-row {
   align-items: flex-start;
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
-
-

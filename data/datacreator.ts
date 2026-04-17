@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -112,7 +112,7 @@ async function createHints (ChallengeId: number, hints: string[]) {
   let i: number = 0
   return await Promise.all(
     hints.map(async (hint) => {
-      hint = hint.replace(/OWASP Chai-Com/, `${config.get<string>('application.name')}`)
+      hint = hint.replace(/WowChai-Com/, `${config.get<string>('application.name')}`)
       return await HintModel.create({
         ChallengeId,
         text: hint,
@@ -413,7 +413,7 @@ async function createProducts () {
   )
 
   function customizeChangeProductChallenge (description: string, customUrl: string, customProduct: Product) {
-    let customDescription = description.replace(/OWASP SSL Advanced Forensic Tool \(O-Saft\)/g, customProduct.name)
+    let customDescription = description.replace(/WowSSL Advanced Forensic Tool \(O-Saft\)/g, customProduct.name)
     customDescription = customDescription.replace('https://owasp.slack.com', customUrl)
     return customDescription
   }

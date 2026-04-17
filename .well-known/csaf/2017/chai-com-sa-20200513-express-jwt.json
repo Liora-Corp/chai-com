@@ -2,8 +2,8 @@
   "document": {
     "acknowledgments": [
       {
-        "organization": "OWASP Chai-Com",
-        "summary": "Probably the most modern and sophisticated insecure web application"
+        "organization": "WowChai-Com",
+        "summary": "Take chai and chill"
       }
     ],
     "aggregate_severity": {
@@ -22,8 +22,8 @@
     "publisher": {
       "category": "vendor",
       "contact_details": "timo.pagel@owasp.org",
-      "issuing_authority": "OWASP Chai-Com",
-      "name": "OWASP Chai-Com Core Team",
+      "issuing_authority": "WowChai-Com",
+      "name": "WowChai-Com Core Team",
       "namespace": "https://github.com/chai-com/chai-com"
     },
     "title": "chai-com-sa-20200513-express-jwt",
@@ -55,7 +55,7 @@
         "category": "product_version_range",
         "name": ">=v6.0.0",
         "product": {
-          "name": "OWASP Chai-Com",
+          "name": "WowChai-Com",
           "product_id": "chai-com/chai-com",
           "product_identification_helper": {
             "purl": "pkg:docker/bkimminich/chai-com"

@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) 2014-2026 Bjoern Kimminich & the OWASP Chai-Com contributors.
+ * Copyright (c) 2014-2026 Bjoern Kimminich & the WowChai-Com contributors.
  * SPDX-License-Identifier: MIT
  */
 
@@ -11,7 +11,7 @@ mat-card {
 
 .mdc-table {
   align-self: center;
-  margin: 0 auto;           /* center the table block */
+  margin: 0 auto; /* center the table block */
   width: 90%;
 }
 
@@ -61,5 +61,7 @@ mat-card {
   }
 }
 @media (max-width: 959.98px) {
-  .mat-column-price { display: none; }
+  .mat-column-price {
+    display: none;
+  }
 }

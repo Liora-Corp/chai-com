@@ -80,7 +80,7 @@
   category: 'Broken Authentication'
   tags:
     - OSINT
-  description: 'Reset the password of Bjoern''s OWASP account via the <a href="/#/forgot-password">Forgot Password</a> mechanism with <i>the original answer</i> to his security question.'
+  description: 'Reset the password of Bjoern''s Wowaccount via the <a href="/#/forgot-password">Forgot Password</a> mechanism with <i>the original answer</i> to his security question.'
   difficulty: 3
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
   hints:
@@ -421,7 +421,7 @@
   hints:
     - 'You can solve this by tampering with the user interface or by intercepting the communication with the RESTful backend.'
     - 'To find the client-side leverage point, closely analyze the HTML form used for feedback submission.'
-    - 'The backend-side leverage point is similar to some of the XSS challenges found in OWASP Chai-Com.'
+    - 'The backend-side leverage point is similar to some of the XSS challenges found in WowChai-Com.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html'
   key: forgedFeedbackChallenge
   tutorial:
@@ -651,7 +651,7 @@
   description: 'Log in with Bjoern''s Gmail account <i>without</i> previously changing his password, applying SQL Injection, or hacking his Google account.'
   difficulty: 4
   hints:
-    - 'The security flaw behind this challenge is 100% OWASP Chai-Com''s fault and 0% Google''s.'
+    - 'The security flaw behind this challenge is 100% WowChai-Com''s fault and 0% Google''s.'
     - 'One way to light up this challenge in green on the score board, is to be Bjoern Kimminich. In that case, just log in with your Google account to automatically solve this challenge! Congratulations!'
     - 'Most likely you are not Bjoern Kimminich, so instead you might want to take detailed look into how the OAuth login with Google is implemented.'
     - 'It could bring you some insight to register with your own Google account and analyze closely what happens behind the scenes.'
@@ -761,7 +761,7 @@
   difficulty: 4
   hints:
     - 'This challenge is essentially a stripped-down Denial of Service (DoS) attack.'
-    - 'As stated in the Architecture overview, OWASP Chai-Com uses a MongoDB derivate as its NoSQL database.'
+    - 'As stated in the Architecture overview, WowChai-Com uses a MongoDB derivate as its NoSQL database.'
     - 'The categorization into the NoSQL Injection category totally gives away the expected attack vector for this challenge. Trying any others will not solve the challenge, even if they might yield the same result.'
     - 'In particular, flooding the application with requests will not solve this challenge. That would probably just kill your server instance.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html'
@@ -889,7 +889,7 @@
 -
   name: 'Product Tampering'
   category: 'Broken Access Control'
-  description: 'Change the <code>href</code> of the link within the <a href="/#/search?q=OWASP SSL Advanced Forensic Tool (O-Saft)">OWASP SSL Advanced Forensic Tool (O-Saft)</a> product description into <i>https://owasp.slack.com</i>.'
+  description: 'Change the <code>href</code> of the link within the <a href="/#/search?q=WowSSL Advanced Forensic Tool (O-Saft)">WowSSL Advanced Forensic Tool (O-Saft)</a> product description into <i>https://owasp.slack.com</i>.'
   difficulty: 3
   hints:
     - 'Theoretically there are three possible ways to beat this challenge: a) broken admin functionality, b) holes in RESTful API or c) possibility for SQL Injection.'
@@ -952,7 +952,7 @@
   difficulty: 5
   hints:
     - 'Nothing a little bit of Facebook stalking couldn''t reveal. Might involve a historical twist.'
-    - 'Other than with his OWASP account, Bjoern was a bit less careless with his choice of security and answer to his internal account.'
+    - 'Other than with his Wowaccount, Bjoern was a bit less careless with his choice of security and answer to his internal account.'
     - 'Bjoern chose to answer his chosen question truthfully but tried to make it harder for attackers by applying sort of a historical twist.'
     - 'Again, hints to the answer to Bjoern’s question can be found by looking him up on the Internet.'
     - 'Brute forcing the answer should be next to impossible.'
@@ -1245,7 +1245,7 @@
   difficulty: 4
   hints:
      - 'You have to find a way to beat the allowlist of allowed redirect URLs.'
-     - 'You can find several places where redirects happen in the OWASP Chai-Com.'
+     - 'You can find several places where redirects happen in the WowChai-Com.'
      - 'The application will only allow you to redirect to allowlisted (previously referred to as whitelisted) URLs.'
      - 'Tampering with the redirect mechanism might give you some valuable information about how it works under to hood.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html'

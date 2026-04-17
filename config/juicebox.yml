@@ -1,6 +1,6 @@
 application:
   domain: juice-b.ox
-  name: 'OWASP Juice Box'
+  name: 'WowJuice Box'
   customMetricsPrefix: juicebox
   welcomeBanner:
     showOnFirstStart: false

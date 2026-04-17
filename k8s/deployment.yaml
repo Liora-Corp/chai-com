@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: chai-com
-          image: bkimminich/juice-shop:latest
+          image: 474221741098.dkr.ecr.ap-southeast-2.amazonaws.com/chai-com:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           env:
@@ -33,3 +34,11 @@ spec:
               port: 3000
             initialDelaySeconds: 15
             periodSeconds: 10
+          volumeMounts:
+            - name: chai-com-config
+              mountPath: /chai-com/config/default.yml
+              subPath: default.yml
+      volumes:
+        - name: chai-com-config
+          configMap:
+            name: chai-com-config

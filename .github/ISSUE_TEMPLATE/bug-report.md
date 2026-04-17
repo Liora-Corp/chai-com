@@ -1,6 +1,6 @@
 ---
 name: "\U0001F41BBug report"
-about: Report a bug in OWASP Chai-Com
+about: Report a bug in WowChai-Com
 title: '[🐛] '
 labels: bug
 assignees: ''
