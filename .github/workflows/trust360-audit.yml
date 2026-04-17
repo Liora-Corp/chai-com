@@ -91,7 +91,7 @@ jobs:
                 "src/handlers/avatarUpload.ts",
                 "src/config/s3.ts",
                 "src/middleware/auth.ts",
-                "src/services/avatarService.ts",
+                "src/services/avatarService.ts"
               ],
               "insertions": 325,
               "deletions": 259,
