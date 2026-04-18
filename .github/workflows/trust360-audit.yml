@@ -14,6 +14,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  statuses: write
 
 jobs:
   # ── Job 1: scan ─────────────────────────────────────────────────────────────
@@ -443,21 +444,44 @@ jobs:
 
     steps:
       - name: "Evaluate gate decision"
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea #v7.0.1
         env:
           GATE:        ${{ needs.scan.outputs.gate }}
           GATE_REASON: ${{ needs.scan.outputs.gate_reason }}
           SCAN_ID:     ${{ needs.scan.outputs.scan_id }}
-        run: |
-          echo "Scan ID : $SCAN_ID"
-          echo "Gate    : $GATE"
-          echo "Reason  : $GATE_REASON"
-          echo ""
-          if [ "$GATE" = "BLOCKED" ]; then
-            echo "::error title=Security Gate BLOCKED::$GATE_REASON"
-            echo "This PR is blocked. Resolve the findings above and push a new commit."
-            exit 1
-          elif [ "$GATE" = "PASS" ]; then
-            echo "::notice title=Security Gate PASS::All checks passed."
-          else
-            echo "::warning title=Security Gate UNKNOWN::Gate value '$GATE' not recognised."
-          fi
+        with:
+          script: |
+            const gate       = (process.env.GATE        || '').trim();
+            const gateReason = (process.env.GATE_REASON || '').trim();
+            const scanId     = (process.env.SCAN_ID     || '').trim();
+
+            core.info(`Scan ID : ${scanId}`);
+            core.info(`Gate    : ${gate}`);
+            core.info(`Reason  : ${gateReason}`);
+
+            // Determine commit status state — anything that is not explicitly PASS is a failure.
+            const blocked = gate !== 'PASS';
+            const state   = blocked ? 'failure' : 'success';
+            const description = blocked
+              ? (gateReason || `Security Gate ${gate || 'UNKNOWN'} — no gate value returned.`).slice(0, 140)
+              : 'All security checks passed.';
+
+            // Resolve the HEAD SHA for both PR and push/dispatch events.
+            const sha = context.payload.pull_request?.head?.sha ?? context.sha;
+
+            // Write a commit status — this is independently requirable in branch protection
+            // (Settings → Branches → Required status checks → "Trust360 / Security Gate").
+            await github.rest.repos.createCommitStatus({
+              owner:       context.repo.owner,
+              repo:        context.repo.repo,
+              sha,
+              state,
+              description,
+              context:     'Trust360 / Security Gate',
+            });
+
+            if (blocked) {
+              core.setFailed(`🚫 Security Gate ${gate}: ${gateReason}`);
+            } else {
+              core.notice('✅ Security Gate PASS — all checks passed.');
+            }
