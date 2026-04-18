@@ -1,0 +1,463 @@
+name: "Security Gate Review"
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      scan_payload:
+        description: "Trust360 scan result JSON payload (leave blank for demo data)"
+        required: false
+        type: string
+  repository_dispatch:
+    types: [trust360-scan-complete]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  # ── Job 1: scan ─────────────────────────────────────────────────────────────
+  # Always completes. Generates + uploads artifacts, posts PR comment.
+  # Gate decision passed to job 2 via outputs.
+  scan:
+    name: "Security Gate Review — Scan"
+    runs-on: ubuntu-latest
+    outputs:
+      gate:        ${{ steps.report.outputs.gate }}
+      gate_reason: ${{ steps.report.outputs.gate_reason }}
+      scan_id:     ${{ steps.report.outputs.scan_id }}
+
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
+
+      # ── 1. Simulate scanning phase ─────────────────────────────────────────
+      - name: "Scanning PR diff..."
+        run: |
+          echo "::notice::Security Gate Review initialising..."
+          echo ""
+          echo "  Connecting to Trust360 engine..."
+          sleep 4
+          echo "  Fetching PR diff..."
+          sleep 4
+          echo "  Analysing changed files:"
+          echo "    src/routes/profile.ts            [DONE]"
+          sleep 2
+          echo "    src/handlers/avatarUpload.ts     [DONE]"
+          sleep 2
+          echo "    src/config/s3.ts                 [DONE]"
+          sleep 1
+          echo "    terraform/s3.tf                  [DONE]"
+          sleep 1
+          echo "    src/middleware/auth.ts            [DONE]"
+          sleep 2
+          echo "  Running security rule engine...    [DONE]"
+          sleep 3
+          echo "  Evaluating gate policy...          [DONE]"
+          sleep 2
+          echo ""
+          echo "  Scan complete. Loading results... "
+
+      # ── 2. Load scan data ──────────────────────────────────────────────────
+      - name: "Load scan data"
+        run: |
+          EVENT="${{ github.event_name }}"
+
+          if [ "$EVENT" = "repository_dispatch" ]; then
+            echo '${{ toJson(github.event.client_payload) }}' > scan.json
+
+          elif [ "$EVENT" = "workflow_dispatch" ] && [ -n '${{ inputs.scan_payload }}' ]; then
+            echo '${{ inputs.scan_payload }}' > scan.json
+
+          else
+            # Demo data — Trust360 scan result for PR #8 (feat/avatar-upload)
+            cat > scan.json <<'ENDJSON'
+          {
+            "scanId": "scan-pr8-sec-01",
+            "prNumber": "#8",
+            "prTitle": "feat(profile): add avatar upload with S3 + presigned URL endpoint",
+            "serviceName": "chai-com",
+            "prAuthor": "ashok-yannam",
+            "prBranch": "feat/avatar-upload",
+            "prBaseBranch": "main",
+            "repo": "Liora-Corp/chai-com",
+            "gate": "BLOCKED",
+            "gateReason": "BLOCKED — critical kill-chain confirmed: SSRF → IMDSv1 → s3:* wildcard IAM achieves full cloud account takeover. 11 critical findings require remediation before merge.",
+            "completedAt": "2026-04-18T09:14:22Z",
+            "ciStatus": "failing",
+            "findingCounts": { "critical": 11, "high": 7, "medium": 3, "low": 6, "info": 21 },
+            "immediateActions": [
+              {
+                "priority": 1,
+                "title": "Block SSRF → IMDS Escalation",
+                "owner": "[DevOps] + [AppSec]",
+                "impact": "Any app-layer vulnerability allows IAM credential extraction from the node metadata service."
+              },
+              {
+                "priority": 2,
+                "title": "Lock Down Node IAM Role (s3:*)",
+                "owner": "[CloudSec]",
+                "impact": "A compromised pod instantly has read/write to all S3 buckets — 2.1M PII records exposed."
+              },
+              {
+                "priority": 3,
+                "title": "Remove Kubelet Anonymous Auth",
+                "owner": "[SecOps / Platform]",
+                "impact": "Anyone inside the VPC can exec into any pod, bypassing Kubernetes RBAC entirely."
+              }
+            ],
+            "diffMeta": {
+              "filesChanged": [
+                "src/routes/profile.ts",
+                "src/handlers/avatarUpload.ts",
+                "src/config/s3.ts",
+                "src/middleware/auth.ts",
+                "src/services/avatarService.ts"
+              ],
+              "insertions": 325,
+              "deletions": 259,
+              "prLink": "https://github.com/Liora-Corp/chai-com/pull/8",
+              "prBaseBranch": "main",
+              "rawDiff": "diff --git a/src/handlers/avatarUpload.ts b/src/handlers/avatarUpload.ts\nindex 3f4g5h6..7i8j9k0 100644\n--- a/src/handlers/avatarUpload.ts\n+++ b/src/handlers/avatarUpload.ts\n@@ -1,5 +1,38 @@\n+import { S3 } from 'aws-sdk';\n+const s3 = new S3();\n+\n+// CRITICAL: no content-type validation\n+export async function getUploadUrl(req, res) {\n+  const { filename, contentType } = req.body;\n+  const key = 'avatars/' + req.user.id + '/' + filename;\n+  const url = await s3.getSignedUrlPromise('putObject', {\n+    Bucket: process.env.AVATAR_BUCKET,\n+    Key: key,\n+    ContentType: contentType,\n+    Expires: 3600,\n+  });\n+  res.json({ uploadUrl: url, key });\n+}\n+\n+// CRITICAL: path traversal\n+export async function deleteAvatar(req, res) {\n+  const { key } = req.body;\n+  await s3.deleteObject({ Bucket: process.env.AVATAR_BUCKET, Key: key }).promise();\n+  res.json({ deleted: true });\n+}"
+            },
+            "findings": [
+              {
+                "id": "F-APP-01", "severity": "CRITICAL", "agent": "SAST",
+                "file": "src/routes/search.ts", "line": 14,
+                "title": "SQL Injection (Auth Bypass)",
+                "detail": "Query built via string concatenation. PoC: POST /rest/user/login {\"email\":\"' OR 1=1--\"}. Full DB dump including PII/PCI.",
+                "mitre": "T1190"
+              },
+              {
+                "id": "F-APP-02", "severity": "CRITICAL", "agent": "SAST",
+                "file": "src/routes/profileImageUrl.ts", "line": 8,
+                "title": "Server-Side Request Forgery (SSRF → IMDS)",
+                "detail": "Unvalidated URL param allows probing internal network and Cloud Metadata at 169.254.169.254.",
+                "mitre": "T1552.005"
+              },
+              {
+                "id": "F-APP-03", "severity": "CRITICAL", "agent": "SAST",
+                "file": "frontend/src/app/search-result/search-result.component.ts", "line": 32,
+                "title": "DOM XSS via unescaped search parameter",
+                "detail": "User-supplied query reflected into innerHTML without sanitisation. Entry point for kill-chain CHN-KILL-01.",
+                "mitre": "T1059.007"
+              },
+              {
+                "id": "F-SEC-04", "severity": "CRITICAL", "agent": "Secrets Scanner",
+                "file": ".env.example", "line": 12,
+                "title": "Active AWS Access Key committed to repository",
+                "detail": "Live AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY present in source. Instant cloud account compromise.",
+                "mitre": "T1552.001"
+              },
+              {
+                "id": "F-APP-05", "severity": "CRITICAL", "agent": "SAST",
+                "file": "config/default.json", "line": 5,
+                "title": "JWT signing secret hardcoded in source",
+                "detail": "HS256 key hardcoded — any repo reader can forge admin-level JWTs.",
+                "mitre": "T1552.001"
+              },
+              {
+                "id": "F-TF-06", "severity": "CRITICAL", "agent": "Terraform Scanner",
+                "file": "terraform/eks-nodes.tf", "line": 22,
+                "title": "IMDSv1 enabled on EKS node group",
+                "detail": "Pods with SSRF can fetch http://169.254.169.254/latest/meta-data/iam/ without a session token.",
+                "mitre": "T1552.005"
+              },
+              {
+                "id": "F-HELM-08", "severity": "CRITICAL", "agent": "Helm / K8s Scanner",
+                "file": "helm/charts/chai-com/templates/deployment.yaml", "line": 41,
+                "title": "Privileged container + hostPID enables node escape",
+                "detail": "privileged: true + hostPID: true. PoC: nsenter --target 1 --mount --uts --ipc --net --pid",
+                "mitre": "T1611"
+              },
+              {
+                "id": "F-CLOUD-11", "severity": "CRITICAL", "agent": "Cloud Config",
+                "file": "terraform/iam.tf", "line": 18,
+                "title": "Node IAM role has s3:* wildcard permissions",
+                "detail": "Any compromised node or pod can read/write all S3 buckets — 2.1M PII records at risk.",
+                "mitre": "T1078.004"
+              },
+              {
+                "id": "F-K8S-12", "severity": "CRITICAL", "agent": "K8s Security",
+                "file": "terraform/eks-nodes.tf", "line": 55,
+                "title": "Kubelet anonymous-auth enabled on port 10250",
+                "detail": "Bypasses RBAC entirely — any VPC-reachable host can execute commands in any pod.",
+                "mitre": "T1609"
+              },
+              {
+                "id": "F-K8S-13", "severity": "CRITICAL", "agent": "K8s Security",
+                "file": "terraform/eks-control-plane.tf", "line": 9,
+                "title": "etcd data at rest not encrypted",
+                "detail": "Secrets, tokens and PII stored in etcd are readable in plaintext if storage is accessed.",
+                "mitre": "T1552.004"
+              },
+              {
+                "id": "F-NET-14", "severity": "CRITICAL", "agent": "K8s Security",
+                "file": "helm/charts/chai-com/templates/", "line": 0,
+                "title": "No NetworkPolicy — cluster-wide allow-all east-west traffic",
+                "detail": "Attacker inside any pod can reach any other service, enabling seamless lateral movement.",
+                "mitre": "T1021"
+              },
+              {
+                "id": "F-DES-01", "severity": "HIGH", "agent": "Design Review",
+                "file": "config/default.json", "line": 5,
+                "title": "No JWT key rotation mechanism",
+                "detail": "Single static HS256 key — long-term persistence if key is leaked.",
+                "mitre": "T1078"
+              },
+              {
+                "id": "F-DES-02", "severity": "HIGH", "agent": "Design Review",
+                "file": "helm/charts/chai-com/", "line": 0,
+                "title": "No trust boundary between workload and kube-system namespace",
+                "detail": "Allows lateral movement across tenant namespace boundaries.",
+                "mitre": "T1021"
+              },
+              {
+                "id": "F-DEF-19", "severity": "HIGH", "agent": "Standards",
+                "file": "src/server.ts", "line": 0,
+                "title": "No Content-Security-Policy header",
+                "detail": "Enables silent session hijacking via XSS. No mitigation for kill-chain entry point CHN-KILL-01.",
+                "mitre": "T1059.007"
+              },
+              {
+                "id": "F-K8S-20", "severity": "HIGH", "agent": "K8s Security",
+                "file": "helm/charts/chai-com/templates/namespace.yaml", "line": 0,
+                "title": "No PodSecurityAdmission policy enforced",
+                "detail": "Workloads can request privileged access without cluster-level enforcement.",
+                "mitre": "T1610"
+              },
+              {
+                "id": "F-CLOUD-21", "severity": "HIGH", "agent": "Cloud Config",
+                "file": "terraform/eks-control-plane.tf", "line": 0,
+                "title": "Kubernetes audit logging not enabled",
+                "detail": "No record of API server access — MTTD for credential abuse is effectively infinite.",
+                "mitre": "T1562.008"
+              },
+              {
+                "id": "F-CICD-22", "severity": "HIGH", "agent": "Pipeline Scanner",
+                "file": ".github/workflows/", "line": 0,
+                "title": "CI/CD uses long-lived AWS credentials instead of OIDC federation",
+                "detail": "Static AWS keys in GitHub Secrets — prefer short-lived OIDC tokens.",
+                "mitre": "T1552.001"
+              },
+              {
+                "id": "F-HELM-25", "severity": "HIGH", "agent": "Helm / K8s Scanner",
+                "file": "helm/charts/chai-com/templates/deployment.yaml", "line": 0,
+                "title": "No CPU/memory limits on chai-com pod",
+                "detail": "Allows resource exhaustion DoS against co-located pods on the node.",
+                "mitre": "T1499"
+              },
+              {
+                "id": "F-APP-30", "severity": "MEDIUM", "agent": "SAST",
+                "file": "src/server.ts", "line": 0,
+                "title": "No rate limiting on authentication endpoints",
+                "detail": "Brute-force and credential stuffing attacks are unrestricted.",
+                "mitre": "T1110"
+              },
+              {
+                "id": "F-APP-31", "severity": "MEDIUM", "agent": "SAST",
+                "file": "config/default.json", "line": 8,
+                "title": "JWT token expiry set to 24 hours",
+                "detail": "Stolen token remains valid for extended window after user logout.",
+                "mitre": "T1539"
+              },
+              {
+                "id": "F-CICD-32", "severity": "MEDIUM", "agent": "Pipeline Scanner",
+                "file": ".github/workflows/", "line": 0,
+                "title": "No SBOM diff or supply-chain verification in CI",
+                "detail": "Transitive dependency changes go undetected between releases.",
+                "mitre": "T1195.001"
+              }
+            ]
+          }
+          ENDJSON
+          fi
+
+          python3 -m json.tool scan.json > /dev/null \
+            || (echo "::error::scan.json is not valid JSON"; exit 1)
+          echo "Scan data loaded."
+
+      # ── 3. Use pre-built HTML report + generate JSON summary + step outputs ──
+      - name: "Generate reports"
+        id: report
+        run: |
+          # Use the pre-built Trust360 report
+          cp .github/workflows/backup/ro5.html trust360-report.html
+
+          # Generate trust360-summary.json from scan.json
+          python3 - <<'PYEOF'
+          import json
+          with open('scan.json') as f:
+              d = json.load(f)
+          summary = {
+              "scanId":        d.get("scanId"),
+              "gate":          d.get("gate"),
+              "gateReason":    d.get("gateReason"),
+              "prNumber":      d.get("prNumber"),
+              "prAuthor":      d.get("prAuthor"),
+              "prBranch":      d.get("prBranch"),
+              "completedAt":   d.get("completedAt"),
+              "findingCounts": d.get("findingCounts", {})
+          }
+          with open('trust360-summary.json', 'w') as f:
+              json.dump(summary, f, indent=2)
+          PYEOF
+
+          # Set step outputs consumed by the gate job
+          GATE=$(python3 -c "import json; d=json.load(open('scan.json')); print(d.get('gate','UNKNOWN'))")
+          REASON=$(python3 -c "import json; d=json.load(open('scan.json')); print(d.get('gateReason',''))")
+          SCAN_ID=$(python3 -c "import json; d=json.load(open('scan.json')); print(d.get('scanId',''))")
+          echo "gate=$GATE"          >> "$GITHUB_OUTPUT"
+          echo "gate_reason=$REASON" >> "$GITHUB_OUTPUT"
+          echo "scan_id=$SCAN_ID"    >> "$GITHUB_OUTPUT"
+
+      # ── 4. Verify files exist ──────────────────────────────────────────────
+      - name: "Verify report files"
+        run: ls -lh trust360-report.html trust360-summary.json scan.json
+
+      # ── 5. Upload artifacts (always) ───────────────────────────────────────
+      - name: "Upload artifacts"
+        if: always()
+        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b #v4.5.0
+        with:
+          name: security-gate-review-${{ steps.report.outputs.scan_id || github.run_id }}
+          path: |
+            trust360-report.html
+            trust360-summary.json
+            scan.json
+          retention-days: 90
+          if-no-files-found: error
+
+      # ── 6. Post full report in PR comment (always) ─────────────────────────
+      - name: "Post PR comment"
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea #v7.0.1
+        with:
+          script: |
+            const fs = require('fs');
+            const d  = JSON.parse(fs.readFileSync('scan.json', 'utf8'));
+            const fc      = d.findingCounts   || {};
+            const diff    = d.diffMeta        || {};
+            const gate    = d.gate            || 'UNKNOWN';
+            const actions = d.immediateActions || [];
+            const runUrl  = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+
+            const gateIcon = { BLOCKED: '🚫', PASS: '✅' }[gate] || '❓';
+            const sevIcon  = { CRITICAL: '🔴', HIGH: '🟠', MEDIUM: '🟡', LOW: '🔵', INFO: 'ℹ️' };
+            const findings = d.findings || [];
+            const files    = diff.filesChanged || [];
+            const total    = Object.values(fc).reduce((a, b) => a + b, 0);
+
+            // ── pipeline findings table rows (grouped by agent) ──
+            const pipelineMdRows = findings.map(fx =>
+              `| \`${fx.id}\` | ${fx.agent} | ${sevIcon[fx.severity]||'⚪'} **${fx.severity}** ` +
+              `| ${fx.title} | \`${fx.file}:${fx.line}\` | \`${fx.mitre||'—'}\` |`
+            ).join('\n');
+
+            // ── immediate action items ──
+            const actionsMd = actions.map(a =>
+              `${a.priority}. **${a.title}** \`${a.owner}\`\n   > ${a.impact}`
+            ).join('\n');
+
+            const body = [
+              `## ${gateIcon} Security Gate Review — **${gate}**`,
+              `> **${d.gateReason || ''}**`,
+              '',
+              '### Finding Counts',
+              '| 🔴 Critical | 🟠 High | 🟡 Medium | 🔵 Low | ℹ️ Info | Total |',
+              '|:-----------:|:-------:|:---------:|:------:|:------:|:-----:|',
+              `| **${fc.critical??0}** | **${fc.high??0}** | **${fc.medium??0}** | **${fc.low??0}** | **${fc.info??0}** | **${total}** |`,
+              '',
+              ...(actions.length ? [
+                '### 🚨 Top 3 Immediate Actions',
+                actionsMd,
+                '',
+              ] : []),
+              ...(findings.length ? [
+                '### Pipeline Findings',
+                '| ID | Agent | Severity | Finding | Location | MITRE |',
+                '|----|-------|----------|---------|----------|-------|',
+                pipelineMdRows,
+                '',
+              ] : []),
+              '<details>',
+              '<summary><strong>Full report (expanded)</strong></summary>',
+              '',
+              `<table>
+              <tr><th>Field</th><th>Value</th></tr>
+              <tr><td>Service</td><td><code>${d.serviceName}</code></td></tr>
+              <tr><td>PR</td><td><a href="${diff.prLink||'#'}">${d.prNumber} — ${d.prTitle||''}</a></td></tr>
+              <tr><td>Author</td><td><code>${d.prAuthor}</code></td></tr>
+              <tr><td>Branch</td><td><code>${d.prBranch}</code> → <code>${diff.prBaseBranch}</code></td></tr>
+              <tr><td>Diff</td><td>+${diff.insertions??0} / -${diff.deletions??0} lines across ${files.length} files</td></tr>
+              <tr><td>CI Status</td><td><code>${d.ciStatus}</code></td></tr>
+              <tr><td>Scan ID</td><td><code>${d.scanId}</code></td></tr>
+              <tr><td>Completed</td><td>${d.completedAt}</td></tr>
+              </table>`,
+              '',
+              `<details>
+              <summary><strong>Files changed (${files.length})</strong></summary>
+              <ul>${files.map(f => `<li><code>${f}</code></li>`).join('\n')}</ul>
+              </details>`,
+              '',
+              `<details>
+              <summary><strong>Raw diff</strong></summary>
+
+              \`\`\`diff
+              ${(diff.rawDiff||'').trim()}
+              \`\`\`
+
+              </details>`,
+              '',
+              '</details>',
+              '',
+              `> 📎 Download [trust360-report.html + trust360-summary.json](${runUrl}) from Artifacts — retained 90 days.`,
+            ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c =>
+              c.user.login === 'github-actions[bot]' &&
+              c.body.includes('Security Gate Review')
+            );
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                comment_id: existing.id, body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: context.issue.number, body,
+              });
+            }
+
+  # ── Job 2: gate ─────────────────────────────────────────────────────────────
+  # Runs after scan always completes. Fails the PR check if gate == BLOCKED.
+  gate:
+    name: "Security Gate Review — Gate"
+    runs-on: ubuntu-latest
+    needs: scan
+    if: always() && needs.scan.result != 'skipped'
+
+    steps:
+      - name: "Evaluate gate decision"
+        env:
+          GATE:        ${{ needs.scan.outputs.gate }}
+          GATE_REASON: ${{ needs.scan.outputs.gate_reason }}
+          SCAN_ID:     ${{ needs.scan.outputs.scan_id }}
+        run: |
+          echo "Scan ID : $SCAN_ID"
+          echo "Gate    : $GATE"
+          echo "Reason  : $GATE_REASON"
+          echo ""
+          if [ "$GATE" = "BLOCKED" ]; then
+            echo "::error title=Security Gate BLOCKED::$GATE_REASON"
+            echo "This PR is blocked. Resolve the findings above and push a new commit."
+            exit 1
+          elif [ "$GATE" = "PASS" ]; then
+            echo "::notice title=Security Gate PASS::All checks passed."
+          else
+            echo "::warning title=Security Gate UNKNOWN::Gate value '$GATE' not recognised."
+          fi
