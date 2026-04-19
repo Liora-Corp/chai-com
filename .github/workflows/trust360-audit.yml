@@ -1,11 +1,11 @@
-name: "Security Gate Review"
+name: 'Security Gate Review'
 
 on:
   pull_request:
   workflow_dispatch:
     inputs:
       scan_payload:
-        description: "Trust360 scan result JSON payload (leave blank for demo data)"
+        description: 'Trust360 scan result JSON payload'
         required: false
         type: string
   repository_dispatch:
@@ -21,18 +21,18 @@ jobs:
   # Always completes. Generates + uploads artifacts, posts PR comment.
   # Gate decision passed to job 2 via outputs.
   scan:
-    name: "Security Gate Review — Scan"
+    name: 'Security Gate Review — Scan'
     runs-on: ubuntu-latest
     outputs:
-      gate:        ${{ steps.report.outputs.gate }}
+      gate: ${{ steps.report.outputs.gate }}
       gate_reason: ${{ steps.report.outputs.gate_reason }}
-      scan_id:     ${{ steps.report.outputs.scan_id }}
+      scan_id: ${{ steps.report.outputs.scan_id }}
 
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
 
       # ── 1. Simulate scanning phase ─────────────────────────────────────────
-      - name: "Scanning PR diff..."
+      - name: 'Scanning PR diff...'
         run: |
           echo "::notice::Security Gate Review initialising..."
           echo ""
@@ -41,16 +41,30 @@ jobs:
           echo "  Fetching PR diff..."
           sleep 4
           echo "  Analysing changed files:"
-          echo "    src/routes/profile.ts            [DONE]"
+          echo "    routes/search.ts                 [DONE]"
           sleep 2
-          echo "    src/handlers/avatarUpload.ts     [DONE]"
+          echo "    routes/profileImageUrl.ts        [DONE]"
           sleep 2
-          echo "    src/config/s3.ts                 [DONE]"
+          echo "    .env.example                     [DONE]"
           sleep 1
-          echo "    terraform/s3.tf                  [DONE]"
-          sleep 1
-          echo "    src/middleware/auth.ts            [DONE]"
+          echo "    helm/charts/chai-com/deployment.yaml  [DONE]"
           sleep 2
+          echo "  Running SAST + Secrets scan...     [DONE]"
+          sleep 3
+          echo ""
+          echo "  ── IaC scan ─────────────────────────────────────────────────"
+          echo "    terraform/eks-nodes.tf           [DONE]"
+          sleep 1
+          echo "    terraform/iam.tf                 [DONE]"
+          sleep 1
+          echo ""
+          echo "  ── Deploying to QA environment for security validation... ───"
+          sleep 3
+          echo "  QA deployment in progress..."
+          sleep 8
+          echo "  QA deployment complete. Running active security validation..."
+          sleep 2
+          echo ""
           echo "  Running security rule engine...    [DONE]"
           sleep 3
           echo "  Evaluating gate policy...          [DONE]"
@@ -59,7 +73,7 @@ jobs:
           echo "  Scan complete. Loading results... "
 
       # ── 2. Load scan data ──────────────────────────────────────────────────
-      - name: "Load scan data"
+      - name: 'Load scan data'
         run: |
           EVENT="${{ github.event_name }}"
 
@@ -70,20 +84,20 @@ jobs:
             echo '${{ inputs.scan_payload }}' > scan.json
 
           else
-            # Demo data — Trust360 scan result for PR #8 (feat/avatar-upload)
+            # Demo data — Trust360 scan result for PR #8 (feat/search)
             cat > scan.json <<'ENDJSON'
           {
-            "scanId": "scan-pr8-sec-01",
+            "scanId": "scan-b7d4e1a3-pr8",
             "prNumber": "#8",
-            "prTitle": "feat(profile): add avatar upload with S3 + presigned URL endpoint",
+            "prTitle": "feat(search): add user search and profile image URL endpoints",
             "serviceName": "chai-com",
             "prAuthor": "ashok-yannam",
-            "prBranch": "feat/avatar-upload",
+            "prBranch": "feat/search",
             "prBaseBranch": "main",
             "repo": "Liora-Corp/chai-com",
             "gate": "BLOCKED",
             "gateReason": "BLOCKED — critical kill-chain confirmed: SSRF → IMDSv1 → s3:* wildcard IAM achieves full cloud account takeover. 11 critical findings require remediation before merge.",
-            "completedAt": "2026-04-18T09:14:22Z",
+            "completedAt": "2026-04-15T11:23:00Z",
             "ciStatus": "failing",
             "findingCounts": { "critical": 11, "high": 7, "medium": 3, "low": 6, "info": 21 },
             "immediateActions": [
@@ -91,46 +105,47 @@ jobs:
                 "priority": 1,
                 "title": "Block SSRF → IMDS Escalation",
                 "owner": "[DevOps] + [AppSec]",
-                "impact": "Any app-layer vulnerability allows IAM credential extraction from the node metadata service."
+                "impact": "Enforce IMDSv2 (http_tokens = \"required\") in terraform/eks-nodes.tf and add URL allowlist in routes/profileImageUrl.ts — any app-layer vulnerability currently allows IAM credential extraction from the node metadata service."
               },
               {
                 "priority": 2,
                 "title": "Lock Down Node IAM Role (s3:*)",
                 "owner": "[CloudSec]",
-                "impact": "A compromised pod instantly has read/write to all S3 buckets — 2.1M PII records exposed."
+                "impact": "Replace s3:* wildcard with scoped policy in terraform/iam.tf — a compromised pod instantly has read/write to all S3 buckets exposing 2.1M PII records."
               },
               {
                 "priority": 3,
                 "title": "Remove Kubelet Anonymous Auth",
                 "owner": "[SecOps / Platform]",
-                "impact": "Anyone inside the VPC can exec into any pod, bypassing Kubernetes RBAC entirely."
+                "impact": "Set anonymous-auth: false in kubelet config — anyone inside the VPC can exec into any pod, bypassing Kubernetes RBAC entirely."
               }
             ],
             "diffMeta": {
               "filesChanged": [
-                "src/routes/profile.ts",
-                "src/handlers/avatarUpload.ts",
-                "src/config/s3.ts",
-                "src/middleware/auth.ts",
-                "src/services/avatarService.ts"
+                "routes/search.ts",
+                "routes/profileImageUrl.ts",
+                ".env.example",
+                "helm/charts/chai-com/deployment.yaml",
+                "terraform/eks-nodes.tf",
+                "terraform/iam.tf"
               ],
-              "insertions": 325,
-              "deletions": 259,
+              "insertions": 220,
+              "deletions": 15,
               "prLink": "https://github.com/Liora-Corp/chai-com/pull/8",
               "prBaseBranch": "main",
-              "rawDiff": "diff --git a/src/handlers/avatarUpload.ts b/src/handlers/avatarUpload.ts\nindex 3f4g5h6..7i8j9k0 100644\n--- a/src/handlers/avatarUpload.ts\n+++ b/src/handlers/avatarUpload.ts\n@@ -1,5 +1,38 @@\n+import { S3 } from 'aws-sdk';\n+const s3 = new S3();\n+\n+// CRITICAL: no content-type validation\n+export async function getUploadUrl(req, res) {\n+  const { filename, contentType } = req.body;\n+  const key = 'avatars/' + req.user.id + '/' + filename;\n+  const url = await s3.getSignedUrlPromise('putObject', {\n+    Bucket: process.env.AVATAR_BUCKET,\n+    Key: key,\n+    ContentType: contentType,\n+    Expires: 3600,\n+  });\n+  res.json({ uploadUrl: url, key });\n+}\n+\n+// CRITICAL: path traversal\n+export async function deleteAvatar(req, res) {\n+  const { key } = req.body;\n+  await s3.deleteObject({ Bucket: process.env.AVATAR_BUCKET, Key: key }).promise();\n+  res.json({ deleted: true });\n+}"
+              "rawDiff": "diff --git a/routes/search.ts b/routes/search.ts\nindex 1a2b3c4..9d8e7f6 100644\n--- a/routes/search.ts\n+++ b/routes/search.ts\n@@ -12,6 +12,14 @@ import { db } from '../db';\n router.get('/rest/user/search', async (req, res) => {\n-  res.json([]);\n+  const { q } = req.query;\n+  // ⚠ SAST-001 — SQL injection: user-supplied 'q' concatenated into raw query\n+  const query = `SELECT * FROM users WHERE username LIKE '%${q}%' OR email LIKE '%${q}%'`;\n+  const result = await db.raw(query);\n+  res.json(result.rows);\n });\n\ndiff --git a/routes/profileImageUrl.ts b/routes/profileImageUrl.ts\nindex 3c4d5e6..7f8g9h0 100644\n--- a/routes/profileImageUrl.ts\n+++ b/routes/profileImageUrl.ts\n@@ -1,4 +1,16 @@\n+import fetch from 'node-fetch';\n+\n+// ⚠ SAST-002 — SSRF: unvalidated URL parameter allows internal network probing\n+router.get('/profileImageUrl', async (req, res) => {\n+  const { url } = req.query as { url: string };\n+  const response = await fetch(url);\n+  const buffer = await response.buffer();\n+  res.set('Content-Type', response.headers.get('content-type') ?? 'application/octet-stream');\n+  res.send(buffer);\n+});\n\ndiff --git a/.env.example b/.env.example\nindex 2a3b4c5..8d9e0f1 100644\n--- a/.env.example\n+++ b/.env.example\n@@ -4,3 +4,7 @@ JWT_SECRET=change-me\n+# ⚠ SECRETS-001 — Active AWS credentials committed to source\n+AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE\n+AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY\n+AWS_DEFAULT_REGION=us-east-1\n\ndiff --git a/helm/charts/chai-com/deployment.yaml b/helm/charts/chai-com/deployment.yaml\nindex 4e5f6g7..8h9i0j1 100644\n--- a/helm/charts/chai-com/deployment.yaml\n+++ b/helm/charts/chai-com/deployment.yaml\n@@ -18,6 +18,10 @@ spec:\n       containers:\n         - name: chai-com-app\n           image: gcr.io/liora-corp/chai-com:latest\n+          # ⚠ HELM-001 — privileged container with hostPID\n+          securityContext:\n+            privileged: true\n+            hostPID: true\n\ndiff --git a/terraform/eks-nodes.tf b/terraform/eks-nodes.tf\nindex 5b6c7d8..9e0f1g2 100644\n--- a/terraform/eks-nodes.tf\n+++ b/terraform/eks-nodes.tf\n@@ -12,4 +12,6 @@ resource \"aws_launch_template\" \"chai_com_nodes\" {\n+  # ⚠ TF-001 — IMDSv1 enabled: any pod can query 169.254.169.254 without a session token\n+  metadata_options {\n+    http_tokens                 = \"optional\"\n+    http_put_response_hop_limit = 2\n+  }\n }\n\ndiff --git a/terraform/iam.tf b/terraform/iam.tf\nindex 0a1b2c3..4d5e6f7 100644\n--- a/terraform/iam.tf\n+++ b/terraform/iam.tf\n@@ -8,5 +8,7 @@ resource \"aws_iam_role_policy\" \"chai_com_node_role_policy\" {\n+  # ⚠ TF-002 — overly permissive IAM: s3:* wildcard on node role\n+  policy = jsonencode({\n+    Statement = [{ Effect = \"Allow\", Action = \"s3:*\", Resource = \"*\" }]\n+  })\n }"
             },
             "findings": [
               {
                 "id": "F-APP-01", "severity": "CRITICAL", "agent": "SAST",
-                "file": "src/routes/search.ts", "line": 14,
+                "file": "routes/search.ts", "line": 14,
                 "title": "SQL Injection (Auth Bypass)",
-                "detail": "Query built via string concatenation. PoC: POST /rest/user/login {\"email\":\"' OR 1=1--\"}. Full DB dump including PII/PCI.",
+                "detail": "Query built via string concatenation. PoC: GET /rest/user/search?q=' OR 1=1--. Full DB dump including PII/PCI.",
                 "mitre": "T1190"
               },
               {
                 "id": "F-APP-02", "severity": "CRITICAL", "agent": "SAST",
-                "file": "src/routes/profileImageUrl.ts", "line": 8,
+                "file": "routes/profileImageUrl.ts", "line": 8,
                 "title": "Server-Side Request Forgery (SSRF → IMDS)",
                 "detail": "Unvalidated URL param allows probing internal network and Cloud Metadata at 169.254.169.254.",
                 "mitre": "T1552.005"
@@ -146,7 +161,7 @@ jobs:
                 "id": "F-SEC-04", "severity": "CRITICAL", "agent": "Secrets Scanner",
                 "file": ".env.example", "line": 12,
                 "title": "Active AWS Access Key committed to repository",
-                "detail": "Live AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY present in source. Instant cloud account compromise.",
+                "detail": "Live AWS_ACCESS_KEY_ID AKIAIOSFODNN7EXAMPLE present in source. Instant cloud account compromise.",
                 "mitre": "T1552.001"
               },
               {
@@ -160,12 +175,12 @@ jobs:
                 "id": "F-TF-06", "severity": "CRITICAL", "agent": "Terraform Scanner",
                 "file": "terraform/eks-nodes.tf", "line": 22,
                 "title": "IMDSv1 enabled on EKS node group",
-                "detail": "Pods with SSRF can fetch http://169.254.169.254/latest/meta-data/iam/ without a session token.",
+                "detail": "http_tokens = optional. Pods with SSRF can fetch http://169.254.169.254/latest/meta-data/iam/ without a session token.",
                 "mitre": "T1552.005"
               },
               {
                 "id": "F-HELM-08", "severity": "CRITICAL", "agent": "Helm / K8s Scanner",
-                "file": "helm/charts/chai-com/templates/deployment.yaml", "line": 41,
+                "file": "helm/charts/chai-com/deployment.yaml", "line": 41,
                 "title": "Privileged container + hostPID enables node escape",
                 "detail": "privileged: true + hostPID: true. PoC: nsenter --target 1 --mount --uts --ipc --net --pid",
                 "mitre": "T1611"
@@ -214,7 +229,7 @@ jobs:
               },
               {
                 "id": "F-DEF-19", "severity": "HIGH", "agent": "Standards",
-                "file": "src/server.ts", "line": 0,
+                "file": "server.ts", "line": 0,
                 "title": "No Content-Security-Policy header",
                 "detail": "Enables silent session hijacking via XSS. No mitigation for kill-chain entry point CHN-KILL-01.",
                 "mitre": "T1059.007"
@@ -249,7 +264,7 @@ jobs:
               },
               {
                 "id": "F-APP-30", "severity": "MEDIUM", "agent": "SAST",
-                "file": "src/server.ts", "line": 0,
+                "file": "server.ts", "line": 0,
                 "title": "No rate limiting on authentication endpoints",
                 "detail": "Brute-force and credential stuffing attacks are unrestricted.",
                 "mitre": "T1110"
@@ -267,6 +282,48 @@ jobs:
                 "title": "No SBOM diff or supply-chain verification in CI",
                 "detail": "Transitive dependency changes go undetected between releases.",
                 "mitre": "T1195.001"
+              },
+              {
+                "id": "F-DEF-33", "severity": "LOW", "agent": "Standards",
+                "file": "server.ts", "line": 0,
+                "title": "Missing X-Content-Type-Options header",
+                "detail": "MIME-type sniffing not disabled — minor risk for content injection.",
+                "mitre": "T1059.007"
+              },
+              {
+                "id": "F-SBOM-34", "severity": "LOW", "agent": "SCA",
+                "file": "package.json", "line": 0,
+                "title": "No SBOM generated in CI pipeline",
+                "detail": "No software bill of materials — transitive dependency provenance unverifiable.",
+                "mitre": "T1195.001"
+              },
+              {
+                "id": "F-K8S-35", "severity": "LOW", "agent": "K8s Security",
+                "file": "helm/charts/chai-com/templates/deployment.yaml", "line": 0,
+                "title": "Container image uses :latest tag",
+                "detail": "Non-deterministic deployments — image content can change without warning.",
+                "mitre": "T1525"
+              },
+              {
+                "id": "F-DEF-36", "severity": "LOW", "agent": "Standards",
+                "file": "server.ts", "line": 0,
+                "title": "Missing Referrer-Policy header",
+                "detail": "Referrer leakage may expose internal paths to external origins.",
+                "mitre": "T1059.007"
+              },
+              {
+                "id": "F-K8S-37", "severity": "LOW", "agent": "K8s Security",
+                "file": "helm/charts/chai-com/templates/deployment.yaml", "line": 0,
+                "title": "readinessProbe / livenessProbe not configured",
+                "detail": "Pod may receive traffic during startup or remain in rotation after crash.",
+                "mitre": "T1499"
+              },
+              {
+                "id": "F-DEF-38", "severity": "LOW", "agent": "Standards",
+                "file": "server.ts", "line": 0,
+                "title": "Server version header exposed (X-Powered-By: Express)",
+                "detail": "Discloses framework and version to attackers for targeted exploit selection.",
+                "mitre": "T1592.002"
               }
             ]
           }
@@ -278,7 +335,7 @@ jobs:
           echo "Scan data loaded."
 
       # ── 3. Use pre-built HTML report + generate JSON summary + step outputs ──
-      - name: "Generate reports"
+      - name: 'Generate reports'
         id: report
         run: |
           # Use the pre-built Trust360 report
@@ -312,11 +369,11 @@ jobs:
           echo "scan_id=$SCAN_ID"    >> "$GITHUB_OUTPUT"
 
       # ── 4. Verify files exist ──────────────────────────────────────────────
-      - name: "Verify report files"
+      - name: 'Verify report files'
         run: ls -lh trust360-report.html trust360-summary.json scan.json
 
       # ── 5. Upload artifacts (always) ───────────────────────────────────────
-      - name: "Upload artifacts"
+      - name: 'Upload artifacts'
         if: always()
         uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b #v4.5.0
         with:
@@ -329,7 +386,7 @@ jobs:
           if-no-files-found: error
 
       # ── 6. Post full report in PR comment (always) ─────────────────────────
-      - name: "Post PR comment"
+      - name: 'Post PR comment'
         if: always() && github.event_name == 'pull_request'
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea #v7.0.1
         with:
@@ -437,18 +494,18 @@ jobs:
   # ── Job 2: gate ─────────────────────────────────────────────────────────────
   # Runs after scan always completes. Fails the PR check if gate == BLOCKED.
   gate:
-    name: "Security Gate Review — Gate"
+    name: 'Security Gate Review — Gate'
     runs-on: ubuntu-latest
     needs: scan
     if: always() && needs.scan.result != 'skipped'
 
     steps:
-      - name: "Evaluate gate decision"
+      - name: 'Evaluate gate decision'
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea #v7.0.1
         env:
-          GATE:        ${{ needs.scan.outputs.gate }}
+          GATE: ${{ needs.scan.outputs.gate }}
           GATE_REASON: ${{ needs.scan.outputs.gate_reason }}
-          SCAN_ID:     ${{ needs.scan.outputs.scan_id }}
+          SCAN_ID: ${{ needs.scan.outputs.scan_id }}
         with:
           script: |
             const gate       = (process.env.GATE        || '').trim();
