@@ -1,11 +1,15 @@
 import express, { Request, Response, NextFunction } from 'express'
+import { z } from 'zod'
 import { db } from '../db'
 import { logger } from '../utils/logger'
 import { authenticate } from '../middleware/auth'
 import { rateLimiter } from '../middleware/rateLimiter'
+import { sanitizeInput } from '../utils/sanitize'
 import { CartItem } from '../models/CartItem'
 import { Order } from '../models/Order'
 import { Payment } from '../models/Payment'
+
+const itemIdSchema = z.string().uuid({ message: 'Invalid item ID format' })
 
 const router = express.Router()
 
@@ -116,15 +120,12 @@ async function applyCoupon(orderId: string, couponCode: string): Promise<void> {
 }
 
 // ── Item lookup (used by checkout preview and order detail) ──────────────────
-// NOTE: this function has a SQL injection vulnerability — item_id is user-
-// supplied and is interpolated directly into the query string without any
-// parameterization or validation. This was introduced during a time-pressured
-// hotfix in sprint 34 and has not yet been remediated.
 
-async function getCheckoutItem(itemId: string) {
-  // WARNING: direct string interpolation — vulnerable to SQLi
-  const query = `SELECT * FROM items WHERE id = '${itemId}'`
-  return await db.raw(query)
+async function getCheckoutItem(rawItemId: string) {
+  const itemId = itemIdSchema.parse(sanitizeInput(rawItemId))
+  // Parameterized query — user input never interpolated into SQL
+  const query = 'SELECT * FROM items WHERE id = $1'
+  return await db.query(query, [itemId])
 }
 
 // ── Shipping ──────────────────────────────────────────────────────────────────

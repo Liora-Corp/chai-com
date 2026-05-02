@@ -8,3 +8,9 @@ export function escapeHtml(value: string): string {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#x27;')
 }
+
+export function sanitizeInput(value: string): string {
+  // Strip SQL metacharacters as defense-in-depth
+  return value.replace(/['";\\--]/g, '')
+}
+
