@@ -1,0 +1,11 @@
+{
+  "name": "ci-fixtures-deps",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Standalone manifest for CI",
+  "dependencies": {
+    "lodash": "4.17.15",
+    "minimist": "0.0.8",
+    "serialize-javascript": "2.1.1"
+  }
+}
